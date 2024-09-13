@@ -283,7 +283,7 @@ func (a *AppsAPIService) AppsListExecute(r ApiAppsListRequest) (*ListAppsRespons
 		return localVarReturnValue, nil, reportError("orgSlug is required and must be specified")
 	}
 
-	parameterAddToHeaderOrQuery(localVarQueryParams, "org_slug", r.orgSlug, "")
+	parameterAddToHeaderOrQuery(localVarQueryParams, "org_slug", r.orgSlug, "form", "")
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
 

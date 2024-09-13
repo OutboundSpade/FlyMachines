@@ -327,7 +327,7 @@ func (a *MachinesAPIService) MachinesCreateLeaseExecute(r ApiMachinesCreateLease
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	if r.flyMachineLeaseNonce != nil {
-		parameterAddToHeaderOrQuery(localVarHeaderParams, "fly-machine-lease-nonce", r.flyMachineLeaseNonce, "")
+		parameterAddToHeaderOrQuery(localVarHeaderParams, "fly-machine-lease-nonce", r.flyMachineLeaseNonce, "simple", "")
 	}
 	// body params
 	localVarPostBody = r.request
@@ -428,7 +428,7 @@ func (a *MachinesAPIService) MachinesDeleteExecute(r ApiMachinesDeleteRequest) (
 	localVarFormParams := url.Values{}
 
 	if r.force != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "force", r.force, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "force", r.force, "form", "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -771,10 +771,10 @@ func (a *MachinesAPIService) MachinesListExecute(r ApiMachinesListRequest) ([]Ma
 	localVarFormParams := url.Values{}
 
 	if r.includeDeleted != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "include_deleted", r.includeDeleted, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "include_deleted", r.includeDeleted, "form", "")
 	}
 	if r.region != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "region", r.region, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "region", r.region, "form", "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -1007,10 +1007,10 @@ func (a *MachinesAPIService) MachinesListProcessesExecute(r ApiMachinesListProce
 	localVarFormParams := url.Values{}
 
 	if r.sortBy != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "sort_by", r.sortBy, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "sort_by", r.sortBy, "form", "")
 	}
 	if r.order != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "order", r.order, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "order", r.order, "form", "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -1263,7 +1263,7 @@ func (a *MachinesAPIService) MachinesReleaseLeaseExecute(r ApiMachinesReleaseLea
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	parameterAddToHeaderOrQuery(localVarHeaderParams, "fly-machine-lease-nonce", r.flyMachineLeaseNonce, "")
+	parameterAddToHeaderOrQuery(localVarHeaderParams, "fly-machine-lease-nonce", r.flyMachineLeaseNonce, "simple", "")
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
@@ -1359,10 +1359,10 @@ func (a *MachinesAPIService) MachinesRestartExecute(r ApiMachinesRestartRequest)
 	localVarFormParams := url.Values{}
 
 	if r.timeout != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "timeout", r.timeout, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "timeout", r.timeout, "form", "")
 	}
 	if r.signal != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "signal", r.signal, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "signal", r.signal, "form", "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -2586,13 +2586,13 @@ func (a *MachinesAPIService) MachinesWaitExecute(r ApiMachinesWaitRequest) (*htt
 	localVarFormParams := url.Values{}
 
 	if r.instanceId != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "instance_id", r.instanceId, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "instance_id", r.instanceId, "form", "")
 	}
 	if r.timeout != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "timeout", r.timeout, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "timeout", r.timeout, "form", "")
 	}
 	if r.state != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "state", r.state, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "state", r.state, "form", "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
