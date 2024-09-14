@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **Request** | Pointer to **map[string]interface{}** |  | [optional] 
 **Source** | Pointer to **string** |  | [optional] 
 **Status** | Pointer to **string** |  | [optional] 
-**Timestamp** | Pointer to **int32** |  | [optional] 
+**Timestamp** | Pointer to **int64** |  | [optional] 
 **Type** | Pointer to **string** |  | [optional] 
 
 ## Methods
@@ -132,20 +132,20 @@ HasStatus returns a boolean if a field has been set.
 
 ### GetTimestamp
 
-`func (o *MachineEvent) GetTimestamp() int32`
+`func (o *MachineEvent) GetTimestamp() int64`
 
 GetTimestamp returns the Timestamp field if non-nil, zero value otherwise.
 
 ### GetTimestampOk
 
-`func (o *MachineEvent) GetTimestampOk() (*int32, bool)`
+`func (o *MachineEvent) GetTimestampOk() (*int64, bool)`
 
 GetTimestampOk returns a tuple with the Timestamp field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetTimestamp
 
-`func (o *MachineEvent) SetTimestamp(v int32)`
+`func (o *MachineEvent) SetTimestamp(v int64)`
 
 SetTimestamp sets Timestamp field to given value.
 

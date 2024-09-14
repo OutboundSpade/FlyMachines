@@ -2621,6 +2621,7 @@ components:
         status:
           type: string
         timestamp:
+          format: int64
           type: integer
         type:
           type: string

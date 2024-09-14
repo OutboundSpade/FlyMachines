@@ -23,7 +23,7 @@ type MachineEvent struct {
 	Request map[string]interface{} `json:"request,omitempty"`
 	Source *string `json:"source,omitempty"`
 	Status *string `json:"status,omitempty"`
-	Timestamp *int32 `json:"timestamp,omitempty"`
+	Timestamp *int64 `json:"timestamp,omitempty"`
 	Type *string `json:"type,omitempty"`
 }
 
@@ -173,9 +173,9 @@ func (o *MachineEvent) SetStatus(v string) {
 }
 
 // GetTimestamp returns the Timestamp field value if set, zero value otherwise.
-func (o *MachineEvent) GetTimestamp() int32 {
+func (o *MachineEvent) GetTimestamp() int64 {
 	if o == nil || IsNil(o.Timestamp) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.Timestamp
@@ -183,7 +183,7 @@ func (o *MachineEvent) GetTimestamp() int32 {
 
 // GetTimestampOk returns a tuple with the Timestamp field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *MachineEvent) GetTimestampOk() (*int32, bool) {
+func (o *MachineEvent) GetTimestampOk() (*int64, bool) {
 	if o == nil || IsNil(o.Timestamp) {
 		return nil, false
 	}
@@ -199,8 +199,8 @@ func (o *MachineEvent) HasTimestamp() bool {
 	return false
 }
 
-// SetTimestamp gets a reference to the given int32 and assigns it to the Timestamp field.
-func (o *MachineEvent) SetTimestamp(v int32) {
+// SetTimestamp gets a reference to the given int64 and assigns it to the Timestamp field.
+func (o *MachineEvent) SetTimestamp(v int64) {
 	o.Timestamp = &v
 }
 
