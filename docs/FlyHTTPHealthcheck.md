@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **Headers** | Pointer to [**[]FlyMachineHTTPHeader**](FlyMachineHTTPHeader.md) | Additional headers to send with the request | [optional] 
 **Method** | Pointer to **string** | The HTTP method to use to when making the request | [optional] 
 **Path** | Pointer to **string** | The path to send the request to | [optional] 
-**Port** | Pointer to **int32** | The port to connect to, often the same as internal_port | [optional] 
+**Port** | Pointer to **int64** | The port to connect to, often the same as internal_port | [optional] 
 **Scheme** | Pointer to [**FlyContainerHealthcheckScheme**](FlyContainerHealthcheckScheme.md) | Whether to use http or https | [optional] 
 **TlsServerName** | Pointer to **string** | If the protocol is https, the hostname to use for TLS certificate validation | [optional] 
 **TlsSkipVerify** | Pointer to **bool** | If the protocol is https, whether or not to verify the TLS certificate | [optional] 
@@ -108,20 +108,20 @@ HasPath returns a boolean if a field has been set.
 
 ### GetPort
 
-`func (o *FlyHTTPHealthcheck) GetPort() int32`
+`func (o *FlyHTTPHealthcheck) GetPort() int64`
 
 GetPort returns the Port field if non-nil, zero value otherwise.
 
 ### GetPortOk
 
-`func (o *FlyHTTPHealthcheck) GetPortOk() (*int32, bool)`
+`func (o *FlyHTTPHealthcheck) GetPortOk() (*int64, bool)`
 
 GetPortOk returns a tuple with the Port field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetPort
 
-`func (o *FlyHTTPHealthcheck) SetPort(v int32)`
+`func (o *FlyHTTPHealthcheck) SetPort(v int64)`
 
 SetPort sets Port field to given value.
 

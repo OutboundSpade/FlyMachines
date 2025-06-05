@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **Entrypoint** | Pointer to **[]string** |  | [optional] 
 **Exec** | Pointer to **[]string** |  | [optional] 
 **KernelArgs** | Pointer to **[]string** |  | [optional] 
-**SwapSizeMb** | Pointer to **int32** |  | [optional] 
+**SwapSizeMb** | Pointer to **int64** |  | [optional] 
 **Tty** | Pointer to **bool** |  | [optional] 
 
 ## Methods
@@ -132,20 +132,20 @@ HasKernelArgs returns a boolean if a field has been set.
 
 ### GetSwapSizeMb
 
-`func (o *FlyMachineInit) GetSwapSizeMb() int32`
+`func (o *FlyMachineInit) GetSwapSizeMb() int64`
 
 GetSwapSizeMb returns the SwapSizeMb field if non-nil, zero value otherwise.
 
 ### GetSwapSizeMbOk
 
-`func (o *FlyMachineInit) GetSwapSizeMbOk() (*int32, bool)`
+`func (o *FlyMachineInit) GetSwapSizeMbOk() (*int64, bool)`
 
 GetSwapSizeMbOk returns a tuple with the SwapSizeMb field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetSwapSizeMb
 
-`func (o *FlyMachineInit) SetSwapSizeMb(v int32)`
+`func (o *FlyMachineInit) SetSwapSizeMb(v int64)`
 
 SetSwapSizeMb sets SwapSizeMb field to given value.
 

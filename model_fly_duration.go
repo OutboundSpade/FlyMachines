@@ -19,7 +19,7 @@ var _ MappedNullable = &FlyDuration{}
 
 // FlyDuration struct for FlyDuration
 type FlyDuration struct {
-	TimeDuration *int32 `json:"time.Duration,omitempty"`
+	TimeDuration *int64 `json:"time.Duration,omitempty"`
 }
 
 // NewFlyDuration instantiates a new FlyDuration object
@@ -40,9 +40,9 @@ func NewFlyDurationWithDefaults() *FlyDuration {
 }
 
 // GetTimeDuration returns the TimeDuration field value if set, zero value otherwise.
-func (o *FlyDuration) GetTimeDuration() int32 {
+func (o *FlyDuration) GetTimeDuration() int64 {
 	if o == nil || IsNil(o.TimeDuration) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.TimeDuration
@@ -50,7 +50,7 @@ func (o *FlyDuration) GetTimeDuration() int32 {
 
 // GetTimeDurationOk returns a tuple with the TimeDuration field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *FlyDuration) GetTimeDurationOk() (*int32, bool) {
+func (o *FlyDuration) GetTimeDurationOk() (*int64, bool) {
 	if o == nil || IsNil(o.TimeDuration) {
 		return nil, false
 	}
@@ -66,8 +66,8 @@ func (o *FlyDuration) HasTimeDuration() bool {
 	return false
 }
 
-// SetTimeDuration gets a reference to the given int32 and assigns it to the TimeDuration field.
-func (o *FlyDuration) SetTimeDuration(v int32) {
+// SetTimeDuration gets a reference to the given int64 and assigns it to the TimeDuration field.
+func (o *FlyDuration) SetTimeDuration(v int64) {
 	o.TimeDuration = &v
 }
 

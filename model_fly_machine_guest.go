@@ -20,12 +20,12 @@ var _ MappedNullable = &FlyMachineGuest{}
 // FlyMachineGuest struct for FlyMachineGuest
 type FlyMachineGuest struct {
 	CpuKind *string `json:"cpu_kind,omitempty"`
-	Cpus *int32 `json:"cpus,omitempty"`
+	Cpus *int64 `json:"cpus,omitempty"`
 	GpuKind *string `json:"gpu_kind,omitempty"`
-	Gpus *int32 `json:"gpus,omitempty"`
+	Gpus *int64 `json:"gpus,omitempty"`
 	HostDedicationId *string `json:"host_dedication_id,omitempty"`
 	KernelArgs []string `json:"kernel_args,omitempty"`
-	MemoryMb *int32 `json:"memory_mb,omitempty"`
+	MemoryMb *int64 `json:"memory_mb,omitempty"`
 }
 
 // NewFlyMachineGuest instantiates a new FlyMachineGuest object
@@ -78,9 +78,9 @@ func (o *FlyMachineGuest) SetCpuKind(v string) {
 }
 
 // GetCpus returns the Cpus field value if set, zero value otherwise.
-func (o *FlyMachineGuest) GetCpus() int32 {
+func (o *FlyMachineGuest) GetCpus() int64 {
 	if o == nil || IsNil(o.Cpus) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.Cpus
@@ -88,7 +88,7 @@ func (o *FlyMachineGuest) GetCpus() int32 {
 
 // GetCpusOk returns a tuple with the Cpus field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *FlyMachineGuest) GetCpusOk() (*int32, bool) {
+func (o *FlyMachineGuest) GetCpusOk() (*int64, bool) {
 	if o == nil || IsNil(o.Cpus) {
 		return nil, false
 	}
@@ -104,8 +104,8 @@ func (o *FlyMachineGuest) HasCpus() bool {
 	return false
 }
 
-// SetCpus gets a reference to the given int32 and assigns it to the Cpus field.
-func (o *FlyMachineGuest) SetCpus(v int32) {
+// SetCpus gets a reference to the given int64 and assigns it to the Cpus field.
+func (o *FlyMachineGuest) SetCpus(v int64) {
 	o.Cpus = &v
 }
 
@@ -142,9 +142,9 @@ func (o *FlyMachineGuest) SetGpuKind(v string) {
 }
 
 // GetGpus returns the Gpus field value if set, zero value otherwise.
-func (o *FlyMachineGuest) GetGpus() int32 {
+func (o *FlyMachineGuest) GetGpus() int64 {
 	if o == nil || IsNil(o.Gpus) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.Gpus
@@ -152,7 +152,7 @@ func (o *FlyMachineGuest) GetGpus() int32 {
 
 // GetGpusOk returns a tuple with the Gpus field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *FlyMachineGuest) GetGpusOk() (*int32, bool) {
+func (o *FlyMachineGuest) GetGpusOk() (*int64, bool) {
 	if o == nil || IsNil(o.Gpus) {
 		return nil, false
 	}
@@ -168,8 +168,8 @@ func (o *FlyMachineGuest) HasGpus() bool {
 	return false
 }
 
-// SetGpus gets a reference to the given int32 and assigns it to the Gpus field.
-func (o *FlyMachineGuest) SetGpus(v int32) {
+// SetGpus gets a reference to the given int64 and assigns it to the Gpus field.
+func (o *FlyMachineGuest) SetGpus(v int64) {
 	o.Gpus = &v
 }
 
@@ -238,9 +238,9 @@ func (o *FlyMachineGuest) SetKernelArgs(v []string) {
 }
 
 // GetMemoryMb returns the MemoryMb field value if set, zero value otherwise.
-func (o *FlyMachineGuest) GetMemoryMb() int32 {
+func (o *FlyMachineGuest) GetMemoryMb() int64 {
 	if o == nil || IsNil(o.MemoryMb) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.MemoryMb
@@ -248,7 +248,7 @@ func (o *FlyMachineGuest) GetMemoryMb() int32 {
 
 // GetMemoryMbOk returns a tuple with the MemoryMb field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *FlyMachineGuest) GetMemoryMbOk() (*int32, bool) {
+func (o *FlyMachineGuest) GetMemoryMbOk() (*int64, bool) {
 	if o == nil || IsNil(o.MemoryMb) {
 		return nil, false
 	}
@@ -264,8 +264,8 @@ func (o *FlyMachineGuest) HasMemoryMb() bool {
 	return false
 }
 
-// SetMemoryMb gets a reference to the given int32 and assigns it to the MemoryMb field.
-func (o *FlyMachineGuest) SetMemoryMb(v int32) {
+// SetMemoryMb gets a reference to the given int64 and assigns it to the MemoryMb field.
+func (o *FlyMachineGuest) SetMemoryMb(v int64) {
 	o.MemoryMb = &v
 }
 

@@ -19,8 +19,8 @@ var _ MappedNullable = &EncryptSecretkeyRequest{}
 
 // EncryptSecretkeyRequest struct for EncryptSecretkeyRequest
 type EncryptSecretkeyRequest struct {
-	AssociatedData []int32 `json:"associated_data,omitempty"`
-	Plaintext []int32 `json:"plaintext,omitempty"`
+	AssociatedData []int64 `json:"associated_data,omitempty"`
+	Plaintext []int64 `json:"plaintext,omitempty"`
 }
 
 // NewEncryptSecretkeyRequest instantiates a new EncryptSecretkeyRequest object
@@ -41,9 +41,9 @@ func NewEncryptSecretkeyRequestWithDefaults() *EncryptSecretkeyRequest {
 }
 
 // GetAssociatedData returns the AssociatedData field value if set, zero value otherwise.
-func (o *EncryptSecretkeyRequest) GetAssociatedData() []int32 {
+func (o *EncryptSecretkeyRequest) GetAssociatedData() []int64 {
 	if o == nil || IsNil(o.AssociatedData) {
-		var ret []int32
+		var ret []int64
 		return ret
 	}
 	return o.AssociatedData
@@ -51,7 +51,7 @@ func (o *EncryptSecretkeyRequest) GetAssociatedData() []int32 {
 
 // GetAssociatedDataOk returns a tuple with the AssociatedData field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *EncryptSecretkeyRequest) GetAssociatedDataOk() ([]int32, bool) {
+func (o *EncryptSecretkeyRequest) GetAssociatedDataOk() ([]int64, bool) {
 	if o == nil || IsNil(o.AssociatedData) {
 		return nil, false
 	}
@@ -67,15 +67,15 @@ func (o *EncryptSecretkeyRequest) HasAssociatedData() bool {
 	return false
 }
 
-// SetAssociatedData gets a reference to the given []int32 and assigns it to the AssociatedData field.
-func (o *EncryptSecretkeyRequest) SetAssociatedData(v []int32) {
+// SetAssociatedData gets a reference to the given []int64 and assigns it to the AssociatedData field.
+func (o *EncryptSecretkeyRequest) SetAssociatedData(v []int64) {
 	o.AssociatedData = v
 }
 
 // GetPlaintext returns the Plaintext field value if set, zero value otherwise.
-func (o *EncryptSecretkeyRequest) GetPlaintext() []int32 {
+func (o *EncryptSecretkeyRequest) GetPlaintext() []int64 {
 	if o == nil || IsNil(o.Plaintext) {
-		var ret []int32
+		var ret []int64
 		return ret
 	}
 	return o.Plaintext
@@ -83,7 +83,7 @@ func (o *EncryptSecretkeyRequest) GetPlaintext() []int32 {
 
 // GetPlaintextOk returns a tuple with the Plaintext field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *EncryptSecretkeyRequest) GetPlaintextOk() ([]int32, bool) {
+func (o *EncryptSecretkeyRequest) GetPlaintextOk() ([]int64, bool) {
 	if o == nil || IsNil(o.Plaintext) {
 		return nil, false
 	}
@@ -99,8 +99,8 @@ func (o *EncryptSecretkeyRequest) HasPlaintext() bool {
 	return false
 }
 
-// SetPlaintext gets a reference to the given []int32 and assigns it to the Plaintext field.
-func (o *EncryptSecretkeyRequest) SetPlaintext(v []int32) {
+// SetPlaintext gets a reference to the given []int64 and assigns it to the Plaintext field.
+func (o *EncryptSecretkeyRequest) SetPlaintext(v []int64) {
 	o.Plaintext = v
 }
 

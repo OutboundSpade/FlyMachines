@@ -19,7 +19,7 @@ var _ MappedNullable = &SignSecretkeyResponse{}
 
 // SignSecretkeyResponse struct for SignSecretkeyResponse
 type SignSecretkeyResponse struct {
-	Signature []int32 `json:"signature,omitempty"`
+	Signature []int64 `json:"signature,omitempty"`
 }
 
 // NewSignSecretkeyResponse instantiates a new SignSecretkeyResponse object
@@ -40,9 +40,9 @@ func NewSignSecretkeyResponseWithDefaults() *SignSecretkeyResponse {
 }
 
 // GetSignature returns the Signature field value if set, zero value otherwise.
-func (o *SignSecretkeyResponse) GetSignature() []int32 {
+func (o *SignSecretkeyResponse) GetSignature() []int64 {
 	if o == nil || IsNil(o.Signature) {
-		var ret []int32
+		var ret []int64
 		return ret
 	}
 	return o.Signature
@@ -50,7 +50,7 @@ func (o *SignSecretkeyResponse) GetSignature() []int32 {
 
 // GetSignatureOk returns a tuple with the Signature field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *SignSecretkeyResponse) GetSignatureOk() ([]int32, bool) {
+func (o *SignSecretkeyResponse) GetSignatureOk() ([]int64, bool) {
 	if o == nil || IsNil(o.Signature) {
 		return nil, false
 	}
@@ -66,8 +66,8 @@ func (o *SignSecretkeyResponse) HasSignature() bool {
 	return false
 }
 
-// SetSignature gets a reference to the given []int32 and assigns it to the Signature field.
-func (o *SignSecretkeyResponse) SetSignature(v []int32) {
+// SetSignature gets a reference to the given []int64 and assigns it to the Signature field.
+func (o *SignSecretkeyResponse) SetSignature(v []int64) {
 	o.Signature = v
 }
 

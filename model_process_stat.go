@@ -20,13 +20,13 @@ var _ MappedNullable = &ProcessStat{}
 // ProcessStat struct for ProcessStat
 type ProcessStat struct {
 	Command *string `json:"command,omitempty"`
-	Cpu *int32 `json:"cpu,omitempty"`
+	Cpu *int64 `json:"cpu,omitempty"`
 	Directory *string `json:"directory,omitempty"`
 	ListenSockets []ListenSocket `json:"listen_sockets,omitempty"`
-	Pid *int32 `json:"pid,omitempty"`
-	Rss *int32 `json:"rss,omitempty"`
-	Rtime *int32 `json:"rtime,omitempty"`
-	Stime *int32 `json:"stime,omitempty"`
+	Pid *int64 `json:"pid,omitempty"`
+	Rss *int64 `json:"rss,omitempty"`
+	Rtime *int64 `json:"rtime,omitempty"`
+	Stime *int64 `json:"stime,omitempty"`
 }
 
 // NewProcessStat instantiates a new ProcessStat object
@@ -79,9 +79,9 @@ func (o *ProcessStat) SetCommand(v string) {
 }
 
 // GetCpu returns the Cpu field value if set, zero value otherwise.
-func (o *ProcessStat) GetCpu() int32 {
+func (o *ProcessStat) GetCpu() int64 {
 	if o == nil || IsNil(o.Cpu) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.Cpu
@@ -89,7 +89,7 @@ func (o *ProcessStat) GetCpu() int32 {
 
 // GetCpuOk returns a tuple with the Cpu field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ProcessStat) GetCpuOk() (*int32, bool) {
+func (o *ProcessStat) GetCpuOk() (*int64, bool) {
 	if o == nil || IsNil(o.Cpu) {
 		return nil, false
 	}
@@ -105,8 +105,8 @@ func (o *ProcessStat) HasCpu() bool {
 	return false
 }
 
-// SetCpu gets a reference to the given int32 and assigns it to the Cpu field.
-func (o *ProcessStat) SetCpu(v int32) {
+// SetCpu gets a reference to the given int64 and assigns it to the Cpu field.
+func (o *ProcessStat) SetCpu(v int64) {
 	o.Cpu = &v
 }
 
@@ -175,9 +175,9 @@ func (o *ProcessStat) SetListenSockets(v []ListenSocket) {
 }
 
 // GetPid returns the Pid field value if set, zero value otherwise.
-func (o *ProcessStat) GetPid() int32 {
+func (o *ProcessStat) GetPid() int64 {
 	if o == nil || IsNil(o.Pid) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.Pid
@@ -185,7 +185,7 @@ func (o *ProcessStat) GetPid() int32 {
 
 // GetPidOk returns a tuple with the Pid field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ProcessStat) GetPidOk() (*int32, bool) {
+func (o *ProcessStat) GetPidOk() (*int64, bool) {
 	if o == nil || IsNil(o.Pid) {
 		return nil, false
 	}
@@ -201,15 +201,15 @@ func (o *ProcessStat) HasPid() bool {
 	return false
 }
 
-// SetPid gets a reference to the given int32 and assigns it to the Pid field.
-func (o *ProcessStat) SetPid(v int32) {
+// SetPid gets a reference to the given int64 and assigns it to the Pid field.
+func (o *ProcessStat) SetPid(v int64) {
 	o.Pid = &v
 }
 
 // GetRss returns the Rss field value if set, zero value otherwise.
-func (o *ProcessStat) GetRss() int32 {
+func (o *ProcessStat) GetRss() int64 {
 	if o == nil || IsNil(o.Rss) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.Rss
@@ -217,7 +217,7 @@ func (o *ProcessStat) GetRss() int32 {
 
 // GetRssOk returns a tuple with the Rss field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ProcessStat) GetRssOk() (*int32, bool) {
+func (o *ProcessStat) GetRssOk() (*int64, bool) {
 	if o == nil || IsNil(o.Rss) {
 		return nil, false
 	}
@@ -233,15 +233,15 @@ func (o *ProcessStat) HasRss() bool {
 	return false
 }
 
-// SetRss gets a reference to the given int32 and assigns it to the Rss field.
-func (o *ProcessStat) SetRss(v int32) {
+// SetRss gets a reference to the given int64 and assigns it to the Rss field.
+func (o *ProcessStat) SetRss(v int64) {
 	o.Rss = &v
 }
 
 // GetRtime returns the Rtime field value if set, zero value otherwise.
-func (o *ProcessStat) GetRtime() int32 {
+func (o *ProcessStat) GetRtime() int64 {
 	if o == nil || IsNil(o.Rtime) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.Rtime
@@ -249,7 +249,7 @@ func (o *ProcessStat) GetRtime() int32 {
 
 // GetRtimeOk returns a tuple with the Rtime field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ProcessStat) GetRtimeOk() (*int32, bool) {
+func (o *ProcessStat) GetRtimeOk() (*int64, bool) {
 	if o == nil || IsNil(o.Rtime) {
 		return nil, false
 	}
@@ -265,15 +265,15 @@ func (o *ProcessStat) HasRtime() bool {
 	return false
 }
 
-// SetRtime gets a reference to the given int32 and assigns it to the Rtime field.
-func (o *ProcessStat) SetRtime(v int32) {
+// SetRtime gets a reference to the given int64 and assigns it to the Rtime field.
+func (o *ProcessStat) SetRtime(v int64) {
 	o.Rtime = &v
 }
 
 // GetStime returns the Stime field value if set, zero value otherwise.
-func (o *ProcessStat) GetStime() int32 {
+func (o *ProcessStat) GetStime() int64 {
 	if o == nil || IsNil(o.Stime) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.Stime
@@ -281,7 +281,7 @@ func (o *ProcessStat) GetStime() int32 {
 
 // GetStimeOk returns a tuple with the Stime field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ProcessStat) GetStimeOk() (*int32, bool) {
+func (o *ProcessStat) GetStimeOk() (*int64, bool) {
 	if o == nil || IsNil(o.Stime) {
 		return nil, false
 	}
@@ -297,8 +297,8 @@ func (o *ProcessStat) HasStime() bool {
 	return false
 }
 
-// SetStime gets a reference to the given int32 and assigns it to the Stime field.
-func (o *ProcessStat) SetStime(v int32) {
+// SetStime gets a reference to the given int64 and assigns it to the Stime field.
+func (o *ProcessStat) SetStime(v int64) {
 	o.Stime = &v
 }
 

@@ -19,7 +19,7 @@ var _ MappedNullable = &SignSecretkeyRequest{}
 
 // SignSecretkeyRequest struct for SignSecretkeyRequest
 type SignSecretkeyRequest struct {
-	Plaintext []int32 `json:"plaintext,omitempty"`
+	Plaintext []int64 `json:"plaintext,omitempty"`
 }
 
 // NewSignSecretkeyRequest instantiates a new SignSecretkeyRequest object
@@ -40,9 +40,9 @@ func NewSignSecretkeyRequestWithDefaults() *SignSecretkeyRequest {
 }
 
 // GetPlaintext returns the Plaintext field value if set, zero value otherwise.
-func (o *SignSecretkeyRequest) GetPlaintext() []int32 {
+func (o *SignSecretkeyRequest) GetPlaintext() []int64 {
 	if o == nil || IsNil(o.Plaintext) {
-		var ret []int32
+		var ret []int64
 		return ret
 	}
 	return o.Plaintext
@@ -50,7 +50,7 @@ func (o *SignSecretkeyRequest) GetPlaintext() []int32 {
 
 // GetPlaintextOk returns a tuple with the Plaintext field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *SignSecretkeyRequest) GetPlaintextOk() ([]int32, bool) {
+func (o *SignSecretkeyRequest) GetPlaintextOk() ([]int64, bool) {
 	if o == nil || IsNil(o.Plaintext) {
 		return nil, false
 	}
@@ -66,8 +66,8 @@ func (o *SignSecretkeyRequest) HasPlaintext() bool {
 	return false
 }
 
-// SetPlaintext gets a reference to the given []int32 and assigns it to the Plaintext field.
-func (o *SignSecretkeyRequest) SetPlaintext(v []int32) {
+// SetPlaintext gets a reference to the given []int64 and assigns it to the Plaintext field.
+func (o *SignSecretkeyRequest) SetPlaintext(v []int64) {
 	o.Plaintext = v
 }
 

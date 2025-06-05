@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Capacity** | Pointer to **int32** |  | [optional] 
+**Capacity** | Pointer to **int64** |  | [optional] 
 **Code** | Pointer to **string** |  | [optional] 
 **GatewayAvailable** | Pointer to **bool** |  | [optional] 
 **GeoRegion** | Pointer to **string** |  | [optional] 
@@ -34,20 +34,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetCapacity
 
-`func (o *ReadsGetCapacityPerRegionRow) GetCapacity() int32`
+`func (o *ReadsGetCapacityPerRegionRow) GetCapacity() int64`
 
 GetCapacity returns the Capacity field if non-nil, zero value otherwise.
 
 ### GetCapacityOk
 
-`func (o *ReadsGetCapacityPerRegionRow) GetCapacityOk() (*int32, bool)`
+`func (o *ReadsGetCapacityPerRegionRow) GetCapacityOk() (*int64, bool)`
 
 GetCapacityOk returns a tuple with the Capacity field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetCapacity
 
-`func (o *ReadsGetCapacityPerRegionRow) SetCapacity(v int32)`
+`func (o *ReadsGetCapacityPerRegionRow) SetCapacity(v int64)`
 
 SetCapacity sets Capacity field to given value.
 

@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Signature** | Pointer to **[]int32** |  | [optional] 
+**Signature** | Pointer to **[]int64** |  | [optional] 
 
 ## Methods
 
@@ -27,20 +27,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetSignature
 
-`func (o *SignSecretkeyResponse) GetSignature() []int32`
+`func (o *SignSecretkeyResponse) GetSignature() []int64`
 
 GetSignature returns the Signature field if non-nil, zero value otherwise.
 
 ### GetSignatureOk
 
-`func (o *SignSecretkeyResponse) GetSignatureOk() (*[]int32, bool)`
+`func (o *SignSecretkeyResponse) GetSignatureOk() (*[]int64, bool)`
 
 GetSignatureOk returns a tuple with the Signature field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetSignature
 
-`func (o *SignSecretkeyResponse) SetSignature(v []int32)`
+`func (o *SignSecretkeyResponse) SetSignature(v []int64)`
 
 SetSignature sets Signature field to given value.
 

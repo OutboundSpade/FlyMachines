@@ -21,7 +21,7 @@ var _ MappedNullable = &CreateMachineRequest{}
 type CreateMachineRequest struct {
 	// An object defining the Machine configuration
 	Config *FlyMachineConfig `json:"config,omitempty"`
-	LeaseTtl *int32 `json:"lease_ttl,omitempty"`
+	LeaseTtl *int64 `json:"lease_ttl,omitempty"`
 	Lsvd *bool `json:"lsvd,omitempty"`
 	// Unique name for this Machine. If omitted, one is generated for you
 	Name *string `json:"name,omitempty"`
@@ -82,9 +82,9 @@ func (o *CreateMachineRequest) SetConfig(v FlyMachineConfig) {
 }
 
 // GetLeaseTtl returns the LeaseTtl field value if set, zero value otherwise.
-func (o *CreateMachineRequest) GetLeaseTtl() int32 {
+func (o *CreateMachineRequest) GetLeaseTtl() int64 {
 	if o == nil || IsNil(o.LeaseTtl) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.LeaseTtl
@@ -92,7 +92,7 @@ func (o *CreateMachineRequest) GetLeaseTtl() int32 {
 
 // GetLeaseTtlOk returns a tuple with the LeaseTtl field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *CreateMachineRequest) GetLeaseTtlOk() (*int32, bool) {
+func (o *CreateMachineRequest) GetLeaseTtlOk() (*int64, bool) {
 	if o == nil || IsNil(o.LeaseTtl) {
 		return nil, false
 	}
@@ -108,8 +108,8 @@ func (o *CreateMachineRequest) HasLeaseTtl() bool {
 	return false
 }
 
-// SetLeaseTtl gets a reference to the given int32 and assigns it to the LeaseTtl field.
-func (o *CreateMachineRequest) SetLeaseTtl(v int32) {
+// SetLeaseTtl gets a reference to the given int64 and assigns it to the LeaseTtl field.
+func (o *CreateMachineRequest) SetLeaseTtl(v int64) {
 	o.LeaseTtl = &v
 }
 

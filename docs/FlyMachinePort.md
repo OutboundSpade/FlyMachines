@@ -4,13 +4,13 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**EndPort** | Pointer to **int32** |  | [optional] 
+**EndPort** | Pointer to **int64** |  | [optional] 
 **ForceHttps** | Pointer to **bool** |  | [optional] 
 **Handlers** | Pointer to **[]string** |  | [optional] 
 **HttpOptions** | Pointer to [**FlyHTTPOptions**](FlyHTTPOptions.md) |  | [optional] 
-**Port** | Pointer to **int32** |  | [optional] 
+**Port** | Pointer to **int64** |  | [optional] 
 **ProxyProtoOptions** | Pointer to [**FlyProxyProtoOptions**](FlyProxyProtoOptions.md) |  | [optional] 
-**StartPort** | Pointer to **int32** |  | [optional] 
+**StartPort** | Pointer to **int64** |  | [optional] 
 **TlsOptions** | Pointer to [**FlyTLSOptions**](FlyTLSOptions.md) |  | [optional] 
 
 ## Methods
@@ -34,20 +34,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetEndPort
 
-`func (o *FlyMachinePort) GetEndPort() int32`
+`func (o *FlyMachinePort) GetEndPort() int64`
 
 GetEndPort returns the EndPort field if non-nil, zero value otherwise.
 
 ### GetEndPortOk
 
-`func (o *FlyMachinePort) GetEndPortOk() (*int32, bool)`
+`func (o *FlyMachinePort) GetEndPortOk() (*int64, bool)`
 
 GetEndPortOk returns a tuple with the EndPort field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetEndPort
 
-`func (o *FlyMachinePort) SetEndPort(v int32)`
+`func (o *FlyMachinePort) SetEndPort(v int64)`
 
 SetEndPort sets EndPort field to given value.
 
@@ -134,20 +134,20 @@ HasHttpOptions returns a boolean if a field has been set.
 
 ### GetPort
 
-`func (o *FlyMachinePort) GetPort() int32`
+`func (o *FlyMachinePort) GetPort() int64`
 
 GetPort returns the Port field if non-nil, zero value otherwise.
 
 ### GetPortOk
 
-`func (o *FlyMachinePort) GetPortOk() (*int32, bool)`
+`func (o *FlyMachinePort) GetPortOk() (*int64, bool)`
 
 GetPortOk returns a tuple with the Port field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetPort
 
-`func (o *FlyMachinePort) SetPort(v int32)`
+`func (o *FlyMachinePort) SetPort(v int64)`
 
 SetPort sets Port field to given value.
 
@@ -184,20 +184,20 @@ HasProxyProtoOptions returns a boolean if a field has been set.
 
 ### GetStartPort
 
-`func (o *FlyMachinePort) GetStartPort() int32`
+`func (o *FlyMachinePort) GetStartPort() int64`
 
 GetStartPort returns the StartPort field if non-nil, zero value otherwise.
 
 ### GetStartPortOk
 
-`func (o *FlyMachinePort) GetStartPortOk() (*int32, bool)`
+`func (o *FlyMachinePort) GetStartPortOk() (*int64, bool)`
 
 GetStartPortOk returns a tuple with the StartPort field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetStartPort
 
-`func (o *FlyMachinePort) SetStartPort(v int32)`
+`func (o *FlyMachinePort) SetStartPort(v int64)`
 
 SetStartPort sets StartPort field to given value.
 

@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**SizeGb** | Pointer to **int32** |  | [optional] 
+**SizeGb** | Pointer to **int64** |  | [optional] 
 
 ## Methods
 
@@ -27,20 +27,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetSizeGb
 
-`func (o *ExtendVolumeRequest) GetSizeGb() int32`
+`func (o *ExtendVolumeRequest) GetSizeGb() int64`
 
 GetSizeGb returns the SizeGb field if non-nil, zero value otherwise.
 
 ### GetSizeGbOk
 
-`func (o *ExtendVolumeRequest) GetSizeGbOk() (*int32, bool)`
+`func (o *ExtendVolumeRequest) GetSizeGbOk() (*int64, bool)`
 
 GetSizeGbOk returns a tuple with the SizeGb field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetSizeGb
 
-`func (o *ExtendVolumeRequest) SetSizeGb(v int32)`
+`func (o *ExtendVolumeRequest) SetSizeGb(v int64)`
 
 SetSizeGb sets SizeGb field to given value.
 

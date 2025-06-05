@@ -2536,7 +2536,7 @@ type ApiMachinesWaitRequest struct {
 	appName string
 	machineId string
 	instanceId *string
-	timeout *int32
+	timeout *int64
 	state *string
 }
 
@@ -2547,7 +2547,7 @@ func (r ApiMachinesWaitRequest) InstanceId(instanceId string) ApiMachinesWaitReq
 }
 
 // wait timeout. default 60s
-func (r ApiMachinesWaitRequest) Timeout(timeout int32) ApiMachinesWaitRequest {
+func (r ApiMachinesWaitRequest) Timeout(timeout int64) ApiMachinesWaitRequest {
 	r.timeout = &timeout
 	return r
 }

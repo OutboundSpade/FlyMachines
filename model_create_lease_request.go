@@ -21,7 +21,7 @@ var _ MappedNullable = &CreateLeaseRequest{}
 type CreateLeaseRequest struct {
 	Description *string `json:"description,omitempty"`
 	// seconds lease will be valid
-	Ttl *int32 `json:"ttl,omitempty"`
+	Ttl *int64 `json:"ttl,omitempty"`
 }
 
 // NewCreateLeaseRequest instantiates a new CreateLeaseRequest object
@@ -74,9 +74,9 @@ func (o *CreateLeaseRequest) SetDescription(v string) {
 }
 
 // GetTtl returns the Ttl field value if set, zero value otherwise.
-func (o *CreateLeaseRequest) GetTtl() int32 {
+func (o *CreateLeaseRequest) GetTtl() int64 {
 	if o == nil || IsNil(o.Ttl) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.Ttl
@@ -84,7 +84,7 @@ func (o *CreateLeaseRequest) GetTtl() int32 {
 
 // GetTtlOk returns a tuple with the Ttl field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *CreateLeaseRequest) GetTtlOk() (*int32, bool) {
+func (o *CreateLeaseRequest) GetTtlOk() (*int64, bool) {
 	if o == nil || IsNil(o.Ttl) {
 		return nil, false
 	}
@@ -100,8 +100,8 @@ func (o *CreateLeaseRequest) HasTtl() bool {
 	return false
 }
 
-// SetTtl gets a reference to the given int32 and assigns it to the Ttl field.
-func (o *CreateLeaseRequest) SetTtl(v int32) {
+// SetTtl gets a reference to the given int64 and assigns it to the Ttl field.
+func (o *CreateLeaseRequest) SetTtl(v int64) {
 	o.Ttl = &v
 }
 

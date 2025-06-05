@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Description** | Pointer to **string** |  | [optional] 
-**Ttl** | Pointer to **int32** | seconds lease will be valid | [optional] 
+**Ttl** | Pointer to **int64** | seconds lease will be valid | [optional] 
 
 ## Methods
 
@@ -53,20 +53,20 @@ HasDescription returns a boolean if a field has been set.
 
 ### GetTtl
 
-`func (o *CreateLeaseRequest) GetTtl() int32`
+`func (o *CreateLeaseRequest) GetTtl() int64`
 
 GetTtl returns the Ttl field if non-nil, zero value otherwise.
 
 ### GetTtlOk
 
-`func (o *CreateLeaseRequest) GetTtlOk() (*int32, bool)`
+`func (o *CreateLeaseRequest) GetTtlOk() (*int64, bool)`
 
 GetTtlOk returns a tuple with the Ttl field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetTtl
 
-`func (o *CreateLeaseRequest) SetTtl(v int32)`
+`func (o *CreateLeaseRequest) SetTtl(v int64)`
 
 SetTtl sets Ttl field to given value.
 

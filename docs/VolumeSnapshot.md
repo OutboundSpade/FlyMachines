@@ -7,8 +7,8 @@ Name | Type | Description | Notes
 **CreatedAt** | Pointer to **string** |  | [optional] 
 **Digest** | Pointer to **string** |  | [optional] 
 **Id** | Pointer to **string** |  | [optional] 
-**RetentionDays** | Pointer to **int32** |  | [optional] 
-**Size** | Pointer to **int32** |  | [optional] 
+**RetentionDays** | Pointer to **int64** |  | [optional] 
+**Size** | Pointer to **int64** |  | [optional] 
 **Status** | Pointer to **string** |  | [optional] 
 
 ## Methods
@@ -107,20 +107,20 @@ HasId returns a boolean if a field has been set.
 
 ### GetRetentionDays
 
-`func (o *VolumeSnapshot) GetRetentionDays() int32`
+`func (o *VolumeSnapshot) GetRetentionDays() int64`
 
 GetRetentionDays returns the RetentionDays field if non-nil, zero value otherwise.
 
 ### GetRetentionDaysOk
 
-`func (o *VolumeSnapshot) GetRetentionDaysOk() (*int32, bool)`
+`func (o *VolumeSnapshot) GetRetentionDaysOk() (*int64, bool)`
 
 GetRetentionDaysOk returns a tuple with the RetentionDays field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRetentionDays
 
-`func (o *VolumeSnapshot) SetRetentionDays(v int32)`
+`func (o *VolumeSnapshot) SetRetentionDays(v int64)`
 
 SetRetentionDays sets RetentionDays field to given value.
 
@@ -132,20 +132,20 @@ HasRetentionDays returns a boolean if a field has been set.
 
 ### GetSize
 
-`func (o *VolumeSnapshot) GetSize() int32`
+`func (o *VolumeSnapshot) GetSize() int64`
 
 GetSize returns the Size field if non-nil, zero value otherwise.
 
 ### GetSizeOk
 
-`func (o *VolumeSnapshot) GetSizeOk() (*int32, bool)`
+`func (o *VolumeSnapshot) GetSizeOk() (*int64, bool)`
 
 GetSizeOk returns a tuple with the Size field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetSize
 
-`func (o *VolumeSnapshot) SetSize(v int32)`
+`func (o *VolumeSnapshot) SetSize(v int64)`
 
 SetSize sets Size field to given value.
 

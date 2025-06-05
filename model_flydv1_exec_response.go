@@ -19,8 +19,8 @@ var _ MappedNullable = &Flydv1ExecResponse{}
 
 // Flydv1ExecResponse struct for Flydv1ExecResponse
 type Flydv1ExecResponse struct {
-	ExitCode *int32 `json:"exit_code,omitempty"`
-	ExitSignal *int32 `json:"exit_signal,omitempty"`
+	ExitCode *int64 `json:"exit_code,omitempty"`
+	ExitSignal *int64 `json:"exit_signal,omitempty"`
 	Stderr *string `json:"stderr,omitempty"`
 	Stdout *string `json:"stdout,omitempty"`
 }
@@ -43,9 +43,9 @@ func NewFlydv1ExecResponseWithDefaults() *Flydv1ExecResponse {
 }
 
 // GetExitCode returns the ExitCode field value if set, zero value otherwise.
-func (o *Flydv1ExecResponse) GetExitCode() int32 {
+func (o *Flydv1ExecResponse) GetExitCode() int64 {
 	if o == nil || IsNil(o.ExitCode) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.ExitCode
@@ -53,7 +53,7 @@ func (o *Flydv1ExecResponse) GetExitCode() int32 {
 
 // GetExitCodeOk returns a tuple with the ExitCode field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Flydv1ExecResponse) GetExitCodeOk() (*int32, bool) {
+func (o *Flydv1ExecResponse) GetExitCodeOk() (*int64, bool) {
 	if o == nil || IsNil(o.ExitCode) {
 		return nil, false
 	}
@@ -69,15 +69,15 @@ func (o *Flydv1ExecResponse) HasExitCode() bool {
 	return false
 }
 
-// SetExitCode gets a reference to the given int32 and assigns it to the ExitCode field.
-func (o *Flydv1ExecResponse) SetExitCode(v int32) {
+// SetExitCode gets a reference to the given int64 and assigns it to the ExitCode field.
+func (o *Flydv1ExecResponse) SetExitCode(v int64) {
 	o.ExitCode = &v
 }
 
 // GetExitSignal returns the ExitSignal field value if set, zero value otherwise.
-func (o *Flydv1ExecResponse) GetExitSignal() int32 {
+func (o *Flydv1ExecResponse) GetExitSignal() int64 {
 	if o == nil || IsNil(o.ExitSignal) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.ExitSignal
@@ -85,7 +85,7 @@ func (o *Flydv1ExecResponse) GetExitSignal() int32 {
 
 // GetExitSignalOk returns a tuple with the ExitSignal field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Flydv1ExecResponse) GetExitSignalOk() (*int32, bool) {
+func (o *Flydv1ExecResponse) GetExitSignalOk() (*int64, bool) {
 	if o == nil || IsNil(o.ExitSignal) {
 		return nil, false
 	}
@@ -101,8 +101,8 @@ func (o *Flydv1ExecResponse) HasExitSignal() bool {
 	return false
 }
 
-// SetExitSignal gets a reference to the given int32 and assigns it to the ExitSignal field.
-func (o *Flydv1ExecResponse) SetExitSignal(v int32) {
+// SetExitSignal gets a reference to the given int64 and assigns it to the ExitSignal field.
+func (o *Flydv1ExecResponse) SetExitSignal(v int64) {
 	o.ExitSignal = &v
 }
 

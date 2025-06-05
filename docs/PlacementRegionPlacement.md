@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Concurrency** | Pointer to **int32** | Hint on the number of machines in this region can be created concurrently. Equal to the number of unique hosts selected for placement. | [optional] 
-**Count** | Pointer to **int32** |  | [optional] 
+**Concurrency** | Pointer to **int64** | Hint on the number of machines in this region can be created concurrently. Equal to the number of unique hosts selected for placement. | [optional] 
+**Count** | Pointer to **int64** |  | [optional] 
 **Region** | Pointer to **string** |  | [optional] 
 
 ## Methods
@@ -29,20 +29,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetConcurrency
 
-`func (o *PlacementRegionPlacement) GetConcurrency() int32`
+`func (o *PlacementRegionPlacement) GetConcurrency() int64`
 
 GetConcurrency returns the Concurrency field if non-nil, zero value otherwise.
 
 ### GetConcurrencyOk
 
-`func (o *PlacementRegionPlacement) GetConcurrencyOk() (*int32, bool)`
+`func (o *PlacementRegionPlacement) GetConcurrencyOk() (*int64, bool)`
 
 GetConcurrencyOk returns a tuple with the Concurrency field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetConcurrency
 
-`func (o *PlacementRegionPlacement) SetConcurrency(v int32)`
+`func (o *PlacementRegionPlacement) SetConcurrency(v int64)`
 
 SetConcurrency sets Concurrency field to given value.
 
@@ -54,20 +54,20 @@ HasConcurrency returns a boolean if a field has been set.
 
 ### GetCount
 
-`func (o *PlacementRegionPlacement) GetCount() int32`
+`func (o *PlacementRegionPlacement) GetCount() int64`
 
 GetCount returns the Count field if non-nil, zero value otherwise.
 
 ### GetCountOk
 
-`func (o *PlacementRegionPlacement) GetCountOk() (*int32, bool)`
+`func (o *PlacementRegionPlacement) GetCountOk() (*int64, bool)`
 
 GetCountOk returns a tuple with the Count field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetCount
 
-`func (o *PlacementRegionPlacement) SetCount(v int32)`
+`func (o *PlacementRegionPlacement) SetCount(v int64)`
 
 SetCount sets Count field to given value.
 

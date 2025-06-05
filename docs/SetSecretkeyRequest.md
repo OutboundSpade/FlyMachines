@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Type** | Pointer to **string** |  | [optional] 
-**Value** | Pointer to **[]int32** |  | [optional] 
+**Value** | Pointer to **[]int64** |  | [optional] 
 
 ## Methods
 
@@ -53,20 +53,20 @@ HasType returns a boolean if a field has been set.
 
 ### GetValue
 
-`func (o *SetSecretkeyRequest) GetValue() []int32`
+`func (o *SetSecretkeyRequest) GetValue() []int64`
 
 GetValue returns the Value field if non-nil, zero value otherwise.
 
 ### GetValueOk
 
-`func (o *SetSecretkeyRequest) GetValueOk() (*[]int32, bool)`
+`func (o *SetSecretkeyRequest) GetValueOk() (*[]int64, bool)`
 
 GetValueOk returns a tuple with the Value field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetValue
 
-`func (o *SetSecretkeyRequest) SetValue(v []int32)`
+`func (o *SetSecretkeyRequest) SetValue(v []int64)`
 
 SetValue sets Value field to given value.
 

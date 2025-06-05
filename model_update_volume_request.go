@@ -20,7 +20,7 @@ var _ MappedNullable = &UpdateVolumeRequest{}
 // UpdateVolumeRequest struct for UpdateVolumeRequest
 type UpdateVolumeRequest struct {
 	AutoBackupEnabled *bool `json:"auto_backup_enabled,omitempty"`
-	SnapshotRetention *int32 `json:"snapshot_retention,omitempty"`
+	SnapshotRetention *int64 `json:"snapshot_retention,omitempty"`
 }
 
 // NewUpdateVolumeRequest instantiates a new UpdateVolumeRequest object
@@ -73,9 +73,9 @@ func (o *UpdateVolumeRequest) SetAutoBackupEnabled(v bool) {
 }
 
 // GetSnapshotRetention returns the SnapshotRetention field value if set, zero value otherwise.
-func (o *UpdateVolumeRequest) GetSnapshotRetention() int32 {
+func (o *UpdateVolumeRequest) GetSnapshotRetention() int64 {
 	if o == nil || IsNil(o.SnapshotRetention) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.SnapshotRetention
@@ -83,7 +83,7 @@ func (o *UpdateVolumeRequest) GetSnapshotRetention() int32 {
 
 // GetSnapshotRetentionOk returns a tuple with the SnapshotRetention field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *UpdateVolumeRequest) GetSnapshotRetentionOk() (*int32, bool) {
+func (o *UpdateVolumeRequest) GetSnapshotRetentionOk() (*int64, bool) {
 	if o == nil || IsNil(o.SnapshotRetention) {
 		return nil, false
 	}
@@ -99,8 +99,8 @@ func (o *UpdateVolumeRequest) HasSnapshotRetention() bool {
 	return false
 }
 
-// SetSnapshotRetention gets a reference to the given int32 and assigns it to the SnapshotRetention field.
-func (o *UpdateVolumeRequest) SetSnapshotRetention(v int32) {
+// SetSnapshotRetention gets a reference to the given int64 and assigns it to the SnapshotRetention field.
+func (o *UpdateVolumeRequest) SetSnapshotRetention(v int64) {
 	o.SnapshotRetention = &v
 }
 

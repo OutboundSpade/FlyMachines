@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Plaintext** | Pointer to **[]int32** |  | [optional] 
+**Plaintext** | Pointer to **[]int64** |  | [optional] 
 
 ## Methods
 
@@ -27,20 +27,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetPlaintext
 
-`func (o *SignSecretkeyRequest) GetPlaintext() []int32`
+`func (o *SignSecretkeyRequest) GetPlaintext() []int64`
 
 GetPlaintext returns the Plaintext field if non-nil, zero value otherwise.
 
 ### GetPlaintextOk
 
-`func (o *SignSecretkeyRequest) GetPlaintextOk() (*[]int32, bool)`
+`func (o *SignSecretkeyRequest) GetPlaintextOk() (*[]int64, bool)`
 
 GetPlaintextOk returns a tuple with the Plaintext field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetPlaintext
 
-`func (o *SignSecretkeyRequest) SetPlaintext(v []int32)`
+`func (o *SignSecretkeyRequest) SetPlaintext(v []int64)`
 
 SetPlaintext sets Plaintext field to given value.
 

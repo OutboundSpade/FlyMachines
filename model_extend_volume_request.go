@@ -19,7 +19,7 @@ var _ MappedNullable = &ExtendVolumeRequest{}
 
 // ExtendVolumeRequest struct for ExtendVolumeRequest
 type ExtendVolumeRequest struct {
-	SizeGb *int32 `json:"size_gb,omitempty"`
+	SizeGb *int64 `json:"size_gb,omitempty"`
 }
 
 // NewExtendVolumeRequest instantiates a new ExtendVolumeRequest object
@@ -40,9 +40,9 @@ func NewExtendVolumeRequestWithDefaults() *ExtendVolumeRequest {
 }
 
 // GetSizeGb returns the SizeGb field value if set, zero value otherwise.
-func (o *ExtendVolumeRequest) GetSizeGb() int32 {
+func (o *ExtendVolumeRequest) GetSizeGb() int64 {
 	if o == nil || IsNil(o.SizeGb) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.SizeGb
@@ -50,7 +50,7 @@ func (o *ExtendVolumeRequest) GetSizeGb() int32 {
 
 // GetSizeGbOk returns a tuple with the SizeGb field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ExtendVolumeRequest) GetSizeGbOk() (*int32, bool) {
+func (o *ExtendVolumeRequest) GetSizeGbOk() (*int64, bool) {
 	if o == nil || IsNil(o.SizeGb) {
 		return nil, false
 	}
@@ -66,8 +66,8 @@ func (o *ExtendVolumeRequest) HasSizeGb() bool {
 	return false
 }
 
-// SetSizeGb gets a reference to the given int32 and assigns it to the SizeGb field.
-func (o *ExtendVolumeRequest) SetSizeGb(v int32) {
+// SetSizeGb gets a reference to the given int64 and assigns it to the SizeGb field.
+func (o *ExtendVolumeRequest) SetSizeGb(v int64) {
 	o.SizeGb = &v
 }
 

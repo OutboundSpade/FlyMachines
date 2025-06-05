@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 **Kind** | Pointer to **string** | Kind of the check (informational, readiness) | [optional] 
 **Method** | Pointer to **string** | For http checks, the HTTP method to use to when making the request | [optional] 
 **Path** | Pointer to **string** | For http checks, the path to send the request to | [optional] 
-**Port** | Pointer to **int32** | The port to connect to, often the same as internal_port | [optional] 
+**Port** | Pointer to **int64** | The port to connect to, often the same as internal_port | [optional] 
 **Protocol** | Pointer to **string** | For http checks, whether to use http or https | [optional] 
 **Timeout** | Pointer to [**FlyDuration**](FlyDuration.md) | The maximum time a connection can take before being reported as failing its health check | [optional] 
 **TlsServerName** | Pointer to **string** | If the protocol is https, the hostname to use for TLS certificate validation | [optional] 
@@ -188,20 +188,20 @@ HasPath returns a boolean if a field has been set.
 
 ### GetPort
 
-`func (o *FlyMachineCheck) GetPort() int32`
+`func (o *FlyMachineCheck) GetPort() int64`
 
 GetPort returns the Port field if non-nil, zero value otherwise.
 
 ### GetPortOk
 
-`func (o *FlyMachineCheck) GetPortOk() (*int32, bool)`
+`func (o *FlyMachineCheck) GetPortOk() (*int64, bool)`
 
 GetPortOk returns a tuple with the Port field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetPort
 
-`func (o *FlyMachineCheck) SetPort(v int32)`
+`func (o *FlyMachineCheck) SetPort(v int64)`
 
 SetPort sets Port field to given value.
 

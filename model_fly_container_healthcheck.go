@@ -21,21 +21,21 @@ var _ MappedNullable = &FlyContainerHealthcheck{}
 type FlyContainerHealthcheck struct {
 	Exec *FlyExecHealthcheck `json:"exec,omitempty"`
 	// The number of times the check must fail before considering the container unhealthy.
-	FailureThreshold *int32 `json:"failure_threshold,omitempty"`
+	FailureThreshold *int64 `json:"failure_threshold,omitempty"`
 	// The time in seconds to wait after a container starts before checking its health.
-	GracePeriod *int32 `json:"grace_period,omitempty"`
+	GracePeriod *int64 `json:"grace_period,omitempty"`
 	Http *FlyHTTPHealthcheck `json:"http,omitempty"`
 	// The time in seconds between executing the defined check.
-	Interval *int32 `json:"interval,omitempty"`
+	Interval *int64 `json:"interval,omitempty"`
 	// Kind of healthcheck (readiness, liveness)
 	Kind *FlyContainerHealthcheckKind `json:"kind,omitempty"`
 	// The name of the check. Must be unique within the container.
 	Name *string `json:"name,omitempty"`
 	// The number of times the check must succeeed before considering the container healthy.
-	SuccessThreshold *int32 `json:"success_threshold,omitempty"`
+	SuccessThreshold *int64 `json:"success_threshold,omitempty"`
 	Tcp *FlyTCPHealthcheck `json:"tcp,omitempty"`
 	// The time in seconds to wait for the check to complete.
-	Timeout *int32 `json:"timeout,omitempty"`
+	Timeout *int64 `json:"timeout,omitempty"`
 	// Unhealthy policy that determines what action to take if a container is deemed unhealthy
 	Unhealthy *FlyUnhealthyPolicy `json:"unhealthy,omitempty"`
 }
@@ -90,9 +90,9 @@ func (o *FlyContainerHealthcheck) SetExec(v FlyExecHealthcheck) {
 }
 
 // GetFailureThreshold returns the FailureThreshold field value if set, zero value otherwise.
-func (o *FlyContainerHealthcheck) GetFailureThreshold() int32 {
+func (o *FlyContainerHealthcheck) GetFailureThreshold() int64 {
 	if o == nil || IsNil(o.FailureThreshold) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.FailureThreshold
@@ -100,7 +100,7 @@ func (o *FlyContainerHealthcheck) GetFailureThreshold() int32 {
 
 // GetFailureThresholdOk returns a tuple with the FailureThreshold field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *FlyContainerHealthcheck) GetFailureThresholdOk() (*int32, bool) {
+func (o *FlyContainerHealthcheck) GetFailureThresholdOk() (*int64, bool) {
 	if o == nil || IsNil(o.FailureThreshold) {
 		return nil, false
 	}
@@ -116,15 +116,15 @@ func (o *FlyContainerHealthcheck) HasFailureThreshold() bool {
 	return false
 }
 
-// SetFailureThreshold gets a reference to the given int32 and assigns it to the FailureThreshold field.
-func (o *FlyContainerHealthcheck) SetFailureThreshold(v int32) {
+// SetFailureThreshold gets a reference to the given int64 and assigns it to the FailureThreshold field.
+func (o *FlyContainerHealthcheck) SetFailureThreshold(v int64) {
 	o.FailureThreshold = &v
 }
 
 // GetGracePeriod returns the GracePeriod field value if set, zero value otherwise.
-func (o *FlyContainerHealthcheck) GetGracePeriod() int32 {
+func (o *FlyContainerHealthcheck) GetGracePeriod() int64 {
 	if o == nil || IsNil(o.GracePeriod) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.GracePeriod
@@ -132,7 +132,7 @@ func (o *FlyContainerHealthcheck) GetGracePeriod() int32 {
 
 // GetGracePeriodOk returns a tuple with the GracePeriod field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *FlyContainerHealthcheck) GetGracePeriodOk() (*int32, bool) {
+func (o *FlyContainerHealthcheck) GetGracePeriodOk() (*int64, bool) {
 	if o == nil || IsNil(o.GracePeriod) {
 		return nil, false
 	}
@@ -148,8 +148,8 @@ func (o *FlyContainerHealthcheck) HasGracePeriod() bool {
 	return false
 }
 
-// SetGracePeriod gets a reference to the given int32 and assigns it to the GracePeriod field.
-func (o *FlyContainerHealthcheck) SetGracePeriod(v int32) {
+// SetGracePeriod gets a reference to the given int64 and assigns it to the GracePeriod field.
+func (o *FlyContainerHealthcheck) SetGracePeriod(v int64) {
 	o.GracePeriod = &v
 }
 
@@ -186,9 +186,9 @@ func (o *FlyContainerHealthcheck) SetHttp(v FlyHTTPHealthcheck) {
 }
 
 // GetInterval returns the Interval field value if set, zero value otherwise.
-func (o *FlyContainerHealthcheck) GetInterval() int32 {
+func (o *FlyContainerHealthcheck) GetInterval() int64 {
 	if o == nil || IsNil(o.Interval) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.Interval
@@ -196,7 +196,7 @@ func (o *FlyContainerHealthcheck) GetInterval() int32 {
 
 // GetIntervalOk returns a tuple with the Interval field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *FlyContainerHealthcheck) GetIntervalOk() (*int32, bool) {
+func (o *FlyContainerHealthcheck) GetIntervalOk() (*int64, bool) {
 	if o == nil || IsNil(o.Interval) {
 		return nil, false
 	}
@@ -212,8 +212,8 @@ func (o *FlyContainerHealthcheck) HasInterval() bool {
 	return false
 }
 
-// SetInterval gets a reference to the given int32 and assigns it to the Interval field.
-func (o *FlyContainerHealthcheck) SetInterval(v int32) {
+// SetInterval gets a reference to the given int64 and assigns it to the Interval field.
+func (o *FlyContainerHealthcheck) SetInterval(v int64) {
 	o.Interval = &v
 }
 
@@ -282,9 +282,9 @@ func (o *FlyContainerHealthcheck) SetName(v string) {
 }
 
 // GetSuccessThreshold returns the SuccessThreshold field value if set, zero value otherwise.
-func (o *FlyContainerHealthcheck) GetSuccessThreshold() int32 {
+func (o *FlyContainerHealthcheck) GetSuccessThreshold() int64 {
 	if o == nil || IsNil(o.SuccessThreshold) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.SuccessThreshold
@@ -292,7 +292,7 @@ func (o *FlyContainerHealthcheck) GetSuccessThreshold() int32 {
 
 // GetSuccessThresholdOk returns a tuple with the SuccessThreshold field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *FlyContainerHealthcheck) GetSuccessThresholdOk() (*int32, bool) {
+func (o *FlyContainerHealthcheck) GetSuccessThresholdOk() (*int64, bool) {
 	if o == nil || IsNil(o.SuccessThreshold) {
 		return nil, false
 	}
@@ -308,8 +308,8 @@ func (o *FlyContainerHealthcheck) HasSuccessThreshold() bool {
 	return false
 }
 
-// SetSuccessThreshold gets a reference to the given int32 and assigns it to the SuccessThreshold field.
-func (o *FlyContainerHealthcheck) SetSuccessThreshold(v int32) {
+// SetSuccessThreshold gets a reference to the given int64 and assigns it to the SuccessThreshold field.
+func (o *FlyContainerHealthcheck) SetSuccessThreshold(v int64) {
 	o.SuccessThreshold = &v
 }
 
@@ -346,9 +346,9 @@ func (o *FlyContainerHealthcheck) SetTcp(v FlyTCPHealthcheck) {
 }
 
 // GetTimeout returns the Timeout field value if set, zero value otherwise.
-func (o *FlyContainerHealthcheck) GetTimeout() int32 {
+func (o *FlyContainerHealthcheck) GetTimeout() int64 {
 	if o == nil || IsNil(o.Timeout) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.Timeout
@@ -356,7 +356,7 @@ func (o *FlyContainerHealthcheck) GetTimeout() int32 {
 
 // GetTimeoutOk returns a tuple with the Timeout field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *FlyContainerHealthcheck) GetTimeoutOk() (*int32, bool) {
+func (o *FlyContainerHealthcheck) GetTimeoutOk() (*int64, bool) {
 	if o == nil || IsNil(o.Timeout) {
 		return nil, false
 	}
@@ -372,8 +372,8 @@ func (o *FlyContainerHealthcheck) HasTimeout() bool {
 	return false
 }
 
-// SetTimeout gets a reference to the given int32 and assigns it to the Timeout field.
-func (o *FlyContainerHealthcheck) SetTimeout(v int32) {
+// SetTimeout gets a reference to the given int64 and assigns it to the Timeout field.
+func (o *FlyContainerHealthcheck) SetTimeout(v int64) {
 	o.Timeout = &v
 }
 

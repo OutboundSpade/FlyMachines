@@ -20,7 +20,7 @@ var _ MappedNullable = &SecretKey{}
 // SecretKey struct for SecretKey
 type SecretKey struct {
 	Name *string `json:"name,omitempty"`
-	PublicKey []int32 `json:"public_key,omitempty"`
+	PublicKey []int64 `json:"public_key,omitempty"`
 	Type *string `json:"type,omitempty"`
 }
 
@@ -74,9 +74,9 @@ func (o *SecretKey) SetName(v string) {
 }
 
 // GetPublicKey returns the PublicKey field value if set, zero value otherwise.
-func (o *SecretKey) GetPublicKey() []int32 {
+func (o *SecretKey) GetPublicKey() []int64 {
 	if o == nil || IsNil(o.PublicKey) {
-		var ret []int32
+		var ret []int64
 		return ret
 	}
 	return o.PublicKey
@@ -84,7 +84,7 @@ func (o *SecretKey) GetPublicKey() []int32 {
 
 // GetPublicKeyOk returns a tuple with the PublicKey field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *SecretKey) GetPublicKeyOk() ([]int32, bool) {
+func (o *SecretKey) GetPublicKeyOk() ([]int64, bool) {
 	if o == nil || IsNil(o.PublicKey) {
 		return nil, false
 	}
@@ -100,8 +100,8 @@ func (o *SecretKey) HasPublicKey() bool {
 	return false
 }
 
-// SetPublicKey gets a reference to the given []int32 and assigns it to the PublicKey field.
-func (o *SecretKey) SetPublicKey(v []int32) {
+// SetPublicKey gets a reference to the given []int64 and assigns it to the PublicKey field.
+func (o *SecretKey) SetPublicKey(v []int64) {
 	o.PublicKey = v
 }
 

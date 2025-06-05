@@ -5,12 +5,12 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Compute** | Pointer to [**FlyMachineGuest**](FlyMachineGuest.md) | Resource requirements for the Machine to simulate. Defaults to a performance-1x machine | [optional] 
-**Count** | Pointer to **int32** | Number of machines to simulate placement. Defaults to 0, which returns the org-specific limit for each region. | [optional] 
+**Count** | Pointer to **int64** | Number of machines to simulate placement. Defaults to 0, which returns the org-specific limit for each region. | [optional] 
 **OrgSlug** | **string** |  | 
 **Region** | Pointer to **string** | Region expression for placement as a comma-delimited set of regions or aliases. Defaults to \&quot;[region],any\&quot;, to prefer the API endpoint&#39;s local region with any other region as fallback. | [optional] 
 **VolumeName** | Pointer to **string** |  | [optional] 
-**VolumeSizeBytes** | Pointer to **int32** |  | [optional] 
-**Weights** | Pointer to **map[string]int32** | Optional weights to override default placement preferences. | [optional] 
+**VolumeSizeBytes** | Pointer to **int64** |  | [optional] 
+**Weights** | Pointer to **map[string]int64** | Optional weights to override default placement preferences. | [optional] 
 
 ## Methods
 
@@ -58,20 +58,20 @@ HasCompute returns a boolean if a field has been set.
 
 ### GetCount
 
-`func (o *MainGetPlacementsRequest) GetCount() int32`
+`func (o *MainGetPlacementsRequest) GetCount() int64`
 
 GetCount returns the Count field if non-nil, zero value otherwise.
 
 ### GetCountOk
 
-`func (o *MainGetPlacementsRequest) GetCountOk() (*int32, bool)`
+`func (o *MainGetPlacementsRequest) GetCountOk() (*int64, bool)`
 
 GetCountOk returns a tuple with the Count field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetCount
 
-`func (o *MainGetPlacementsRequest) SetCount(v int32)`
+`func (o *MainGetPlacementsRequest) SetCount(v int64)`
 
 SetCount sets Count field to given value.
 
@@ -153,20 +153,20 @@ HasVolumeName returns a boolean if a field has been set.
 
 ### GetVolumeSizeBytes
 
-`func (o *MainGetPlacementsRequest) GetVolumeSizeBytes() int32`
+`func (o *MainGetPlacementsRequest) GetVolumeSizeBytes() int64`
 
 GetVolumeSizeBytes returns the VolumeSizeBytes field if non-nil, zero value otherwise.
 
 ### GetVolumeSizeBytesOk
 
-`func (o *MainGetPlacementsRequest) GetVolumeSizeBytesOk() (*int32, bool)`
+`func (o *MainGetPlacementsRequest) GetVolumeSizeBytesOk() (*int64, bool)`
 
 GetVolumeSizeBytesOk returns a tuple with the VolumeSizeBytes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetVolumeSizeBytes
 
-`func (o *MainGetPlacementsRequest) SetVolumeSizeBytes(v int32)`
+`func (o *MainGetPlacementsRequest) SetVolumeSizeBytes(v int64)`
 
 SetVolumeSizeBytes sets VolumeSizeBytes field to given value.
 
@@ -178,20 +178,20 @@ HasVolumeSizeBytes returns a boolean if a field has been set.
 
 ### GetWeights
 
-`func (o *MainGetPlacementsRequest) GetWeights() map[string]int32`
+`func (o *MainGetPlacementsRequest) GetWeights() map[string]int64`
 
 GetWeights returns the Weights field if non-nil, zero value otherwise.
 
 ### GetWeightsOk
 
-`func (o *MainGetPlacementsRequest) GetWeightsOk() (*map[string]int32, bool)`
+`func (o *MainGetPlacementsRequest) GetWeightsOk() (*map[string]int64, bool)`
 
 GetWeightsOk returns a tuple with the Weights field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetWeights
 
-`func (o *MainGetPlacementsRequest) SetWeights(v map[string]int32)`
+`func (o *MainGetPlacementsRequest) SetWeights(v map[string]int64)`
 
 SetWeights sets Weights field to given value.
 

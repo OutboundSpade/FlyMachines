@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **Command** | Pointer to **[]string** |  | [optional] 
 **Container** | Pointer to **string** |  | [optional] 
 **Stdin** | Pointer to **string** |  | [optional] 
-**Timeout** | Pointer to **int32** |  | [optional] 
+**Timeout** | Pointer to **int64** |  | [optional] 
 
 ## Methods
 
@@ -131,20 +131,20 @@ HasStdin returns a boolean if a field has been set.
 
 ### GetTimeout
 
-`func (o *MachineExecRequest) GetTimeout() int32`
+`func (o *MachineExecRequest) GetTimeout() int64`
 
 GetTimeout returns the Timeout field if non-nil, zero value otherwise.
 
 ### GetTimeoutOk
 
-`func (o *MachineExecRequest) GetTimeoutOk() (*int32, bool)`
+`func (o *MachineExecRequest) GetTimeoutOk() (*int64, bool)`
 
 GetTimeoutOk returns a tuple with the Timeout field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetTimeout
 
-`func (o *MachineExecRequest) SetTimeout(v int32)`
+`func (o *MachineExecRequest) SetTimeout(v int64)`
 
 SetTimeout sets Timeout field to given value.
 

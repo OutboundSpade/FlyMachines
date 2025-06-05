@@ -22,8 +22,8 @@ type VolumeSnapshot struct {
 	CreatedAt *string `json:"created_at,omitempty"`
 	Digest *string `json:"digest,omitempty"`
 	Id *string `json:"id,omitempty"`
-	RetentionDays *int32 `json:"retention_days,omitempty"`
-	Size *int32 `json:"size,omitempty"`
+	RetentionDays *int64 `json:"retention_days,omitempty"`
+	Size *int64 `json:"size,omitempty"`
 	Status *string `json:"status,omitempty"`
 }
 
@@ -141,9 +141,9 @@ func (o *VolumeSnapshot) SetId(v string) {
 }
 
 // GetRetentionDays returns the RetentionDays field value if set, zero value otherwise.
-func (o *VolumeSnapshot) GetRetentionDays() int32 {
+func (o *VolumeSnapshot) GetRetentionDays() int64 {
 	if o == nil || IsNil(o.RetentionDays) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.RetentionDays
@@ -151,7 +151,7 @@ func (o *VolumeSnapshot) GetRetentionDays() int32 {
 
 // GetRetentionDaysOk returns a tuple with the RetentionDays field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *VolumeSnapshot) GetRetentionDaysOk() (*int32, bool) {
+func (o *VolumeSnapshot) GetRetentionDaysOk() (*int64, bool) {
 	if o == nil || IsNil(o.RetentionDays) {
 		return nil, false
 	}
@@ -167,15 +167,15 @@ func (o *VolumeSnapshot) HasRetentionDays() bool {
 	return false
 }
 
-// SetRetentionDays gets a reference to the given int32 and assigns it to the RetentionDays field.
-func (o *VolumeSnapshot) SetRetentionDays(v int32) {
+// SetRetentionDays gets a reference to the given int64 and assigns it to the RetentionDays field.
+func (o *VolumeSnapshot) SetRetentionDays(v int64) {
 	o.RetentionDays = &v
 }
 
 // GetSize returns the Size field value if set, zero value otherwise.
-func (o *VolumeSnapshot) GetSize() int32 {
+func (o *VolumeSnapshot) GetSize() int64 {
 	if o == nil || IsNil(o.Size) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.Size
@@ -183,7 +183,7 @@ func (o *VolumeSnapshot) GetSize() int32 {
 
 // GetSizeOk returns a tuple with the Size field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *VolumeSnapshot) GetSizeOk() (*int32, bool) {
+func (o *VolumeSnapshot) GetSizeOk() (*int64, bool) {
 	if o == nil || IsNil(o.Size) {
 		return nil, false
 	}
@@ -199,8 +199,8 @@ func (o *VolumeSnapshot) HasSize() bool {
 	return false
 }
 
-// SetSize gets a reference to the given int32 and assigns it to the Size field.
-func (o *VolumeSnapshot) SetSize(v int32) {
+// SetSize gets a reference to the given int64 and assigns it to the Size field.
+func (o *VolumeSnapshot) SetSize(v int64) {
 	o.Size = &v
 }
 

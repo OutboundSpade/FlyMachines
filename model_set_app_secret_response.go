@@ -22,7 +22,7 @@ type SetAppSecretResponse struct {
 	Digest *string `json:"digest,omitempty"`
 	Name *string `json:"name,omitempty"`
 	Value *string `json:"value,omitempty"`
-	Version *int32 `json:"version,omitempty"`
+	Version *int64 `json:"version,omitempty"`
 }
 
 // NewSetAppSecretResponse instantiates a new SetAppSecretResponse object
@@ -139,9 +139,9 @@ func (o *SetAppSecretResponse) SetValue(v string) {
 }
 
 // GetVersion returns the Version field value if set, zero value otherwise.
-func (o *SetAppSecretResponse) GetVersion() int32 {
+func (o *SetAppSecretResponse) GetVersion() int64 {
 	if o == nil || IsNil(o.Version) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.Version
@@ -149,7 +149,7 @@ func (o *SetAppSecretResponse) GetVersion() int32 {
 
 // GetVersionOk returns a tuple with the Version field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *SetAppSecretResponse) GetVersionOk() (*int32, bool) {
+func (o *SetAppSecretResponse) GetVersionOk() (*int64, bool) {
 	if o == nil || IsNil(o.Version) {
 		return nil, false
 	}
@@ -165,8 +165,8 @@ func (o *SetAppSecretResponse) HasVersion() bool {
 	return false
 }
 
-// SetVersion gets a reference to the given int32 and assigns it to the Version field.
-func (o *SetAppSecretResponse) SetVersion(v int32) {
+// SetVersion gets a reference to the given int64 and assigns it to the Version field.
+func (o *SetAppSecretResponse) SetVersion(v int64) {
 	o.Version = &v
 }
 

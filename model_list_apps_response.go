@@ -20,7 +20,7 @@ var _ MappedNullable = &ListAppsResponse{}
 // ListAppsResponse struct for ListAppsResponse
 type ListAppsResponse struct {
 	Apps []ListApp `json:"apps,omitempty"`
-	TotalApps *int32 `json:"total_apps,omitempty"`
+	TotalApps *int64 `json:"total_apps,omitempty"`
 }
 
 // NewListAppsResponse instantiates a new ListAppsResponse object
@@ -73,9 +73,9 @@ func (o *ListAppsResponse) SetApps(v []ListApp) {
 }
 
 // GetTotalApps returns the TotalApps field value if set, zero value otherwise.
-func (o *ListAppsResponse) GetTotalApps() int32 {
+func (o *ListAppsResponse) GetTotalApps() int64 {
 	if o == nil || IsNil(o.TotalApps) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.TotalApps
@@ -83,7 +83,7 @@ func (o *ListAppsResponse) GetTotalApps() int32 {
 
 // GetTotalAppsOk returns a tuple with the TotalApps field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ListAppsResponse) GetTotalAppsOk() (*int32, bool) {
+func (o *ListAppsResponse) GetTotalAppsOk() (*int64, bool) {
 	if o == nil || IsNil(o.TotalApps) {
 		return nil, false
 	}
@@ -99,8 +99,8 @@ func (o *ListAppsResponse) HasTotalApps() bool {
 	return false
 }
 
-// SetTotalApps gets a reference to the given int32 and assigns it to the TotalApps field.
-func (o *ListAppsResponse) SetTotalApps(v int32) {
+// SetTotalApps gets a reference to the given int64 and assigns it to the TotalApps field.
+func (o *ListAppsResponse) SetTotalApps(v int64) {
 	o.TotalApps = &v
 }
 

@@ -23,7 +23,7 @@ type FlyMachineInit struct {
 	Entrypoint []string `json:"entrypoint,omitempty"`
 	Exec []string `json:"exec,omitempty"`
 	KernelArgs []string `json:"kernel_args,omitempty"`
-	SwapSizeMb *int32 `json:"swap_size_mb,omitempty"`
+	SwapSizeMb *int64 `json:"swap_size_mb,omitempty"`
 	Tty *bool `json:"tty,omitempty"`
 }
 
@@ -173,9 +173,9 @@ func (o *FlyMachineInit) SetKernelArgs(v []string) {
 }
 
 // GetSwapSizeMb returns the SwapSizeMb field value if set, zero value otherwise.
-func (o *FlyMachineInit) GetSwapSizeMb() int32 {
+func (o *FlyMachineInit) GetSwapSizeMb() int64 {
 	if o == nil || IsNil(o.SwapSizeMb) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.SwapSizeMb
@@ -183,7 +183,7 @@ func (o *FlyMachineInit) GetSwapSizeMb() int32 {
 
 // GetSwapSizeMbOk returns a tuple with the SwapSizeMb field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *FlyMachineInit) GetSwapSizeMbOk() (*int32, bool) {
+func (o *FlyMachineInit) GetSwapSizeMbOk() (*int64, bool) {
 	if o == nil || IsNil(o.SwapSizeMb) {
 		return nil, false
 	}
@@ -199,8 +199,8 @@ func (o *FlyMachineInit) HasSwapSizeMb() bool {
 	return false
 }
 
-// SetSwapSizeMb gets a reference to the given int32 and assigns it to the SwapSizeMb field.
-func (o *FlyMachineInit) SetSwapSizeMb(v int32) {
+// SetSwapSizeMb gets a reference to the given int64 and assigns it to the SwapSizeMb field.
+func (o *FlyMachineInit) SetSwapSizeMb(v int64) {
 	o.SwapSizeMb = &v
 }
 

@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Port** | Pointer to **int32** | The port to connect to, often the same as internal_port | [optional] 
+**Port** | Pointer to **int64** | The port to connect to, often the same as internal_port | [optional] 
 
 ## Methods
 
@@ -27,20 +27,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetPort
 
-`func (o *FlyTCPHealthcheck) GetPort() int32`
+`func (o *FlyTCPHealthcheck) GetPort() int64`
 
 GetPort returns the Port field if non-nil, zero value otherwise.
 
 ### GetPortOk
 
-`func (o *FlyTCPHealthcheck) GetPortOk() (*int32, bool)`
+`func (o *FlyTCPHealthcheck) GetPortOk() (*int64, bool)`
 
 GetPortOk returns a tuple with the Port field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetPort
 
-`func (o *FlyTCPHealthcheck) SetPort(v int32)`
+`func (o *FlyTCPHealthcheck) SetPort(v int64)`
 
 SetPort sets Port field to given value.
 

@@ -1672,7 +1672,7 @@ func main() {
 	appName := "appName_example" // string | Fly App Name
 	machineId := "machineId_example" // string | Machine ID
 	instanceId := "instanceId_example" // string | 26-character Machine version ID (optional)
-	timeout := int32(56) // int32 | wait timeout. default 60s (optional)
+	timeout := int64(56) // int64 | wait timeout. default 60s (optional)
 	state := "state_example" // string | desired state (optional)
 
 	configuration := openapiclient.NewConfiguration()
@@ -1704,7 +1704,7 @@ Name | Type | Description  | Notes
 
 
  **instanceId** | **string** | 26-character Machine version ID | 
- **timeout** | **int32** | wait timeout. default 60s | 
+ **timeout** | **int64** | wait timeout. default 60s | 
  **state** | **string** | desired state | 
 
 ### Return type

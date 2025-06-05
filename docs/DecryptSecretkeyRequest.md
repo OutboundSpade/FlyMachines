@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**AssociatedData** | Pointer to **[]int32** |  | [optional] 
-**Ciphertext** | Pointer to **[]int32** |  | [optional] 
+**AssociatedData** | Pointer to **[]int64** |  | [optional] 
+**Ciphertext** | Pointer to **[]int64** |  | [optional] 
 
 ## Methods
 
@@ -28,20 +28,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetAssociatedData
 
-`func (o *DecryptSecretkeyRequest) GetAssociatedData() []int32`
+`func (o *DecryptSecretkeyRequest) GetAssociatedData() []int64`
 
 GetAssociatedData returns the AssociatedData field if non-nil, zero value otherwise.
 
 ### GetAssociatedDataOk
 
-`func (o *DecryptSecretkeyRequest) GetAssociatedDataOk() (*[]int32, bool)`
+`func (o *DecryptSecretkeyRequest) GetAssociatedDataOk() (*[]int64, bool)`
 
 GetAssociatedDataOk returns a tuple with the AssociatedData field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAssociatedData
 
-`func (o *DecryptSecretkeyRequest) SetAssociatedData(v []int32)`
+`func (o *DecryptSecretkeyRequest) SetAssociatedData(v []int64)`
 
 SetAssociatedData sets AssociatedData field to given value.
 
@@ -53,20 +53,20 @@ HasAssociatedData returns a boolean if a field has been set.
 
 ### GetCiphertext
 
-`func (o *DecryptSecretkeyRequest) GetCiphertext() []int32`
+`func (o *DecryptSecretkeyRequest) GetCiphertext() []int64`
 
 GetCiphertext returns the Ciphertext field if non-nil, zero value otherwise.
 
 ### GetCiphertextOk
 
-`func (o *DecryptSecretkeyRequest) GetCiphertextOk() (*[]int32, bool)`
+`func (o *DecryptSecretkeyRequest) GetCiphertextOk() (*[]int64, bool)`
 
 GetCiphertextOk returns a tuple with the Ciphertext field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetCiphertext
 
-`func (o *DecryptSecretkeyRequest) SetCiphertext(v []int32)`
+`func (o *DecryptSecretkeyRequest) SetCiphertext(v []int64)`
 
 SetCiphertext sets Ciphertext field to given value.
 

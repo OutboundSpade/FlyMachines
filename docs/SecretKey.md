@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Name** | Pointer to **string** |  | [optional] 
-**PublicKey** | Pointer to **[]int32** |  | [optional] 
+**PublicKey** | Pointer to **[]int64** |  | [optional] 
 **Type** | Pointer to **string** |  | [optional] 
 
 ## Methods
@@ -54,20 +54,20 @@ HasName returns a boolean if a field has been set.
 
 ### GetPublicKey
 
-`func (o *SecretKey) GetPublicKey() []int32`
+`func (o *SecretKey) GetPublicKey() []int64`
 
 GetPublicKey returns the PublicKey field if non-nil, zero value otherwise.
 
 ### GetPublicKeyOk
 
-`func (o *SecretKey) GetPublicKeyOk() (*[]int32, bool)`
+`func (o *SecretKey) GetPublicKeyOk() (*[]int64, bool)`
 
 GetPublicKeyOk returns a tuple with the PublicKey field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetPublicKey
 
-`func (o *SecretKey) SetPublicKey(v []int32)`
+`func (o *SecretKey) SetPublicKey(v []int64)`
 
 SetPublicKey sets PublicKey field to given value.
 

@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**ExitCode** | Pointer to **int32** |  | [optional] 
-**ExitSignal** | Pointer to **int32** |  | [optional] 
+**ExitCode** | Pointer to **int64** |  | [optional] 
+**ExitSignal** | Pointer to **int64** |  | [optional] 
 **Stderr** | Pointer to **string** |  | [optional] 
 **Stdout** | Pointer to **string** |  | [optional] 
 
@@ -30,20 +30,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetExitCode
 
-`func (o *Flydv1ExecResponse) GetExitCode() int32`
+`func (o *Flydv1ExecResponse) GetExitCode() int64`
 
 GetExitCode returns the ExitCode field if non-nil, zero value otherwise.
 
 ### GetExitCodeOk
 
-`func (o *Flydv1ExecResponse) GetExitCodeOk() (*int32, bool)`
+`func (o *Flydv1ExecResponse) GetExitCodeOk() (*int64, bool)`
 
 GetExitCodeOk returns a tuple with the ExitCode field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetExitCode
 
-`func (o *Flydv1ExecResponse) SetExitCode(v int32)`
+`func (o *Flydv1ExecResponse) SetExitCode(v int64)`
 
 SetExitCode sets ExitCode field to given value.
 
@@ -55,20 +55,20 @@ HasExitCode returns a boolean if a field has been set.
 
 ### GetExitSignal
 
-`func (o *Flydv1ExecResponse) GetExitSignal() int32`
+`func (o *Flydv1ExecResponse) GetExitSignal() int64`
 
 GetExitSignal returns the ExitSignal field if non-nil, zero value otherwise.
 
 ### GetExitSignalOk
 
-`func (o *Flydv1ExecResponse) GetExitSignalOk() (*int32, bool)`
+`func (o *Flydv1ExecResponse) GetExitSignalOk() (*int64, bool)`
 
 GetExitSignalOk returns a tuple with the ExitSignal field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetExitSignal
 
-`func (o *Flydv1ExecResponse) SetExitSignal(v int32)`
+`func (o *Flydv1ExecResponse) SetExitSignal(v int64)`
 
 SetExitSignal sets ExitSignal field to given value.
 

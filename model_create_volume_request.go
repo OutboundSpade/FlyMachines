@@ -26,10 +26,10 @@ type CreateVolumeRequest struct {
 	Name *string `json:"name,omitempty"`
 	Region *string `json:"region,omitempty"`
 	RequireUniqueZone *bool `json:"require_unique_zone,omitempty"`
-	SizeGb *int32 `json:"size_gb,omitempty"`
+	SizeGb *int64 `json:"size_gb,omitempty"`
 	// restore from snapshot
 	SnapshotId *string `json:"snapshot_id,omitempty"`
-	SnapshotRetention *int32 `json:"snapshot_retention,omitempty"`
+	SnapshotRetention *int64 `json:"snapshot_retention,omitempty"`
 	// fork from remote volume
 	SourceVolumeId *string `json:"source_volume_id,omitempty"`
 	UniqueZoneAppWide *bool `json:"unique_zone_app_wide,omitempty"`
@@ -277,9 +277,9 @@ func (o *CreateVolumeRequest) SetRequireUniqueZone(v bool) {
 }
 
 // GetSizeGb returns the SizeGb field value if set, zero value otherwise.
-func (o *CreateVolumeRequest) GetSizeGb() int32 {
+func (o *CreateVolumeRequest) GetSizeGb() int64 {
 	if o == nil || IsNil(o.SizeGb) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.SizeGb
@@ -287,7 +287,7 @@ func (o *CreateVolumeRequest) GetSizeGb() int32 {
 
 // GetSizeGbOk returns a tuple with the SizeGb field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *CreateVolumeRequest) GetSizeGbOk() (*int32, bool) {
+func (o *CreateVolumeRequest) GetSizeGbOk() (*int64, bool) {
 	if o == nil || IsNil(o.SizeGb) {
 		return nil, false
 	}
@@ -303,8 +303,8 @@ func (o *CreateVolumeRequest) HasSizeGb() bool {
 	return false
 }
 
-// SetSizeGb gets a reference to the given int32 and assigns it to the SizeGb field.
-func (o *CreateVolumeRequest) SetSizeGb(v int32) {
+// SetSizeGb gets a reference to the given int64 and assigns it to the SizeGb field.
+func (o *CreateVolumeRequest) SetSizeGb(v int64) {
 	o.SizeGb = &v
 }
 
@@ -341,9 +341,9 @@ func (o *CreateVolumeRequest) SetSnapshotId(v string) {
 }
 
 // GetSnapshotRetention returns the SnapshotRetention field value if set, zero value otherwise.
-func (o *CreateVolumeRequest) GetSnapshotRetention() int32 {
+func (o *CreateVolumeRequest) GetSnapshotRetention() int64 {
 	if o == nil || IsNil(o.SnapshotRetention) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.SnapshotRetention
@@ -351,7 +351,7 @@ func (o *CreateVolumeRequest) GetSnapshotRetention() int32 {
 
 // GetSnapshotRetentionOk returns a tuple with the SnapshotRetention field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *CreateVolumeRequest) GetSnapshotRetentionOk() (*int32, bool) {
+func (o *CreateVolumeRequest) GetSnapshotRetentionOk() (*int64, bool) {
 	if o == nil || IsNil(o.SnapshotRetention) {
 		return nil, false
 	}
@@ -367,8 +367,8 @@ func (o *CreateVolumeRequest) HasSnapshotRetention() bool {
 	return false
 }
 
-// SetSnapshotRetention gets a reference to the given int32 and assigns it to the SnapshotRetention field.
-func (o *CreateVolumeRequest) SetSnapshotRetention(v int32) {
+// SetSnapshotRetention gets a reference to the given int64 and assigns it to the SnapshotRetention field.
+func (o *CreateVolumeRequest) SetSnapshotRetention(v int64) {
 	o.SnapshotRetention = &v
 }
 

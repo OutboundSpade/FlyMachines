@@ -20,8 +20,8 @@ var _ MappedNullable = &PlacementRegionPlacement{}
 // PlacementRegionPlacement struct for PlacementRegionPlacement
 type PlacementRegionPlacement struct {
 	// Hint on the number of machines in this region can be created concurrently. Equal to the number of unique hosts selected for placement.
-	Concurrency *int32 `json:"concurrency,omitempty"`
-	Count *int32 `json:"count,omitempty"`
+	Concurrency *int64 `json:"concurrency,omitempty"`
+	Count *int64 `json:"count,omitempty"`
 	Region *string `json:"region,omitempty"`
 }
 
@@ -43,9 +43,9 @@ func NewPlacementRegionPlacementWithDefaults() *PlacementRegionPlacement {
 }
 
 // GetConcurrency returns the Concurrency field value if set, zero value otherwise.
-func (o *PlacementRegionPlacement) GetConcurrency() int32 {
+func (o *PlacementRegionPlacement) GetConcurrency() int64 {
 	if o == nil || IsNil(o.Concurrency) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.Concurrency
@@ -53,7 +53,7 @@ func (o *PlacementRegionPlacement) GetConcurrency() int32 {
 
 // GetConcurrencyOk returns a tuple with the Concurrency field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PlacementRegionPlacement) GetConcurrencyOk() (*int32, bool) {
+func (o *PlacementRegionPlacement) GetConcurrencyOk() (*int64, bool) {
 	if o == nil || IsNil(o.Concurrency) {
 		return nil, false
 	}
@@ -69,15 +69,15 @@ func (o *PlacementRegionPlacement) HasConcurrency() bool {
 	return false
 }
 
-// SetConcurrency gets a reference to the given int32 and assigns it to the Concurrency field.
-func (o *PlacementRegionPlacement) SetConcurrency(v int32) {
+// SetConcurrency gets a reference to the given int64 and assigns it to the Concurrency field.
+func (o *PlacementRegionPlacement) SetConcurrency(v int64) {
 	o.Concurrency = &v
 }
 
 // GetCount returns the Count field value if set, zero value otherwise.
-func (o *PlacementRegionPlacement) GetCount() int32 {
+func (o *PlacementRegionPlacement) GetCount() int64 {
 	if o == nil || IsNil(o.Count) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.Count
@@ -85,7 +85,7 @@ func (o *PlacementRegionPlacement) GetCount() int32 {
 
 // GetCountOk returns a tuple with the Count field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PlacementRegionPlacement) GetCountOk() (*int32, bool) {
+func (o *PlacementRegionPlacement) GetCountOk() (*int64, bool) {
 	if o == nil || IsNil(o.Count) {
 		return nil, false
 	}
@@ -101,8 +101,8 @@ func (o *PlacementRegionPlacement) HasCount() bool {
 	return false
 }
 
-// SetCount gets a reference to the given int32 and assigns it to the Count field.
-func (o *PlacementRegionPlacement) SetCount(v int32) {
+// SetCount gets a reference to the given int64 and assigns it to the Count field.
+func (o *PlacementRegionPlacement) SetCount(v int64) {
 	o.Count = &v
 }
 

@@ -19,7 +19,7 @@ var _ MappedNullable = &EncryptSecretkeyResponse{}
 
 // EncryptSecretkeyResponse struct for EncryptSecretkeyResponse
 type EncryptSecretkeyResponse struct {
-	Ciphertext []int32 `json:"ciphertext,omitempty"`
+	Ciphertext []int64 `json:"ciphertext,omitempty"`
 }
 
 // NewEncryptSecretkeyResponse instantiates a new EncryptSecretkeyResponse object
@@ -40,9 +40,9 @@ func NewEncryptSecretkeyResponseWithDefaults() *EncryptSecretkeyResponse {
 }
 
 // GetCiphertext returns the Ciphertext field value if set, zero value otherwise.
-func (o *EncryptSecretkeyResponse) GetCiphertext() []int32 {
+func (o *EncryptSecretkeyResponse) GetCiphertext() []int64 {
 	if o == nil || IsNil(o.Ciphertext) {
-		var ret []int32
+		var ret []int64
 		return ret
 	}
 	return o.Ciphertext
@@ -50,7 +50,7 @@ func (o *EncryptSecretkeyResponse) GetCiphertext() []int32 {
 
 // GetCiphertextOk returns a tuple with the Ciphertext field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *EncryptSecretkeyResponse) GetCiphertextOk() ([]int32, bool) {
+func (o *EncryptSecretkeyResponse) GetCiphertextOk() ([]int64, bool) {
 	if o == nil || IsNil(o.Ciphertext) {
 		return nil, false
 	}
@@ -66,8 +66,8 @@ func (o *EncryptSecretkeyResponse) HasCiphertext() bool {
 	return false
 }
 
-// SetCiphertext gets a reference to the given []int32 and assigns it to the Ciphertext field.
-func (o *EncryptSecretkeyResponse) SetCiphertext(v []int32) {
+// SetCiphertext gets a reference to the given []int64 and assigns it to the Ciphertext field.
+func (o *EncryptSecretkeyResponse) SetCiphertext(v []int64) {
 	o.Ciphertext = v
 }
 

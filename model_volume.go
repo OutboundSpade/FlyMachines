@@ -22,12 +22,12 @@ type Volume struct {
 	AttachedAllocId *string `json:"attached_alloc_id,omitempty"`
 	AttachedMachineId *string `json:"attached_machine_id,omitempty"`
 	AutoBackupEnabled *bool `json:"auto_backup_enabled,omitempty"`
-	BlockSize *int32 `json:"block_size,omitempty"`
-	Blocks *int32 `json:"blocks,omitempty"`
-	BlocksAvail *int32 `json:"blocks_avail,omitempty"`
-	BlocksFree *int32 `json:"blocks_free,omitempty"`
-	BytesTotal *int32 `json:"bytes_total,omitempty"`
-	BytesUsed *int32 `json:"bytes_used,omitempty"`
+	BlockSize *int64 `json:"block_size,omitempty"`
+	Blocks *int64 `json:"blocks,omitempty"`
+	BlocksAvail *int64 `json:"blocks_avail,omitempty"`
+	BlocksFree *int64 `json:"blocks_free,omitempty"`
+	BytesTotal *int64 `json:"bytes_total,omitempty"`
+	BytesUsed *int64 `json:"bytes_used,omitempty"`
 	CreatedAt *string `json:"created_at,omitempty"`
 	Encrypted *bool `json:"encrypted,omitempty"`
 	Fstype *string `json:"fstype,omitempty"`
@@ -35,8 +35,8 @@ type Volume struct {
 	Id *string `json:"id,omitempty"`
 	Name *string `json:"name,omitempty"`
 	Region *string `json:"region,omitempty"`
-	SizeGb *int32 `json:"size_gb,omitempty"`
-	SnapshotRetention *int32 `json:"snapshot_retention,omitempty"`
+	SizeGb *int64 `json:"size_gb,omitempty"`
+	SnapshotRetention *int64 `json:"snapshot_retention,omitempty"`
 	State *string `json:"state,omitempty"`
 	Zone *string `json:"zone,omitempty"`
 }
@@ -155,9 +155,9 @@ func (o *Volume) SetAutoBackupEnabled(v bool) {
 }
 
 // GetBlockSize returns the BlockSize field value if set, zero value otherwise.
-func (o *Volume) GetBlockSize() int32 {
+func (o *Volume) GetBlockSize() int64 {
 	if o == nil || IsNil(o.BlockSize) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.BlockSize
@@ -165,7 +165,7 @@ func (o *Volume) GetBlockSize() int32 {
 
 // GetBlockSizeOk returns a tuple with the BlockSize field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Volume) GetBlockSizeOk() (*int32, bool) {
+func (o *Volume) GetBlockSizeOk() (*int64, bool) {
 	if o == nil || IsNil(o.BlockSize) {
 		return nil, false
 	}
@@ -181,15 +181,15 @@ func (o *Volume) HasBlockSize() bool {
 	return false
 }
 
-// SetBlockSize gets a reference to the given int32 and assigns it to the BlockSize field.
-func (o *Volume) SetBlockSize(v int32) {
+// SetBlockSize gets a reference to the given int64 and assigns it to the BlockSize field.
+func (o *Volume) SetBlockSize(v int64) {
 	o.BlockSize = &v
 }
 
 // GetBlocks returns the Blocks field value if set, zero value otherwise.
-func (o *Volume) GetBlocks() int32 {
+func (o *Volume) GetBlocks() int64 {
 	if o == nil || IsNil(o.Blocks) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.Blocks
@@ -197,7 +197,7 @@ func (o *Volume) GetBlocks() int32 {
 
 // GetBlocksOk returns a tuple with the Blocks field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Volume) GetBlocksOk() (*int32, bool) {
+func (o *Volume) GetBlocksOk() (*int64, bool) {
 	if o == nil || IsNil(o.Blocks) {
 		return nil, false
 	}
@@ -213,15 +213,15 @@ func (o *Volume) HasBlocks() bool {
 	return false
 }
 
-// SetBlocks gets a reference to the given int32 and assigns it to the Blocks field.
-func (o *Volume) SetBlocks(v int32) {
+// SetBlocks gets a reference to the given int64 and assigns it to the Blocks field.
+func (o *Volume) SetBlocks(v int64) {
 	o.Blocks = &v
 }
 
 // GetBlocksAvail returns the BlocksAvail field value if set, zero value otherwise.
-func (o *Volume) GetBlocksAvail() int32 {
+func (o *Volume) GetBlocksAvail() int64 {
 	if o == nil || IsNil(o.BlocksAvail) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.BlocksAvail
@@ -229,7 +229,7 @@ func (o *Volume) GetBlocksAvail() int32 {
 
 // GetBlocksAvailOk returns a tuple with the BlocksAvail field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Volume) GetBlocksAvailOk() (*int32, bool) {
+func (o *Volume) GetBlocksAvailOk() (*int64, bool) {
 	if o == nil || IsNil(o.BlocksAvail) {
 		return nil, false
 	}
@@ -245,15 +245,15 @@ func (o *Volume) HasBlocksAvail() bool {
 	return false
 }
 
-// SetBlocksAvail gets a reference to the given int32 and assigns it to the BlocksAvail field.
-func (o *Volume) SetBlocksAvail(v int32) {
+// SetBlocksAvail gets a reference to the given int64 and assigns it to the BlocksAvail field.
+func (o *Volume) SetBlocksAvail(v int64) {
 	o.BlocksAvail = &v
 }
 
 // GetBlocksFree returns the BlocksFree field value if set, zero value otherwise.
-func (o *Volume) GetBlocksFree() int32 {
+func (o *Volume) GetBlocksFree() int64 {
 	if o == nil || IsNil(o.BlocksFree) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.BlocksFree
@@ -261,7 +261,7 @@ func (o *Volume) GetBlocksFree() int32 {
 
 // GetBlocksFreeOk returns a tuple with the BlocksFree field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Volume) GetBlocksFreeOk() (*int32, bool) {
+func (o *Volume) GetBlocksFreeOk() (*int64, bool) {
 	if o == nil || IsNil(o.BlocksFree) {
 		return nil, false
 	}
@@ -277,15 +277,15 @@ func (o *Volume) HasBlocksFree() bool {
 	return false
 }
 
-// SetBlocksFree gets a reference to the given int32 and assigns it to the BlocksFree field.
-func (o *Volume) SetBlocksFree(v int32) {
+// SetBlocksFree gets a reference to the given int64 and assigns it to the BlocksFree field.
+func (o *Volume) SetBlocksFree(v int64) {
 	o.BlocksFree = &v
 }
 
 // GetBytesTotal returns the BytesTotal field value if set, zero value otherwise.
-func (o *Volume) GetBytesTotal() int32 {
+func (o *Volume) GetBytesTotal() int64 {
 	if o == nil || IsNil(o.BytesTotal) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.BytesTotal
@@ -293,7 +293,7 @@ func (o *Volume) GetBytesTotal() int32 {
 
 // GetBytesTotalOk returns a tuple with the BytesTotal field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Volume) GetBytesTotalOk() (*int32, bool) {
+func (o *Volume) GetBytesTotalOk() (*int64, bool) {
 	if o == nil || IsNil(o.BytesTotal) {
 		return nil, false
 	}
@@ -309,15 +309,15 @@ func (o *Volume) HasBytesTotal() bool {
 	return false
 }
 
-// SetBytesTotal gets a reference to the given int32 and assigns it to the BytesTotal field.
-func (o *Volume) SetBytesTotal(v int32) {
+// SetBytesTotal gets a reference to the given int64 and assigns it to the BytesTotal field.
+func (o *Volume) SetBytesTotal(v int64) {
 	o.BytesTotal = &v
 }
 
 // GetBytesUsed returns the BytesUsed field value if set, zero value otherwise.
-func (o *Volume) GetBytesUsed() int32 {
+func (o *Volume) GetBytesUsed() int64 {
 	if o == nil || IsNil(o.BytesUsed) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.BytesUsed
@@ -325,7 +325,7 @@ func (o *Volume) GetBytesUsed() int32 {
 
 // GetBytesUsedOk returns a tuple with the BytesUsed field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Volume) GetBytesUsedOk() (*int32, bool) {
+func (o *Volume) GetBytesUsedOk() (*int64, bool) {
 	if o == nil || IsNil(o.BytesUsed) {
 		return nil, false
 	}
@@ -341,8 +341,8 @@ func (o *Volume) HasBytesUsed() bool {
 	return false
 }
 
-// SetBytesUsed gets a reference to the given int32 and assigns it to the BytesUsed field.
-func (o *Volume) SetBytesUsed(v int32) {
+// SetBytesUsed gets a reference to the given int64 and assigns it to the BytesUsed field.
+func (o *Volume) SetBytesUsed(v int64) {
 	o.BytesUsed = &v
 }
 
@@ -571,9 +571,9 @@ func (o *Volume) SetRegion(v string) {
 }
 
 // GetSizeGb returns the SizeGb field value if set, zero value otherwise.
-func (o *Volume) GetSizeGb() int32 {
+func (o *Volume) GetSizeGb() int64 {
 	if o == nil || IsNil(o.SizeGb) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.SizeGb
@@ -581,7 +581,7 @@ func (o *Volume) GetSizeGb() int32 {
 
 // GetSizeGbOk returns a tuple with the SizeGb field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Volume) GetSizeGbOk() (*int32, bool) {
+func (o *Volume) GetSizeGbOk() (*int64, bool) {
 	if o == nil || IsNil(o.SizeGb) {
 		return nil, false
 	}
@@ -597,15 +597,15 @@ func (o *Volume) HasSizeGb() bool {
 	return false
 }
 
-// SetSizeGb gets a reference to the given int32 and assigns it to the SizeGb field.
-func (o *Volume) SetSizeGb(v int32) {
+// SetSizeGb gets a reference to the given int64 and assigns it to the SizeGb field.
+func (o *Volume) SetSizeGb(v int64) {
 	o.SizeGb = &v
 }
 
 // GetSnapshotRetention returns the SnapshotRetention field value if set, zero value otherwise.
-func (o *Volume) GetSnapshotRetention() int32 {
+func (o *Volume) GetSnapshotRetention() int64 {
 	if o == nil || IsNil(o.SnapshotRetention) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.SnapshotRetention
@@ -613,7 +613,7 @@ func (o *Volume) GetSnapshotRetention() int32 {
 
 // GetSnapshotRetentionOk returns a tuple with the SnapshotRetention field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Volume) GetSnapshotRetentionOk() (*int32, bool) {
+func (o *Volume) GetSnapshotRetentionOk() (*int64, bool) {
 	if o == nil || IsNil(o.SnapshotRetention) {
 		return nil, false
 	}
@@ -629,8 +629,8 @@ func (o *Volume) HasSnapshotRetention() bool {
 	return false
 }
 
-// SetSnapshotRetention gets a reference to the given int32 and assigns it to the SnapshotRetention field.
-func (o *Volume) SetSnapshotRetention(v int32) {
+// SetSnapshotRetention gets a reference to the given int64 and assigns it to the SnapshotRetention field.
+func (o *Volume) SetSnapshotRetention(v int64) {
 	o.SnapshotRetention = &v
 }
 

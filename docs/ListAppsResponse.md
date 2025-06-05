@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Apps** | Pointer to [**[]ListApp**](ListApp.md) |  | [optional] 
-**TotalApps** | Pointer to **int32** |  | [optional] 
+**TotalApps** | Pointer to **int64** |  | [optional] 
 
 ## Methods
 
@@ -53,20 +53,20 @@ HasApps returns a boolean if a field has been set.
 
 ### GetTotalApps
 
-`func (o *ListAppsResponse) GetTotalApps() int32`
+`func (o *ListAppsResponse) GetTotalApps() int64`
 
 GetTotalApps returns the TotalApps field if non-nil, zero value otherwise.
 
 ### GetTotalAppsOk
 
-`func (o *ListAppsResponse) GetTotalAppsOk() (*int32, bool)`
+`func (o *ListAppsResponse) GetTotalAppsOk() (*int64, bool)`
 
 GetTotalAppsOk returns a tuple with the TotalApps field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetTotalApps
 
-`func (o *ListAppsResponse) SetTotalApps(v int32)`
+`func (o *ListAppsResponse) SetTotalApps(v int64)`
 
 SetTotalApps sets TotalApps field to given value.
 

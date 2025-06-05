@@ -5,13 +5,13 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Command** | Pointer to **string** |  | [optional] 
-**Cpu** | Pointer to **int32** |  | [optional] 
+**Cpu** | Pointer to **int64** |  | [optional] 
 **Directory** | Pointer to **string** |  | [optional] 
 **ListenSockets** | Pointer to [**[]ListenSocket**](ListenSocket.md) |  | [optional] 
-**Pid** | Pointer to **int32** |  | [optional] 
-**Rss** | Pointer to **int32** |  | [optional] 
-**Rtime** | Pointer to **int32** |  | [optional] 
-**Stime** | Pointer to **int32** |  | [optional] 
+**Pid** | Pointer to **int64** |  | [optional] 
+**Rss** | Pointer to **int64** |  | [optional] 
+**Rtime** | Pointer to **int64** |  | [optional] 
+**Stime** | Pointer to **int64** |  | [optional] 
 
 ## Methods
 
@@ -59,20 +59,20 @@ HasCommand returns a boolean if a field has been set.
 
 ### GetCpu
 
-`func (o *ProcessStat) GetCpu() int32`
+`func (o *ProcessStat) GetCpu() int64`
 
 GetCpu returns the Cpu field if non-nil, zero value otherwise.
 
 ### GetCpuOk
 
-`func (o *ProcessStat) GetCpuOk() (*int32, bool)`
+`func (o *ProcessStat) GetCpuOk() (*int64, bool)`
 
 GetCpuOk returns a tuple with the Cpu field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetCpu
 
-`func (o *ProcessStat) SetCpu(v int32)`
+`func (o *ProcessStat) SetCpu(v int64)`
 
 SetCpu sets Cpu field to given value.
 
@@ -134,20 +134,20 @@ HasListenSockets returns a boolean if a field has been set.
 
 ### GetPid
 
-`func (o *ProcessStat) GetPid() int32`
+`func (o *ProcessStat) GetPid() int64`
 
 GetPid returns the Pid field if non-nil, zero value otherwise.
 
 ### GetPidOk
 
-`func (o *ProcessStat) GetPidOk() (*int32, bool)`
+`func (o *ProcessStat) GetPidOk() (*int64, bool)`
 
 GetPidOk returns a tuple with the Pid field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetPid
 
-`func (o *ProcessStat) SetPid(v int32)`
+`func (o *ProcessStat) SetPid(v int64)`
 
 SetPid sets Pid field to given value.
 
@@ -159,20 +159,20 @@ HasPid returns a boolean if a field has been set.
 
 ### GetRss
 
-`func (o *ProcessStat) GetRss() int32`
+`func (o *ProcessStat) GetRss() int64`
 
 GetRss returns the Rss field if non-nil, zero value otherwise.
 
 ### GetRssOk
 
-`func (o *ProcessStat) GetRssOk() (*int32, bool)`
+`func (o *ProcessStat) GetRssOk() (*int64, bool)`
 
 GetRssOk returns a tuple with the Rss field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRss
 
-`func (o *ProcessStat) SetRss(v int32)`
+`func (o *ProcessStat) SetRss(v int64)`
 
 SetRss sets Rss field to given value.
 
@@ -184,20 +184,20 @@ HasRss returns a boolean if a field has been set.
 
 ### GetRtime
 
-`func (o *ProcessStat) GetRtime() int32`
+`func (o *ProcessStat) GetRtime() int64`
 
 GetRtime returns the Rtime field if non-nil, zero value otherwise.
 
 ### GetRtimeOk
 
-`func (o *ProcessStat) GetRtimeOk() (*int32, bool)`
+`func (o *ProcessStat) GetRtimeOk() (*int64, bool)`
 
 GetRtimeOk returns a tuple with the Rtime field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRtime
 
-`func (o *ProcessStat) SetRtime(v int32)`
+`func (o *ProcessStat) SetRtime(v int64)`
 
 SetRtime sets Rtime field to given value.
 
@@ -209,20 +209,20 @@ HasRtime returns a boolean if a field has been set.
 
 ### GetStime
 
-`func (o *ProcessStat) GetStime() int32`
+`func (o *ProcessStat) GetStime() int64`
 
 GetStime returns the Stime field if non-nil, zero value otherwise.
 
 ### GetStimeOk
 
-`func (o *ProcessStat) GetStimeOk() (*int32, bool)`
+`func (o *ProcessStat) GetStimeOk() (*int64, bool)`
 
 GetStimeOk returns a tuple with the Stime field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetStime
 
-`func (o *ProcessStat) SetStime(v int32)`
+`func (o *ProcessStat) SetStime(v int64)`
 
 SetStime sets Stime field to given value.
 

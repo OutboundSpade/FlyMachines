@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | Pointer to **string** |  | [optional] 
-**MachineCount** | Pointer to **int32** |  | [optional] 
+**MachineCount** | Pointer to **int64** |  | [optional] 
 **Name** | Pointer to **string** |  | [optional] 
 **Network** | Pointer to **map[string]interface{}** |  | [optional] 
 
@@ -55,20 +55,20 @@ HasId returns a boolean if a field has been set.
 
 ### GetMachineCount
 
-`func (o *ListApp) GetMachineCount() int32`
+`func (o *ListApp) GetMachineCount() int64`
 
 GetMachineCount returns the MachineCount field if non-nil, zero value otherwise.
 
 ### GetMachineCountOk
 
-`func (o *ListApp) GetMachineCountOk() (*int32, bool)`
+`func (o *ListApp) GetMachineCountOk() (*int64, bool)`
 
 GetMachineCountOk returns a tuple with the MachineCount field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMachineCount
 
-`func (o *ListApp) SetMachineCount(v int32)`
+`func (o *ListApp) SetMachineCount(v int64)`
 
 SetMachineCount sets MachineCount field to given value.
 

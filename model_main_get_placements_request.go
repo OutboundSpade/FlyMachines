@@ -24,14 +24,14 @@ type MainGetPlacementsRequest struct {
 	// Resource requirements for the Machine to simulate. Defaults to a performance-1x machine
 	Compute *FlyMachineGuest `json:"compute,omitempty"`
 	// Number of machines to simulate placement. Defaults to 0, which returns the org-specific limit for each region.
-	Count *int32 `json:"count,omitempty"`
+	Count *int64 `json:"count,omitempty"`
 	OrgSlug string `json:"org_slug"`
 	// Region expression for placement as a comma-delimited set of regions or aliases. Defaults to \"[region],any\", to prefer the API endpoint's local region with any other region as fallback.
 	Region *string `json:"region,omitempty"`
 	VolumeName *string `json:"volume_name,omitempty"`
-	VolumeSizeBytes *int32 `json:"volume_size_bytes,omitempty"`
+	VolumeSizeBytes *int64 `json:"volume_size_bytes,omitempty"`
 	// Optional weights to override default placement preferences.
-	Weights *map[string]int32 `json:"weights,omitempty"`
+	Weights *map[string]int64 `json:"weights,omitempty"`
 }
 
 type _MainGetPlacementsRequest MainGetPlacementsRequest
@@ -87,9 +87,9 @@ func (o *MainGetPlacementsRequest) SetCompute(v FlyMachineGuest) {
 }
 
 // GetCount returns the Count field value if set, zero value otherwise.
-func (o *MainGetPlacementsRequest) GetCount() int32 {
+func (o *MainGetPlacementsRequest) GetCount() int64 {
 	if o == nil || IsNil(o.Count) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.Count
@@ -97,7 +97,7 @@ func (o *MainGetPlacementsRequest) GetCount() int32 {
 
 // GetCountOk returns a tuple with the Count field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *MainGetPlacementsRequest) GetCountOk() (*int32, bool) {
+func (o *MainGetPlacementsRequest) GetCountOk() (*int64, bool) {
 	if o == nil || IsNil(o.Count) {
 		return nil, false
 	}
@@ -113,8 +113,8 @@ func (o *MainGetPlacementsRequest) HasCount() bool {
 	return false
 }
 
-// SetCount gets a reference to the given int32 and assigns it to the Count field.
-func (o *MainGetPlacementsRequest) SetCount(v int32) {
+// SetCount gets a reference to the given int64 and assigns it to the Count field.
+func (o *MainGetPlacementsRequest) SetCount(v int64) {
 	o.Count = &v
 }
 
@@ -207,9 +207,9 @@ func (o *MainGetPlacementsRequest) SetVolumeName(v string) {
 }
 
 // GetVolumeSizeBytes returns the VolumeSizeBytes field value if set, zero value otherwise.
-func (o *MainGetPlacementsRequest) GetVolumeSizeBytes() int32 {
+func (o *MainGetPlacementsRequest) GetVolumeSizeBytes() int64 {
 	if o == nil || IsNil(o.VolumeSizeBytes) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.VolumeSizeBytes
@@ -217,7 +217,7 @@ func (o *MainGetPlacementsRequest) GetVolumeSizeBytes() int32 {
 
 // GetVolumeSizeBytesOk returns a tuple with the VolumeSizeBytes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *MainGetPlacementsRequest) GetVolumeSizeBytesOk() (*int32, bool) {
+func (o *MainGetPlacementsRequest) GetVolumeSizeBytesOk() (*int64, bool) {
 	if o == nil || IsNil(o.VolumeSizeBytes) {
 		return nil, false
 	}
@@ -233,15 +233,15 @@ func (o *MainGetPlacementsRequest) HasVolumeSizeBytes() bool {
 	return false
 }
 
-// SetVolumeSizeBytes gets a reference to the given int32 and assigns it to the VolumeSizeBytes field.
-func (o *MainGetPlacementsRequest) SetVolumeSizeBytes(v int32) {
+// SetVolumeSizeBytes gets a reference to the given int64 and assigns it to the VolumeSizeBytes field.
+func (o *MainGetPlacementsRequest) SetVolumeSizeBytes(v int64) {
 	o.VolumeSizeBytes = &v
 }
 
 // GetWeights returns the Weights field value if set, zero value otherwise.
-func (o *MainGetPlacementsRequest) GetWeights() map[string]int32 {
+func (o *MainGetPlacementsRequest) GetWeights() map[string]int64 {
 	if o == nil || IsNil(o.Weights) {
-		var ret map[string]int32
+		var ret map[string]int64
 		return ret
 	}
 	return *o.Weights
@@ -249,7 +249,7 @@ func (o *MainGetPlacementsRequest) GetWeights() map[string]int32 {
 
 // GetWeightsOk returns a tuple with the Weights field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *MainGetPlacementsRequest) GetWeightsOk() (*map[string]int32, bool) {
+func (o *MainGetPlacementsRequest) GetWeightsOk() (*map[string]int64, bool) {
 	if o == nil || IsNil(o.Weights) {
 		return nil, false
 	}
@@ -265,8 +265,8 @@ func (o *MainGetPlacementsRequest) HasWeights() bool {
 	return false
 }
 
-// SetWeights gets a reference to the given map[string]int32 and assigns it to the Weights field.
-func (o *MainGetPlacementsRequest) SetWeights(v map[string]int32) {
+// SetWeights gets a reference to the given map[string]int64 and assigns it to the Weights field.
+func (o *MainGetPlacementsRequest) SetWeights(v map[string]int64) {
 	o.Weights = &v
 }
 

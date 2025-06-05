@@ -24,7 +24,7 @@ type FlyFile struct {
 	// The name of an image to use the OCI image config as the file contents.
 	ImageConfig *string `json:"image_config,omitempty"`
 	// Mode bits used to set permissions on this file as accepted by chmod(2).
-	Mode *int32 `json:"mode,omitempty"`
+	Mode *int64 `json:"mode,omitempty"`
 	// The base64 encoded string of the file contents.
 	RawValue *string `json:"raw_value,omitempty"`
 	// The name of the secret that contains the base64 encoded file contents.
@@ -113,9 +113,9 @@ func (o *FlyFile) SetImageConfig(v string) {
 }
 
 // GetMode returns the Mode field value if set, zero value otherwise.
-func (o *FlyFile) GetMode() int32 {
+func (o *FlyFile) GetMode() int64 {
 	if o == nil || IsNil(o.Mode) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.Mode
@@ -123,7 +123,7 @@ func (o *FlyFile) GetMode() int32 {
 
 // GetModeOk returns a tuple with the Mode field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *FlyFile) GetModeOk() (*int32, bool) {
+func (o *FlyFile) GetModeOk() (*int64, bool) {
 	if o == nil || IsNil(o.Mode) {
 		return nil, false
 	}
@@ -139,8 +139,8 @@ func (o *FlyFile) HasMode() bool {
 	return false
 }
 
-// SetMode gets a reference to the given int32 and assigns it to the Mode field.
-func (o *FlyFile) SetMode(v int32) {
+// SetMode gets a reference to the given int64 and assigns it to the Mode field.
+func (o *FlyFile) SetMode(v int64) {
 	o.Mode = &v
 }
 

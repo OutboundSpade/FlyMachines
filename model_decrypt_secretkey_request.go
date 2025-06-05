@@ -19,8 +19,8 @@ var _ MappedNullable = &DecryptSecretkeyRequest{}
 
 // DecryptSecretkeyRequest struct for DecryptSecretkeyRequest
 type DecryptSecretkeyRequest struct {
-	AssociatedData []int32 `json:"associated_data,omitempty"`
-	Ciphertext []int32 `json:"ciphertext,omitempty"`
+	AssociatedData []int64 `json:"associated_data,omitempty"`
+	Ciphertext []int64 `json:"ciphertext,omitempty"`
 }
 
 // NewDecryptSecretkeyRequest instantiates a new DecryptSecretkeyRequest object
@@ -41,9 +41,9 @@ func NewDecryptSecretkeyRequestWithDefaults() *DecryptSecretkeyRequest {
 }
 
 // GetAssociatedData returns the AssociatedData field value if set, zero value otherwise.
-func (o *DecryptSecretkeyRequest) GetAssociatedData() []int32 {
+func (o *DecryptSecretkeyRequest) GetAssociatedData() []int64 {
 	if o == nil || IsNil(o.AssociatedData) {
-		var ret []int32
+		var ret []int64
 		return ret
 	}
 	return o.AssociatedData
@@ -51,7 +51,7 @@ func (o *DecryptSecretkeyRequest) GetAssociatedData() []int32 {
 
 // GetAssociatedDataOk returns a tuple with the AssociatedData field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *DecryptSecretkeyRequest) GetAssociatedDataOk() ([]int32, bool) {
+func (o *DecryptSecretkeyRequest) GetAssociatedDataOk() ([]int64, bool) {
 	if o == nil || IsNil(o.AssociatedData) {
 		return nil, false
 	}
@@ -67,15 +67,15 @@ func (o *DecryptSecretkeyRequest) HasAssociatedData() bool {
 	return false
 }
 
-// SetAssociatedData gets a reference to the given []int32 and assigns it to the AssociatedData field.
-func (o *DecryptSecretkeyRequest) SetAssociatedData(v []int32) {
+// SetAssociatedData gets a reference to the given []int64 and assigns it to the AssociatedData field.
+func (o *DecryptSecretkeyRequest) SetAssociatedData(v []int64) {
 	o.AssociatedData = v
 }
 
 // GetCiphertext returns the Ciphertext field value if set, zero value otherwise.
-func (o *DecryptSecretkeyRequest) GetCiphertext() []int32 {
+func (o *DecryptSecretkeyRequest) GetCiphertext() []int64 {
 	if o == nil || IsNil(o.Ciphertext) {
-		var ret []int32
+		var ret []int64
 		return ret
 	}
 	return o.Ciphertext
@@ -83,7 +83,7 @@ func (o *DecryptSecretkeyRequest) GetCiphertext() []int32 {
 
 // GetCiphertextOk returns a tuple with the Ciphertext field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *DecryptSecretkeyRequest) GetCiphertextOk() ([]int32, bool) {
+func (o *DecryptSecretkeyRequest) GetCiphertextOk() ([]int64, bool) {
 	if o == nil || IsNil(o.Ciphertext) {
 		return nil, false
 	}
@@ -99,8 +99,8 @@ func (o *DecryptSecretkeyRequest) HasCiphertext() bool {
 	return false
 }
 
-// SetCiphertext gets a reference to the given []int32 and assigns it to the Ciphertext field.
-func (o *DecryptSecretkeyRequest) SetCiphertext(v []int32) {
+// SetCiphertext gets a reference to the given []int64 and assigns it to the Ciphertext field.
+func (o *DecryptSecretkeyRequest) SetCiphertext(v []int64) {
 	o.Ciphertext = v
 }
 

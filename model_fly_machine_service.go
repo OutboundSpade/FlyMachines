@@ -27,8 +27,8 @@ type FlyMachineService struct {
 	Concurrency *FlyMachineServiceConcurrency `json:"concurrency,omitempty"`
 	ForceInstanceDescription *string `json:"force_instance_description,omitempty"`
 	ForceInstanceKey *string `json:"force_instance_key,omitempty"`
-	InternalPort *int32 `json:"internal_port,omitempty"`
-	MinMachinesRunning *int32 `json:"min_machines_running,omitempty"`
+	InternalPort *int64 `json:"internal_port,omitempty"`
+	MinMachinesRunning *int64 `json:"min_machines_running,omitempty"`
 	Ports []FlyMachinePort `json:"ports,omitempty"`
 	Protocol *string `json:"protocol,omitempty"`
 }
@@ -243,9 +243,9 @@ func (o *FlyMachineService) SetForceInstanceKey(v string) {
 }
 
 // GetInternalPort returns the InternalPort field value if set, zero value otherwise.
-func (o *FlyMachineService) GetInternalPort() int32 {
+func (o *FlyMachineService) GetInternalPort() int64 {
 	if o == nil || IsNil(o.InternalPort) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.InternalPort
@@ -253,7 +253,7 @@ func (o *FlyMachineService) GetInternalPort() int32 {
 
 // GetInternalPortOk returns a tuple with the InternalPort field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *FlyMachineService) GetInternalPortOk() (*int32, bool) {
+func (o *FlyMachineService) GetInternalPortOk() (*int64, bool) {
 	if o == nil || IsNil(o.InternalPort) {
 		return nil, false
 	}
@@ -269,15 +269,15 @@ func (o *FlyMachineService) HasInternalPort() bool {
 	return false
 }
 
-// SetInternalPort gets a reference to the given int32 and assigns it to the InternalPort field.
-func (o *FlyMachineService) SetInternalPort(v int32) {
+// SetInternalPort gets a reference to the given int64 and assigns it to the InternalPort field.
+func (o *FlyMachineService) SetInternalPort(v int64) {
 	o.InternalPort = &v
 }
 
 // GetMinMachinesRunning returns the MinMachinesRunning field value if set, zero value otherwise.
-func (o *FlyMachineService) GetMinMachinesRunning() int32 {
+func (o *FlyMachineService) GetMinMachinesRunning() int64 {
 	if o == nil || IsNil(o.MinMachinesRunning) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.MinMachinesRunning
@@ -285,7 +285,7 @@ func (o *FlyMachineService) GetMinMachinesRunning() int32 {
 
 // GetMinMachinesRunningOk returns a tuple with the MinMachinesRunning field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *FlyMachineService) GetMinMachinesRunningOk() (*int32, bool) {
+func (o *FlyMachineService) GetMinMachinesRunningOk() (*int64, bool) {
 	if o == nil || IsNil(o.MinMachinesRunning) {
 		return nil, false
 	}
@@ -301,8 +301,8 @@ func (o *FlyMachineService) HasMinMachinesRunning() bool {
 	return false
 }
 
-// SetMinMachinesRunning gets a reference to the given int32 and assigns it to the MinMachinesRunning field.
-func (o *FlyMachineService) SetMinMachinesRunning(v int32) {
+// SetMinMachinesRunning gets a reference to the given int64 and assigns it to the MinMachinesRunning field.
+func (o *FlyMachineService) SetMinMachinesRunning(v int64) {
 	o.MinMachinesRunning = &v
 }
 

@@ -20,9 +20,9 @@ var _ MappedNullable = &SetSecretkeyResponse{}
 // SetSecretkeyResponse struct for SetSecretkeyResponse
 type SetSecretkeyResponse struct {
 	Name *string `json:"name,omitempty"`
-	PublicKey []int32 `json:"public_key,omitempty"`
+	PublicKey []int64 `json:"public_key,omitempty"`
 	Type *string `json:"type,omitempty"`
-	Version *int32 `json:"version,omitempty"`
+	Version *int64 `json:"version,omitempty"`
 }
 
 // NewSetSecretkeyResponse instantiates a new SetSecretkeyResponse object
@@ -75,9 +75,9 @@ func (o *SetSecretkeyResponse) SetName(v string) {
 }
 
 // GetPublicKey returns the PublicKey field value if set, zero value otherwise.
-func (o *SetSecretkeyResponse) GetPublicKey() []int32 {
+func (o *SetSecretkeyResponse) GetPublicKey() []int64 {
 	if o == nil || IsNil(o.PublicKey) {
-		var ret []int32
+		var ret []int64
 		return ret
 	}
 	return o.PublicKey
@@ -85,7 +85,7 @@ func (o *SetSecretkeyResponse) GetPublicKey() []int32 {
 
 // GetPublicKeyOk returns a tuple with the PublicKey field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *SetSecretkeyResponse) GetPublicKeyOk() ([]int32, bool) {
+func (o *SetSecretkeyResponse) GetPublicKeyOk() ([]int64, bool) {
 	if o == nil || IsNil(o.PublicKey) {
 		return nil, false
 	}
@@ -101,8 +101,8 @@ func (o *SetSecretkeyResponse) HasPublicKey() bool {
 	return false
 }
 
-// SetPublicKey gets a reference to the given []int32 and assigns it to the PublicKey field.
-func (o *SetSecretkeyResponse) SetPublicKey(v []int32) {
+// SetPublicKey gets a reference to the given []int64 and assigns it to the PublicKey field.
+func (o *SetSecretkeyResponse) SetPublicKey(v []int64) {
 	o.PublicKey = v
 }
 
@@ -139,9 +139,9 @@ func (o *SetSecretkeyResponse) SetType(v string) {
 }
 
 // GetVersion returns the Version field value if set, zero value otherwise.
-func (o *SetSecretkeyResponse) GetVersion() int32 {
+func (o *SetSecretkeyResponse) GetVersion() int64 {
 	if o == nil || IsNil(o.Version) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.Version
@@ -149,7 +149,7 @@ func (o *SetSecretkeyResponse) GetVersion() int32 {
 
 // GetVersionOk returns a tuple with the Version field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *SetSecretkeyResponse) GetVersionOk() (*int32, bool) {
+func (o *SetSecretkeyResponse) GetVersionOk() (*int64, bool) {
 	if o == nil || IsNil(o.Version) {
 		return nil, false
 	}
@@ -165,8 +165,8 @@ func (o *SetSecretkeyResponse) HasVersion() bool {
 	return false
 }
 
-// SetVersion gets a reference to the given int32 and assigns it to the Version field.
-func (o *SetSecretkeyResponse) SetVersion(v int32) {
+// SetVersion gets a reference to the given int64 and assigns it to the Version field.
+func (o *SetSecretkeyResponse) SetVersion(v int64) {
 	o.Version = &v
 }
 

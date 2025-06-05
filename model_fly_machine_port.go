@@ -19,13 +19,13 @@ var _ MappedNullable = &FlyMachinePort{}
 
 // FlyMachinePort struct for FlyMachinePort
 type FlyMachinePort struct {
-	EndPort *int32 `json:"end_port,omitempty"`
+	EndPort *int64 `json:"end_port,omitempty"`
 	ForceHttps *bool `json:"force_https,omitempty"`
 	Handlers []string `json:"handlers,omitempty"`
 	HttpOptions *FlyHTTPOptions `json:"http_options,omitempty"`
-	Port *int32 `json:"port,omitempty"`
+	Port *int64 `json:"port,omitempty"`
 	ProxyProtoOptions *FlyProxyProtoOptions `json:"proxy_proto_options,omitempty"`
-	StartPort *int32 `json:"start_port,omitempty"`
+	StartPort *int64 `json:"start_port,omitempty"`
 	TlsOptions *FlyTLSOptions `json:"tls_options,omitempty"`
 }
 
@@ -47,9 +47,9 @@ func NewFlyMachinePortWithDefaults() *FlyMachinePort {
 }
 
 // GetEndPort returns the EndPort field value if set, zero value otherwise.
-func (o *FlyMachinePort) GetEndPort() int32 {
+func (o *FlyMachinePort) GetEndPort() int64 {
 	if o == nil || IsNil(o.EndPort) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.EndPort
@@ -57,7 +57,7 @@ func (o *FlyMachinePort) GetEndPort() int32 {
 
 // GetEndPortOk returns a tuple with the EndPort field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *FlyMachinePort) GetEndPortOk() (*int32, bool) {
+func (o *FlyMachinePort) GetEndPortOk() (*int64, bool) {
 	if o == nil || IsNil(o.EndPort) {
 		return nil, false
 	}
@@ -73,8 +73,8 @@ func (o *FlyMachinePort) HasEndPort() bool {
 	return false
 }
 
-// SetEndPort gets a reference to the given int32 and assigns it to the EndPort field.
-func (o *FlyMachinePort) SetEndPort(v int32) {
+// SetEndPort gets a reference to the given int64 and assigns it to the EndPort field.
+func (o *FlyMachinePort) SetEndPort(v int64) {
 	o.EndPort = &v
 }
 
@@ -175,9 +175,9 @@ func (o *FlyMachinePort) SetHttpOptions(v FlyHTTPOptions) {
 }
 
 // GetPort returns the Port field value if set, zero value otherwise.
-func (o *FlyMachinePort) GetPort() int32 {
+func (o *FlyMachinePort) GetPort() int64 {
 	if o == nil || IsNil(o.Port) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.Port
@@ -185,7 +185,7 @@ func (o *FlyMachinePort) GetPort() int32 {
 
 // GetPortOk returns a tuple with the Port field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *FlyMachinePort) GetPortOk() (*int32, bool) {
+func (o *FlyMachinePort) GetPortOk() (*int64, bool) {
 	if o == nil || IsNil(o.Port) {
 		return nil, false
 	}
@@ -201,8 +201,8 @@ func (o *FlyMachinePort) HasPort() bool {
 	return false
 }
 
-// SetPort gets a reference to the given int32 and assigns it to the Port field.
-func (o *FlyMachinePort) SetPort(v int32) {
+// SetPort gets a reference to the given int64 and assigns it to the Port field.
+func (o *FlyMachinePort) SetPort(v int64) {
 	o.Port = &v
 }
 
@@ -239,9 +239,9 @@ func (o *FlyMachinePort) SetProxyProtoOptions(v FlyProxyProtoOptions) {
 }
 
 // GetStartPort returns the StartPort field value if set, zero value otherwise.
-func (o *FlyMachinePort) GetStartPort() int32 {
+func (o *FlyMachinePort) GetStartPort() int64 {
 	if o == nil || IsNil(o.StartPort) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.StartPort
@@ -249,7 +249,7 @@ func (o *FlyMachinePort) GetStartPort() int32 {
 
 // GetStartPortOk returns a tuple with the StartPort field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *FlyMachinePort) GetStartPortOk() (*int32, bool) {
+func (o *FlyMachinePort) GetStartPortOk() (*int64, bool) {
 	if o == nil || IsNil(o.StartPort) {
 		return nil, false
 	}
@@ -265,8 +265,8 @@ func (o *FlyMachinePort) HasStartPort() bool {
 	return false
 }
 
-// SetStartPort gets a reference to the given int32 and assigns it to the StartPort field.
-func (o *FlyMachinePort) SetStartPort(v int32) {
+// SetStartPort gets a reference to the given int64 and assigns it to the StartPort field.
+func (o *FlyMachinePort) SetStartPort(v int64) {
 	o.StartPort = &v
 }
 

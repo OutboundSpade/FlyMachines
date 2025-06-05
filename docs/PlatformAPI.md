@@ -98,9 +98,9 @@ import (
 func main() {
 	size := "size_example" // string | guest machine size preset. default performance-1x (optional)
 	cpuKind := "cpuKind_example" // string | guest CPU kind (optional)
-	memoryMb := int32(56) // int32 | guest memory in megabytes (optional)
-	cpus := int32(56) // int32 | guest CPU count (optional)
-	gpus := int32(56) // int32 | guest GPU count (optional)
+	memoryMb := int64(56) // int64 | guest memory in megabytes (optional)
+	cpus := int64(56) // int64 | guest CPU count (optional)
+	gpus := int64(56) // int64 | guest GPU count (optional)
 	gpuKind := "gpuKind_example" // string | guest GPU kind (optional)
 
 	configuration := openapiclient.NewConfiguration()
@@ -128,9 +128,9 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **size** | **string** | guest machine size preset. default performance-1x | 
  **cpuKind** | **string** | guest CPU kind | 
- **memoryMb** | **int32** | guest memory in megabytes | 
- **cpus** | **int32** | guest CPU count | 
- **gpus** | **int32** | guest GPU count | 
+ **memoryMb** | **int64** | guest memory in megabytes | 
+ **cpus** | **int64** | guest CPU count | 
+ **gpus** | **int64** | guest GPU count | 
  **gpuKind** | **string** | guest GPU kind | 
 
 ### Return type

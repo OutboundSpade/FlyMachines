@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **AutoBackupEnabled** | Pointer to **bool** |  | [optional] 
-**SnapshotRetention** | Pointer to **int32** |  | [optional] 
+**SnapshotRetention** | Pointer to **int64** |  | [optional] 
 
 ## Methods
 
@@ -53,20 +53,20 @@ HasAutoBackupEnabled returns a boolean if a field has been set.
 
 ### GetSnapshotRetention
 
-`func (o *UpdateVolumeRequest) GetSnapshotRetention() int32`
+`func (o *UpdateVolumeRequest) GetSnapshotRetention() int64`
 
 GetSnapshotRetention returns the SnapshotRetention field if non-nil, zero value otherwise.
 
 ### GetSnapshotRetentionOk
 
-`func (o *UpdateVolumeRequest) GetSnapshotRetentionOk() (*int32, bool)`
+`func (o *UpdateVolumeRequest) GetSnapshotRetentionOk() (*int64, bool)`
 
 GetSnapshotRetentionOk returns a tuple with the SnapshotRetention field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetSnapshotRetention
 
-`func (o *UpdateVolumeRequest) SetSnapshotRetention(v int32)`
+`func (o *UpdateVolumeRequest) SetSnapshotRetention(v int64)`
 
 SetSnapshotRetention sets SnapshotRetention field to given value.
 

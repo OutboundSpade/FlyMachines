@@ -7,12 +7,12 @@ Name | Type | Description | Notes
 **AttachedAllocId** | Pointer to **string** |  | [optional] 
 **AttachedMachineId** | Pointer to **string** |  | [optional] 
 **AutoBackupEnabled** | Pointer to **bool** |  | [optional] 
-**BlockSize** | Pointer to **int32** |  | [optional] 
-**Blocks** | Pointer to **int32** |  | [optional] 
-**BlocksAvail** | Pointer to **int32** |  | [optional] 
-**BlocksFree** | Pointer to **int32** |  | [optional] 
-**BytesTotal** | Pointer to **int32** |  | [optional] 
-**BytesUsed** | Pointer to **int32** |  | [optional] 
+**BlockSize** | Pointer to **int64** |  | [optional] 
+**Blocks** | Pointer to **int64** |  | [optional] 
+**BlocksAvail** | Pointer to **int64** |  | [optional] 
+**BlocksFree** | Pointer to **int64** |  | [optional] 
+**BytesTotal** | Pointer to **int64** |  | [optional] 
+**BytesUsed** | Pointer to **int64** |  | [optional] 
 **CreatedAt** | Pointer to **string** |  | [optional] 
 **Encrypted** | Pointer to **bool** |  | [optional] 
 **Fstype** | Pointer to **string** |  | [optional] 
@@ -20,8 +20,8 @@ Name | Type | Description | Notes
 **Id** | Pointer to **string** |  | [optional] 
 **Name** | Pointer to **string** |  | [optional] 
 **Region** | Pointer to **string** |  | [optional] 
-**SizeGb** | Pointer to **int32** |  | [optional] 
-**SnapshotRetention** | Pointer to **int32** |  | [optional] 
+**SizeGb** | Pointer to **int64** |  | [optional] 
+**SnapshotRetention** | Pointer to **int64** |  | [optional] 
 **State** | Pointer to **string** |  | [optional] 
 **Zone** | Pointer to **string** |  | [optional] 
 
@@ -121,20 +121,20 @@ HasAutoBackupEnabled returns a boolean if a field has been set.
 
 ### GetBlockSize
 
-`func (o *Volume) GetBlockSize() int32`
+`func (o *Volume) GetBlockSize() int64`
 
 GetBlockSize returns the BlockSize field if non-nil, zero value otherwise.
 
 ### GetBlockSizeOk
 
-`func (o *Volume) GetBlockSizeOk() (*int32, bool)`
+`func (o *Volume) GetBlockSizeOk() (*int64, bool)`
 
 GetBlockSizeOk returns a tuple with the BlockSize field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetBlockSize
 
-`func (o *Volume) SetBlockSize(v int32)`
+`func (o *Volume) SetBlockSize(v int64)`
 
 SetBlockSize sets BlockSize field to given value.
 
@@ -146,20 +146,20 @@ HasBlockSize returns a boolean if a field has been set.
 
 ### GetBlocks
 
-`func (o *Volume) GetBlocks() int32`
+`func (o *Volume) GetBlocks() int64`
 
 GetBlocks returns the Blocks field if non-nil, zero value otherwise.
 
 ### GetBlocksOk
 
-`func (o *Volume) GetBlocksOk() (*int32, bool)`
+`func (o *Volume) GetBlocksOk() (*int64, bool)`
 
 GetBlocksOk returns a tuple with the Blocks field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetBlocks
 
-`func (o *Volume) SetBlocks(v int32)`
+`func (o *Volume) SetBlocks(v int64)`
 
 SetBlocks sets Blocks field to given value.
 
@@ -171,20 +171,20 @@ HasBlocks returns a boolean if a field has been set.
 
 ### GetBlocksAvail
 
-`func (o *Volume) GetBlocksAvail() int32`
+`func (o *Volume) GetBlocksAvail() int64`
 
 GetBlocksAvail returns the BlocksAvail field if non-nil, zero value otherwise.
 
 ### GetBlocksAvailOk
 
-`func (o *Volume) GetBlocksAvailOk() (*int32, bool)`
+`func (o *Volume) GetBlocksAvailOk() (*int64, bool)`
 
 GetBlocksAvailOk returns a tuple with the BlocksAvail field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetBlocksAvail
 
-`func (o *Volume) SetBlocksAvail(v int32)`
+`func (o *Volume) SetBlocksAvail(v int64)`
 
 SetBlocksAvail sets BlocksAvail field to given value.
 
@@ -196,20 +196,20 @@ HasBlocksAvail returns a boolean if a field has been set.
 
 ### GetBlocksFree
 
-`func (o *Volume) GetBlocksFree() int32`
+`func (o *Volume) GetBlocksFree() int64`
 
 GetBlocksFree returns the BlocksFree field if non-nil, zero value otherwise.
 
 ### GetBlocksFreeOk
 
-`func (o *Volume) GetBlocksFreeOk() (*int32, bool)`
+`func (o *Volume) GetBlocksFreeOk() (*int64, bool)`
 
 GetBlocksFreeOk returns a tuple with the BlocksFree field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetBlocksFree
 
-`func (o *Volume) SetBlocksFree(v int32)`
+`func (o *Volume) SetBlocksFree(v int64)`
 
 SetBlocksFree sets BlocksFree field to given value.
 
@@ -221,20 +221,20 @@ HasBlocksFree returns a boolean if a field has been set.
 
 ### GetBytesTotal
 
-`func (o *Volume) GetBytesTotal() int32`
+`func (o *Volume) GetBytesTotal() int64`
 
 GetBytesTotal returns the BytesTotal field if non-nil, zero value otherwise.
 
 ### GetBytesTotalOk
 
-`func (o *Volume) GetBytesTotalOk() (*int32, bool)`
+`func (o *Volume) GetBytesTotalOk() (*int64, bool)`
 
 GetBytesTotalOk returns a tuple with the BytesTotal field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetBytesTotal
 
-`func (o *Volume) SetBytesTotal(v int32)`
+`func (o *Volume) SetBytesTotal(v int64)`
 
 SetBytesTotal sets BytesTotal field to given value.
 
@@ -246,20 +246,20 @@ HasBytesTotal returns a boolean if a field has been set.
 
 ### GetBytesUsed
 
-`func (o *Volume) GetBytesUsed() int32`
+`func (o *Volume) GetBytesUsed() int64`
 
 GetBytesUsed returns the BytesUsed field if non-nil, zero value otherwise.
 
 ### GetBytesUsedOk
 
-`func (o *Volume) GetBytesUsedOk() (*int32, bool)`
+`func (o *Volume) GetBytesUsedOk() (*int64, bool)`
 
 GetBytesUsedOk returns a tuple with the BytesUsed field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetBytesUsed
 
-`func (o *Volume) SetBytesUsed(v int32)`
+`func (o *Volume) SetBytesUsed(v int64)`
 
 SetBytesUsed sets BytesUsed field to given value.
 
@@ -446,20 +446,20 @@ HasRegion returns a boolean if a field has been set.
 
 ### GetSizeGb
 
-`func (o *Volume) GetSizeGb() int32`
+`func (o *Volume) GetSizeGb() int64`
 
 GetSizeGb returns the SizeGb field if non-nil, zero value otherwise.
 
 ### GetSizeGbOk
 
-`func (o *Volume) GetSizeGbOk() (*int32, bool)`
+`func (o *Volume) GetSizeGbOk() (*int64, bool)`
 
 GetSizeGbOk returns a tuple with the SizeGb field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetSizeGb
 
-`func (o *Volume) SetSizeGb(v int32)`
+`func (o *Volume) SetSizeGb(v int64)`
 
 SetSizeGb sets SizeGb field to given value.
 
@@ -471,20 +471,20 @@ HasSizeGb returns a boolean if a field has been set.
 
 ### GetSnapshotRetention
 
-`func (o *Volume) GetSnapshotRetention() int32`
+`func (o *Volume) GetSnapshotRetention() int64`
 
 GetSnapshotRetention returns the SnapshotRetention field if non-nil, zero value otherwise.
 
 ### GetSnapshotRetentionOk
 
-`func (o *Volume) GetSnapshotRetentionOk() (*int32, bool)`
+`func (o *Volume) GetSnapshotRetentionOk() (*int64, bool)`
 
 GetSnapshotRetentionOk returns a tuple with the SnapshotRetention field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetSnapshotRetention
 
-`func (o *Volume) SetSnapshotRetention(v int32)`
+`func (o *Volume) SetSnapshotRetention(v int64)`
 
 SetSnapshotRetention sets SnapshotRetention field to given value.
 

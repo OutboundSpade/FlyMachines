@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Plaintext** | Pointer to **[]int32** |  | [optional] 
-**Signature** | Pointer to **[]int32** |  | [optional] 
+**Plaintext** | Pointer to **[]int64** |  | [optional] 
+**Signature** | Pointer to **[]int64** |  | [optional] 
 
 ## Methods
 
@@ -28,20 +28,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetPlaintext
 
-`func (o *VerifySecretkeyRequest) GetPlaintext() []int32`
+`func (o *VerifySecretkeyRequest) GetPlaintext() []int64`
 
 GetPlaintext returns the Plaintext field if non-nil, zero value otherwise.
 
 ### GetPlaintextOk
 
-`func (o *VerifySecretkeyRequest) GetPlaintextOk() (*[]int32, bool)`
+`func (o *VerifySecretkeyRequest) GetPlaintextOk() (*[]int64, bool)`
 
 GetPlaintextOk returns a tuple with the Plaintext field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetPlaintext
 
-`func (o *VerifySecretkeyRequest) SetPlaintext(v []int32)`
+`func (o *VerifySecretkeyRequest) SetPlaintext(v []int64)`
 
 SetPlaintext sets Plaintext field to given value.
 
@@ -53,20 +53,20 @@ HasPlaintext returns a boolean if a field has been set.
 
 ### GetSignature
 
-`func (o *VerifySecretkeyRequest) GetSignature() []int32`
+`func (o *VerifySecretkeyRequest) GetSignature() []int64`
 
 GetSignature returns the Signature field if non-nil, zero value otherwise.
 
 ### GetSignatureOk
 
-`func (o *VerifySecretkeyRequest) GetSignatureOk() (*[]int32, bool)`
+`func (o *VerifySecretkeyRequest) GetSignatureOk() (*[]int64, bool)`
 
 GetSignatureOk returns a tuple with the Signature field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetSignature
 
-`func (o *VerifySecretkeyRequest) SetSignature(v []int32)`
+`func (o *VerifySecretkeyRequest) SetSignature(v []int64)`
 
 SetSignature sets Signature field to given value.
 

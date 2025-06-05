@@ -6,8 +6,8 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Compress** | Pointer to **bool** |  | [optional] 
 **H2Backend** | Pointer to **bool** |  | [optional] 
-**HeadersReadTimeout** | Pointer to **int32** |  | [optional] 
-**IdleTimeout** | Pointer to **int32** |  | [optional] 
+**HeadersReadTimeout** | Pointer to **int64** |  | [optional] 
+**IdleTimeout** | Pointer to **int64** |  | [optional] 
 **Response** | Pointer to [**FlyHTTPResponseOptions**](FlyHTTPResponseOptions.md) |  | [optional] 
 
 ## Methods
@@ -81,20 +81,20 @@ HasH2Backend returns a boolean if a field has been set.
 
 ### GetHeadersReadTimeout
 
-`func (o *FlyHTTPOptions) GetHeadersReadTimeout() int32`
+`func (o *FlyHTTPOptions) GetHeadersReadTimeout() int64`
 
 GetHeadersReadTimeout returns the HeadersReadTimeout field if non-nil, zero value otherwise.
 
 ### GetHeadersReadTimeoutOk
 
-`func (o *FlyHTTPOptions) GetHeadersReadTimeoutOk() (*int32, bool)`
+`func (o *FlyHTTPOptions) GetHeadersReadTimeoutOk() (*int64, bool)`
 
 GetHeadersReadTimeoutOk returns a tuple with the HeadersReadTimeout field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetHeadersReadTimeout
 
-`func (o *FlyHTTPOptions) SetHeadersReadTimeout(v int32)`
+`func (o *FlyHTTPOptions) SetHeadersReadTimeout(v int64)`
 
 SetHeadersReadTimeout sets HeadersReadTimeout field to given value.
 
@@ -106,20 +106,20 @@ HasHeadersReadTimeout returns a boolean if a field has been set.
 
 ### GetIdleTimeout
 
-`func (o *FlyHTTPOptions) GetIdleTimeout() int32`
+`func (o *FlyHTTPOptions) GetIdleTimeout() int64`
 
 GetIdleTimeout returns the IdleTimeout field if non-nil, zero value otherwise.
 
 ### GetIdleTimeoutOk
 
-`func (o *FlyHTTPOptions) GetIdleTimeoutOk() (*int32, bool)`
+`func (o *FlyHTTPOptions) GetIdleTimeoutOk() (*int64, bool)`
 
 GetIdleTimeoutOk returns a tuple with the IdleTimeout field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetIdleTimeout
 
-`func (o *FlyHTTPOptions) SetIdleTimeout(v int32)`
+`func (o *FlyHTTPOptions) SetIdleTimeout(v int64)`
 
 SetIdleTimeout sets IdleTimeout field to given value.
 

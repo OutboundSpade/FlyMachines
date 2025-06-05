@@ -5,15 +5,15 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Exec** | Pointer to [**FlyExecHealthcheck**](FlyExecHealthcheck.md) |  | [optional] 
-**FailureThreshold** | Pointer to **int32** | The number of times the check must fail before considering the container unhealthy. | [optional] 
-**GracePeriod** | Pointer to **int32** | The time in seconds to wait after a container starts before checking its health. | [optional] 
+**FailureThreshold** | Pointer to **int64** | The number of times the check must fail before considering the container unhealthy. | [optional] 
+**GracePeriod** | Pointer to **int64** | The time in seconds to wait after a container starts before checking its health. | [optional] 
 **Http** | Pointer to [**FlyHTTPHealthcheck**](FlyHTTPHealthcheck.md) |  | [optional] 
-**Interval** | Pointer to **int32** | The time in seconds between executing the defined check. | [optional] 
+**Interval** | Pointer to **int64** | The time in seconds between executing the defined check. | [optional] 
 **Kind** | Pointer to [**FlyContainerHealthcheckKind**](FlyContainerHealthcheckKind.md) | Kind of healthcheck (readiness, liveness) | [optional] 
 **Name** | Pointer to **string** | The name of the check. Must be unique within the container. | [optional] 
-**SuccessThreshold** | Pointer to **int32** | The number of times the check must succeeed before considering the container healthy. | [optional] 
+**SuccessThreshold** | Pointer to **int64** | The number of times the check must succeeed before considering the container healthy. | [optional] 
 **Tcp** | Pointer to [**FlyTCPHealthcheck**](FlyTCPHealthcheck.md) |  | [optional] 
-**Timeout** | Pointer to **int32** | The time in seconds to wait for the check to complete. | [optional] 
+**Timeout** | Pointer to **int64** | The time in seconds to wait for the check to complete. | [optional] 
 **Unhealthy** | Pointer to [**FlyUnhealthyPolicy**](FlyUnhealthyPolicy.md) | Unhealthy policy that determines what action to take if a container is deemed unhealthy | [optional] 
 
 ## Methods
@@ -62,20 +62,20 @@ HasExec returns a boolean if a field has been set.
 
 ### GetFailureThreshold
 
-`func (o *FlyContainerHealthcheck) GetFailureThreshold() int32`
+`func (o *FlyContainerHealthcheck) GetFailureThreshold() int64`
 
 GetFailureThreshold returns the FailureThreshold field if non-nil, zero value otherwise.
 
 ### GetFailureThresholdOk
 
-`func (o *FlyContainerHealthcheck) GetFailureThresholdOk() (*int32, bool)`
+`func (o *FlyContainerHealthcheck) GetFailureThresholdOk() (*int64, bool)`
 
 GetFailureThresholdOk returns a tuple with the FailureThreshold field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetFailureThreshold
 
-`func (o *FlyContainerHealthcheck) SetFailureThreshold(v int32)`
+`func (o *FlyContainerHealthcheck) SetFailureThreshold(v int64)`
 
 SetFailureThreshold sets FailureThreshold field to given value.
 
@@ -87,20 +87,20 @@ HasFailureThreshold returns a boolean if a field has been set.
 
 ### GetGracePeriod
 
-`func (o *FlyContainerHealthcheck) GetGracePeriod() int32`
+`func (o *FlyContainerHealthcheck) GetGracePeriod() int64`
 
 GetGracePeriod returns the GracePeriod field if non-nil, zero value otherwise.
 
 ### GetGracePeriodOk
 
-`func (o *FlyContainerHealthcheck) GetGracePeriodOk() (*int32, bool)`
+`func (o *FlyContainerHealthcheck) GetGracePeriodOk() (*int64, bool)`
 
 GetGracePeriodOk returns a tuple with the GracePeriod field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetGracePeriod
 
-`func (o *FlyContainerHealthcheck) SetGracePeriod(v int32)`
+`func (o *FlyContainerHealthcheck) SetGracePeriod(v int64)`
 
 SetGracePeriod sets GracePeriod field to given value.
 
@@ -137,20 +137,20 @@ HasHttp returns a boolean if a field has been set.
 
 ### GetInterval
 
-`func (o *FlyContainerHealthcheck) GetInterval() int32`
+`func (o *FlyContainerHealthcheck) GetInterval() int64`
 
 GetInterval returns the Interval field if non-nil, zero value otherwise.
 
 ### GetIntervalOk
 
-`func (o *FlyContainerHealthcheck) GetIntervalOk() (*int32, bool)`
+`func (o *FlyContainerHealthcheck) GetIntervalOk() (*int64, bool)`
 
 GetIntervalOk returns a tuple with the Interval field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetInterval
 
-`func (o *FlyContainerHealthcheck) SetInterval(v int32)`
+`func (o *FlyContainerHealthcheck) SetInterval(v int64)`
 
 SetInterval sets Interval field to given value.
 
@@ -212,20 +212,20 @@ HasName returns a boolean if a field has been set.
 
 ### GetSuccessThreshold
 
-`func (o *FlyContainerHealthcheck) GetSuccessThreshold() int32`
+`func (o *FlyContainerHealthcheck) GetSuccessThreshold() int64`
 
 GetSuccessThreshold returns the SuccessThreshold field if non-nil, zero value otherwise.
 
 ### GetSuccessThresholdOk
 
-`func (o *FlyContainerHealthcheck) GetSuccessThresholdOk() (*int32, bool)`
+`func (o *FlyContainerHealthcheck) GetSuccessThresholdOk() (*int64, bool)`
 
 GetSuccessThresholdOk returns a tuple with the SuccessThreshold field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetSuccessThreshold
 
-`func (o *FlyContainerHealthcheck) SetSuccessThreshold(v int32)`
+`func (o *FlyContainerHealthcheck) SetSuccessThreshold(v int64)`
 
 SetSuccessThreshold sets SuccessThreshold field to given value.
 
@@ -262,20 +262,20 @@ HasTcp returns a boolean if a field has been set.
 
 ### GetTimeout
 
-`func (o *FlyContainerHealthcheck) GetTimeout() int32`
+`func (o *FlyContainerHealthcheck) GetTimeout() int64`
 
 GetTimeout returns the Timeout field if non-nil, zero value otherwise.
 
 ### GetTimeoutOk
 
-`func (o *FlyContainerHealthcheck) GetTimeoutOk() (*int32, bool)`
+`func (o *FlyContainerHealthcheck) GetTimeoutOk() (*int64, bool)`
 
 GetTimeoutOk returns a tuple with the Timeout field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetTimeout
 
-`func (o *FlyContainerHealthcheck) SetTimeout(v int32)`
+`func (o *FlyContainerHealthcheck) SetTimeout(v int64)`
 
 SetTimeout sets Timeout field to given value.
 

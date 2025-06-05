@@ -24,7 +24,7 @@ type MachineExecRequest struct {
 	Command []string `json:"command,omitempty"`
 	Container *string `json:"container,omitempty"`
 	Stdin *string `json:"stdin,omitempty"`
-	Timeout *int32 `json:"timeout,omitempty"`
+	Timeout *int64 `json:"timeout,omitempty"`
 }
 
 // NewMachineExecRequest instantiates a new MachineExecRequest object
@@ -173,9 +173,9 @@ func (o *MachineExecRequest) SetStdin(v string) {
 }
 
 // GetTimeout returns the Timeout field value if set, zero value otherwise.
-func (o *MachineExecRequest) GetTimeout() int32 {
+func (o *MachineExecRequest) GetTimeout() int64 {
 	if o == nil || IsNil(o.Timeout) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.Timeout
@@ -183,7 +183,7 @@ func (o *MachineExecRequest) GetTimeout() int32 {
 
 // GetTimeoutOk returns a tuple with the Timeout field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *MachineExecRequest) GetTimeoutOk() (*int32, bool) {
+func (o *MachineExecRequest) GetTimeoutOk() (*int64, bool) {
 	if o == nil || IsNil(o.Timeout) {
 		return nil, false
 	}
@@ -199,8 +199,8 @@ func (o *MachineExecRequest) HasTimeout() bool {
 	return false
 }
 
-// SetTimeout gets a reference to the given int32 and assigns it to the Timeout field.
-func (o *MachineExecRequest) SetTimeout(v int32) {
+// SetTimeout gets a reference to the given int64 and assigns it to the Timeout field.
+func (o *MachineExecRequest) SetTimeout(v int64) {
 	o.Timeout = &v
 }
 

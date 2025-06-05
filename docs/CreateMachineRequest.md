@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Config** | Pointer to [**FlyMachineConfig**](FlyMachineConfig.md) | An object defining the Machine configuration | [optional] 
-**LeaseTtl** | Pointer to **int32** |  | [optional] 
+**LeaseTtl** | Pointer to **int64** |  | [optional] 
 **Lsvd** | Pointer to **bool** |  | [optional] 
 **Name** | Pointer to **string** | Unique name for this Machine. If omitted, one is generated for you | [optional] 
 **Region** | Pointer to **string** | The target region. Omitting this param launches in the same region as your WireGuard peer connection (somewhere near you). | [optional] 
@@ -59,20 +59,20 @@ HasConfig returns a boolean if a field has been set.
 
 ### GetLeaseTtl
 
-`func (o *CreateMachineRequest) GetLeaseTtl() int32`
+`func (o *CreateMachineRequest) GetLeaseTtl() int64`
 
 GetLeaseTtl returns the LeaseTtl field if non-nil, zero value otherwise.
 
 ### GetLeaseTtlOk
 
-`func (o *CreateMachineRequest) GetLeaseTtlOk() (*int32, bool)`
+`func (o *CreateMachineRequest) GetLeaseTtlOk() (*int64, bool)`
 
 GetLeaseTtlOk returns a tuple with the LeaseTtl field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetLeaseTtl
 
-`func (o *CreateMachineRequest) SetLeaseTtl(v int32)`
+`func (o *CreateMachineRequest) SetLeaseTtl(v int64)`
 
 SetLeaseTtl sets LeaseTtl field to given value.
 

@@ -19,8 +19,8 @@ var _ MappedNullable = &FlyMachineServiceConcurrency{}
 
 // FlyMachineServiceConcurrency struct for FlyMachineServiceConcurrency
 type FlyMachineServiceConcurrency struct {
-	HardLimit *int32 `json:"hard_limit,omitempty"`
-	SoftLimit *int32 `json:"soft_limit,omitempty"`
+	HardLimit *int64 `json:"hard_limit,omitempty"`
+	SoftLimit *int64 `json:"soft_limit,omitempty"`
 	Type *string `json:"type,omitempty"`
 }
 
@@ -42,9 +42,9 @@ func NewFlyMachineServiceConcurrencyWithDefaults() *FlyMachineServiceConcurrency
 }
 
 // GetHardLimit returns the HardLimit field value if set, zero value otherwise.
-func (o *FlyMachineServiceConcurrency) GetHardLimit() int32 {
+func (o *FlyMachineServiceConcurrency) GetHardLimit() int64 {
 	if o == nil || IsNil(o.HardLimit) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.HardLimit
@@ -52,7 +52,7 @@ func (o *FlyMachineServiceConcurrency) GetHardLimit() int32 {
 
 // GetHardLimitOk returns a tuple with the HardLimit field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *FlyMachineServiceConcurrency) GetHardLimitOk() (*int32, bool) {
+func (o *FlyMachineServiceConcurrency) GetHardLimitOk() (*int64, bool) {
 	if o == nil || IsNil(o.HardLimit) {
 		return nil, false
 	}
@@ -68,15 +68,15 @@ func (o *FlyMachineServiceConcurrency) HasHardLimit() bool {
 	return false
 }
 
-// SetHardLimit gets a reference to the given int32 and assigns it to the HardLimit field.
-func (o *FlyMachineServiceConcurrency) SetHardLimit(v int32) {
+// SetHardLimit gets a reference to the given int64 and assigns it to the HardLimit field.
+func (o *FlyMachineServiceConcurrency) SetHardLimit(v int64) {
 	o.HardLimit = &v
 }
 
 // GetSoftLimit returns the SoftLimit field value if set, zero value otherwise.
-func (o *FlyMachineServiceConcurrency) GetSoftLimit() int32 {
+func (o *FlyMachineServiceConcurrency) GetSoftLimit() int64 {
 	if o == nil || IsNil(o.SoftLimit) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.SoftLimit
@@ -84,7 +84,7 @@ func (o *FlyMachineServiceConcurrency) GetSoftLimit() int32 {
 
 // GetSoftLimitOk returns a tuple with the SoftLimit field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *FlyMachineServiceConcurrency) GetSoftLimitOk() (*int32, bool) {
+func (o *FlyMachineServiceConcurrency) GetSoftLimitOk() (*int64, bool) {
 	if o == nil || IsNil(o.SoftLimit) {
 		return nil, false
 	}
@@ -100,8 +100,8 @@ func (o *FlyMachineServiceConcurrency) HasSoftLimit() bool {
 	return false
 }
 
-// SetSoftLimit gets a reference to the given int32 and assigns it to the SoftLimit field.
-func (o *FlyMachineServiceConcurrency) SetSoftLimit(v int32) {
+// SetSoftLimit gets a reference to the given int64 and assigns it to the SoftLimit field.
+func (o *FlyMachineServiceConcurrency) SetSoftLimit(v int64) {
 	o.SoftLimit = &v
 }
 

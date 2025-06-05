@@ -26,7 +26,7 @@ type FlyHTTPHealthcheck struct {
 	// The path to send the request to
 	Path *string `json:"path,omitempty"`
 	// The port to connect to, often the same as internal_port
-	Port *int32 `json:"port,omitempty"`
+	Port *int64 `json:"port,omitempty"`
 	// Whether to use http or https
 	Scheme *FlyContainerHealthcheckScheme `json:"scheme,omitempty"`
 	// If the protocol is https, the hostname to use for TLS certificate validation
@@ -149,9 +149,9 @@ func (o *FlyHTTPHealthcheck) SetPath(v string) {
 }
 
 // GetPort returns the Port field value if set, zero value otherwise.
-func (o *FlyHTTPHealthcheck) GetPort() int32 {
+func (o *FlyHTTPHealthcheck) GetPort() int64 {
 	if o == nil || IsNil(o.Port) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.Port
@@ -159,7 +159,7 @@ func (o *FlyHTTPHealthcheck) GetPort() int32 {
 
 // GetPortOk returns a tuple with the Port field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *FlyHTTPHealthcheck) GetPortOk() (*int32, bool) {
+func (o *FlyHTTPHealthcheck) GetPortOk() (*int64, bool) {
 	if o == nil || IsNil(o.Port) {
 		return nil, false
 	}
@@ -175,8 +175,8 @@ func (o *FlyHTTPHealthcheck) HasPort() bool {
 	return false
 }
 
-// SetPort gets a reference to the given int32 and assigns it to the Port field.
-func (o *FlyHTTPHealthcheck) SetPort(v int32) {
+// SetPort gets a reference to the given int64 and assigns it to the Port field.
+func (o *FlyHTTPHealthcheck) SetPort(v int64) {
 	o.Port = &v
 }
 

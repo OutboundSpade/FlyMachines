@@ -7,6 +7,7 @@ docker run --rm -v "${PWD}:/local" openapitools/openapi-generator-cli generate \
     --package-name=machines \
     -p packageName=machines \
     --skip-validate-spec \
+    --type-mappings integer=int64 \
     --git-repo-id FlyMachines --git-user-id OutboundSpade
 
 go mod init github.com/OutboundSpade/FlyMachines

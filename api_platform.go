@@ -138,9 +138,9 @@ type ApiPlatformRegionsGetRequest struct {
 	ApiService *PlatformAPIService
 	size *string
 	cpuKind *string
-	memoryMb *int32
-	cpus *int32
-	gpus *int32
+	memoryMb *int64
+	cpus *int64
+	gpus *int64
 	gpuKind *string
 }
 
@@ -157,19 +157,19 @@ func (r ApiPlatformRegionsGetRequest) CpuKind(cpuKind string) ApiPlatformRegions
 }
 
 // guest memory in megabytes
-func (r ApiPlatformRegionsGetRequest) MemoryMb(memoryMb int32) ApiPlatformRegionsGetRequest {
+func (r ApiPlatformRegionsGetRequest) MemoryMb(memoryMb int64) ApiPlatformRegionsGetRequest {
 	r.memoryMb = &memoryMb
 	return r
 }
 
 // guest CPU count
-func (r ApiPlatformRegionsGetRequest) Cpus(cpus int32) ApiPlatformRegionsGetRequest {
+func (r ApiPlatformRegionsGetRequest) Cpus(cpus int64) ApiPlatformRegionsGetRequest {
 	r.cpus = &cpus
 	return r
 }
 
 // guest GPU count
-func (r ApiPlatformRegionsGetRequest) Gpus(gpus int32) ApiPlatformRegionsGetRequest {
+func (r ApiPlatformRegionsGetRequest) Gpus(gpus int64) ApiPlatformRegionsGetRequest {
 	r.gpus = &gpus
 	return r
 }

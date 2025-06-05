@@ -21,8 +21,8 @@ var _ MappedNullable = &FlyHTTPOptions{}
 type FlyHTTPOptions struct {
 	Compress *bool `json:"compress,omitempty"`
 	H2Backend *bool `json:"h2_backend,omitempty"`
-	HeadersReadTimeout *int32 `json:"headers_read_timeout,omitempty"`
-	IdleTimeout *int32 `json:"idle_timeout,omitempty"`
+	HeadersReadTimeout *int64 `json:"headers_read_timeout,omitempty"`
+	IdleTimeout *int64 `json:"idle_timeout,omitempty"`
 	Response *FlyHTTPResponseOptions `json:"response,omitempty"`
 }
 
@@ -108,9 +108,9 @@ func (o *FlyHTTPOptions) SetH2Backend(v bool) {
 }
 
 // GetHeadersReadTimeout returns the HeadersReadTimeout field value if set, zero value otherwise.
-func (o *FlyHTTPOptions) GetHeadersReadTimeout() int32 {
+func (o *FlyHTTPOptions) GetHeadersReadTimeout() int64 {
 	if o == nil || IsNil(o.HeadersReadTimeout) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.HeadersReadTimeout
@@ -118,7 +118,7 @@ func (o *FlyHTTPOptions) GetHeadersReadTimeout() int32 {
 
 // GetHeadersReadTimeoutOk returns a tuple with the HeadersReadTimeout field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *FlyHTTPOptions) GetHeadersReadTimeoutOk() (*int32, bool) {
+func (o *FlyHTTPOptions) GetHeadersReadTimeoutOk() (*int64, bool) {
 	if o == nil || IsNil(o.HeadersReadTimeout) {
 		return nil, false
 	}
@@ -134,15 +134,15 @@ func (o *FlyHTTPOptions) HasHeadersReadTimeout() bool {
 	return false
 }
 
-// SetHeadersReadTimeout gets a reference to the given int32 and assigns it to the HeadersReadTimeout field.
-func (o *FlyHTTPOptions) SetHeadersReadTimeout(v int32) {
+// SetHeadersReadTimeout gets a reference to the given int64 and assigns it to the HeadersReadTimeout field.
+func (o *FlyHTTPOptions) SetHeadersReadTimeout(v int64) {
 	o.HeadersReadTimeout = &v
 }
 
 // GetIdleTimeout returns the IdleTimeout field value if set, zero value otherwise.
-func (o *FlyHTTPOptions) GetIdleTimeout() int32 {
+func (o *FlyHTTPOptions) GetIdleTimeout() int64 {
 	if o == nil || IsNil(o.IdleTimeout) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.IdleTimeout
@@ -150,7 +150,7 @@ func (o *FlyHTTPOptions) GetIdleTimeout() int32 {
 
 // GetIdleTimeoutOk returns a tuple with the IdleTimeout field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *FlyHTTPOptions) GetIdleTimeoutOk() (*int32, bool) {
+func (o *FlyHTTPOptions) GetIdleTimeoutOk() (*int64, bool) {
 	if o == nil || IsNil(o.IdleTimeout) {
 		return nil, false
 	}
@@ -166,8 +166,8 @@ func (o *FlyHTTPOptions) HasIdleTimeout() bool {
 	return false
 }
 
-// SetIdleTimeout gets a reference to the given int32 and assigns it to the IdleTimeout field.
-func (o *FlyHTTPOptions) SetIdleTimeout(v int32) {
+// SetIdleTimeout gets a reference to the given int64 and assigns it to the IdleTimeout field.
+func (o *FlyHTTPOptions) SetIdleTimeout(v int64) {
 	o.IdleTimeout = &v
 }
 

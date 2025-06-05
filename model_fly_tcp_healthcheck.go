@@ -20,7 +20,7 @@ var _ MappedNullable = &FlyTCPHealthcheck{}
 // FlyTCPHealthcheck struct for FlyTCPHealthcheck
 type FlyTCPHealthcheck struct {
 	// The port to connect to, often the same as internal_port
-	Port *int32 `json:"port,omitempty"`
+	Port *int64 `json:"port,omitempty"`
 }
 
 // NewFlyTCPHealthcheck instantiates a new FlyTCPHealthcheck object
@@ -41,9 +41,9 @@ func NewFlyTCPHealthcheckWithDefaults() *FlyTCPHealthcheck {
 }
 
 // GetPort returns the Port field value if set, zero value otherwise.
-func (o *FlyTCPHealthcheck) GetPort() int32 {
+func (o *FlyTCPHealthcheck) GetPort() int64 {
 	if o == nil || IsNil(o.Port) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.Port
@@ -51,7 +51,7 @@ func (o *FlyTCPHealthcheck) GetPort() int32 {
 
 // GetPortOk returns a tuple with the Port field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *FlyTCPHealthcheck) GetPortOk() (*int32, bool) {
+func (o *FlyTCPHealthcheck) GetPortOk() (*int64, bool) {
 	if o == nil || IsNil(o.Port) {
 		return nil, false
 	}
@@ -67,8 +67,8 @@ func (o *FlyTCPHealthcheck) HasPort() bool {
 	return false
 }
 
-// SetPort gets a reference to the given int32 and assigns it to the Port field.
-func (o *FlyTCPHealthcheck) SetPort(v int32) {
+// SetPort gets a reference to the given int64 and assigns it to the Port field.
+func (o *FlyTCPHealthcheck) SetPort(v int64) {
 	o.Port = &v
 }
 

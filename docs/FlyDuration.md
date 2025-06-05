@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**TimeDuration** | Pointer to **int32** |  | [optional] 
+**TimeDuration** | Pointer to **int64** |  | [optional] 
 
 ## Methods
 
@@ -27,20 +27,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetTimeDuration
 
-`func (o *FlyDuration) GetTimeDuration() int32`
+`func (o *FlyDuration) GetTimeDuration() int64`
 
 GetTimeDuration returns the TimeDuration field if non-nil, zero value otherwise.
 
 ### GetTimeDurationOk
 
-`func (o *FlyDuration) GetTimeDurationOk() (*int32, bool)`
+`func (o *FlyDuration) GetTimeDurationOk() (*int64, bool)`
 
 GetTimeDurationOk returns a tuple with the TimeDuration field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetTimeDuration
 
-`func (o *FlyDuration) SetTimeDuration(v int32)`
+`func (o *FlyDuration) SetTimeDuration(v int64)`
 
 SetTimeDuration sets TimeDuration field to given value.
 

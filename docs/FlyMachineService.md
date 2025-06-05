@@ -10,8 +10,8 @@ Name | Type | Description | Notes
 **Concurrency** | Pointer to [**FlyMachineServiceConcurrency**](FlyMachineServiceConcurrency.md) |  | [optional] 
 **ForceInstanceDescription** | Pointer to **string** |  | [optional] 
 **ForceInstanceKey** | Pointer to **string** |  | [optional] 
-**InternalPort** | Pointer to **int32** |  | [optional] 
-**MinMachinesRunning** | Pointer to **int32** |  | [optional] 
+**InternalPort** | Pointer to **int64** |  | [optional] 
+**MinMachinesRunning** | Pointer to **int64** |  | [optional] 
 **Ports** | Pointer to [**[]FlyMachinePort**](FlyMachinePort.md) |  | [optional] 
 **Protocol** | Pointer to **string** |  | [optional] 
 
@@ -186,20 +186,20 @@ HasForceInstanceKey returns a boolean if a field has been set.
 
 ### GetInternalPort
 
-`func (o *FlyMachineService) GetInternalPort() int32`
+`func (o *FlyMachineService) GetInternalPort() int64`
 
 GetInternalPort returns the InternalPort field if non-nil, zero value otherwise.
 
 ### GetInternalPortOk
 
-`func (o *FlyMachineService) GetInternalPortOk() (*int32, bool)`
+`func (o *FlyMachineService) GetInternalPortOk() (*int64, bool)`
 
 GetInternalPortOk returns a tuple with the InternalPort field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetInternalPort
 
-`func (o *FlyMachineService) SetInternalPort(v int32)`
+`func (o *FlyMachineService) SetInternalPort(v int64)`
 
 SetInternalPort sets InternalPort field to given value.
 
@@ -211,20 +211,20 @@ HasInternalPort returns a boolean if a field has been set.
 
 ### GetMinMachinesRunning
 
-`func (o *FlyMachineService) GetMinMachinesRunning() int32`
+`func (o *FlyMachineService) GetMinMachinesRunning() int64`
 
 GetMinMachinesRunning returns the MinMachinesRunning field if non-nil, zero value otherwise.
 
 ### GetMinMachinesRunningOk
 
-`func (o *FlyMachineService) GetMinMachinesRunningOk() (*int32, bool)`
+`func (o *FlyMachineService) GetMinMachinesRunningOk() (*int64, bool)`
 
 GetMinMachinesRunningOk returns a tuple with the MinMachinesRunning field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMinMachinesRunning
 
-`func (o *FlyMachineService) SetMinMachinesRunning(v int32)`
+`func (o *FlyMachineService) SetMinMachinesRunning(v int64)`
 
 SetMinMachinesRunning sets MinMachinesRunning field to given value.
 

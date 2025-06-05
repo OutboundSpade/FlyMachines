@@ -22,7 +22,7 @@ type FlyMachineRestart struct {
 	// GPU bid price for spot Machines.
 	GpuBidPrice *float32 `json:"gpu_bid_price,omitempty"`
 	// When policy is on-failure, the maximum number of times to attempt to restart the Machine before letting it stop.
-	MaxRetries *int32 `json:"max_retries,omitempty"`
+	MaxRetries *int64 `json:"max_retries,omitempty"`
 	// * no - Never try to restart a Machine automatically when its main process exits, whether that’s on purpose or on a crash. * always - Always restart a Machine automatically and never let it enter a stopped state, even when the main process exits cleanly. * on-failure - Try up to MaxRetries times to automatically restart the Machine if it exits with a non-zero exit code. Default when no explicit policy is set, and for Machines with schedules. * spot-price - Starts the Machine only when there is capacity and the spot price is less than or equal to the bid price.
 	Policy *string `json:"policy,omitempty"`
 }
@@ -77,9 +77,9 @@ func (o *FlyMachineRestart) SetGpuBidPrice(v float32) {
 }
 
 // GetMaxRetries returns the MaxRetries field value if set, zero value otherwise.
-func (o *FlyMachineRestart) GetMaxRetries() int32 {
+func (o *FlyMachineRestart) GetMaxRetries() int64 {
 	if o == nil || IsNil(o.MaxRetries) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.MaxRetries
@@ -87,7 +87,7 @@ func (o *FlyMachineRestart) GetMaxRetries() int32 {
 
 // GetMaxRetriesOk returns a tuple with the MaxRetries field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *FlyMachineRestart) GetMaxRetriesOk() (*int32, bool) {
+func (o *FlyMachineRestart) GetMaxRetriesOk() (*int64, bool) {
 	if o == nil || IsNil(o.MaxRetries) {
 		return nil, false
 	}
@@ -103,8 +103,8 @@ func (o *FlyMachineRestart) HasMaxRetries() bool {
 	return false
 }
 
-// SetMaxRetries gets a reference to the given int32 and assigns it to the MaxRetries field.
-func (o *FlyMachineRestart) SetMaxRetries(v int32) {
+// SetMaxRetries gets a reference to the given int64 and assigns it to the MaxRetries field.
+func (o *FlyMachineRestart) SetMaxRetries(v int64) {
 	o.MaxRetries = &v
 }
 

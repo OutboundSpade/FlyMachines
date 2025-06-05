@@ -5,12 +5,12 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **CpuKind** | Pointer to **string** |  | [optional] 
-**Cpus** | Pointer to **int32** |  | [optional] 
+**Cpus** | Pointer to **int64** |  | [optional] 
 **GpuKind** | Pointer to **string** |  | [optional] 
-**Gpus** | Pointer to **int32** |  | [optional] 
+**Gpus** | Pointer to **int64** |  | [optional] 
 **HostDedicationId** | Pointer to **string** |  | [optional] 
 **KernelArgs** | Pointer to **[]string** |  | [optional] 
-**MemoryMb** | Pointer to **int32** |  | [optional] 
+**MemoryMb** | Pointer to **int64** |  | [optional] 
 
 ## Methods
 
@@ -58,20 +58,20 @@ HasCpuKind returns a boolean if a field has been set.
 
 ### GetCpus
 
-`func (o *FlyMachineGuest) GetCpus() int32`
+`func (o *FlyMachineGuest) GetCpus() int64`
 
 GetCpus returns the Cpus field if non-nil, zero value otherwise.
 
 ### GetCpusOk
 
-`func (o *FlyMachineGuest) GetCpusOk() (*int32, bool)`
+`func (o *FlyMachineGuest) GetCpusOk() (*int64, bool)`
 
 GetCpusOk returns a tuple with the Cpus field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetCpus
 
-`func (o *FlyMachineGuest) SetCpus(v int32)`
+`func (o *FlyMachineGuest) SetCpus(v int64)`
 
 SetCpus sets Cpus field to given value.
 
@@ -108,20 +108,20 @@ HasGpuKind returns a boolean if a field has been set.
 
 ### GetGpus
 
-`func (o *FlyMachineGuest) GetGpus() int32`
+`func (o *FlyMachineGuest) GetGpus() int64`
 
 GetGpus returns the Gpus field if non-nil, zero value otherwise.
 
 ### GetGpusOk
 
-`func (o *FlyMachineGuest) GetGpusOk() (*int32, bool)`
+`func (o *FlyMachineGuest) GetGpusOk() (*int64, bool)`
 
 GetGpusOk returns a tuple with the Gpus field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetGpus
 
-`func (o *FlyMachineGuest) SetGpus(v int32)`
+`func (o *FlyMachineGuest) SetGpus(v int64)`
 
 SetGpus sets Gpus field to given value.
 
@@ -183,20 +183,20 @@ HasKernelArgs returns a boolean if a field has been set.
 
 ### GetMemoryMb
 
-`func (o *FlyMachineGuest) GetMemoryMb() int32`
+`func (o *FlyMachineGuest) GetMemoryMb() int64`
 
 GetMemoryMb returns the MemoryMb field if non-nil, zero value otherwise.
 
 ### GetMemoryMbOk
 
-`func (o *FlyMachineGuest) GetMemoryMbOk() (*int32, bool)`
+`func (o *FlyMachineGuest) GetMemoryMbOk() (*int64, bool)`
 
 GetMemoryMbOk returns a tuple with the MemoryMb field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMemoryMb
 
-`func (o *FlyMachineGuest) SetMemoryMb(v int32)`
+`func (o *FlyMachineGuest) SetMemoryMb(v int64)`
 
 SetMemoryMb sets MemoryMb field to given value.
 

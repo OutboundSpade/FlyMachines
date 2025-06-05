@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **Digest** | Pointer to **string** |  | [optional] 
 **Name** | Pointer to **string** |  | [optional] 
 **Value** | Pointer to **string** |  | [optional] 
-**Version** | Pointer to **int32** |  | [optional] 
+**Version** | Pointer to **int64** |  | [optional] 
 
 ## Methods
 
@@ -105,20 +105,20 @@ HasValue returns a boolean if a field has been set.
 
 ### GetVersion
 
-`func (o *SetAppSecretResponse) GetVersion() int32`
+`func (o *SetAppSecretResponse) GetVersion() int64`
 
 GetVersion returns the Version field if non-nil, zero value otherwise.
 
 ### GetVersionOk
 
-`func (o *SetAppSecretResponse) GetVersionOk() (*int32, bool)`
+`func (o *SetAppSecretResponse) GetVersionOk() (*int64, bool)`
 
 GetVersionOk returns a tuple with the Version field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetVersion
 
-`func (o *SetAppSecretResponse) SetVersion(v int32)`
+`func (o *SetAppSecretResponse) SetVersion(v int64)`
 
 SetVersion sets Version field to given value.
 

@@ -19,7 +19,7 @@ var _ MappedNullable = &ReadsGetCapacityPerRegionRow{}
 
 // ReadsGetCapacityPerRegionRow struct for ReadsGetCapacityPerRegionRow
 type ReadsGetCapacityPerRegionRow struct {
-	Capacity *int32 `json:"capacity,omitempty"`
+	Capacity *int64 `json:"capacity,omitempty"`
 	Code *string `json:"code,omitempty"`
 	GatewayAvailable *bool `json:"gateway_available,omitempty"`
 	GeoRegion *string `json:"geo_region,omitempty"`
@@ -47,9 +47,9 @@ func NewReadsGetCapacityPerRegionRowWithDefaults() *ReadsGetCapacityPerRegionRow
 }
 
 // GetCapacity returns the Capacity field value if set, zero value otherwise.
-func (o *ReadsGetCapacityPerRegionRow) GetCapacity() int32 {
+func (o *ReadsGetCapacityPerRegionRow) GetCapacity() int64 {
 	if o == nil || IsNil(o.Capacity) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.Capacity
@@ -57,7 +57,7 @@ func (o *ReadsGetCapacityPerRegionRow) GetCapacity() int32 {
 
 // GetCapacityOk returns a tuple with the Capacity field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ReadsGetCapacityPerRegionRow) GetCapacityOk() (*int32, bool) {
+func (o *ReadsGetCapacityPerRegionRow) GetCapacityOk() (*int64, bool) {
 	if o == nil || IsNil(o.Capacity) {
 		return nil, false
 	}
@@ -73,8 +73,8 @@ func (o *ReadsGetCapacityPerRegionRow) HasCapacity() bool {
 	return false
 }
 
-// SetCapacity gets a reference to the given int32 and assigns it to the Capacity field.
-func (o *ReadsGetCapacityPerRegionRow) SetCapacity(v int32) {
+// SetCapacity gets a reference to the given int64 and assigns it to the Capacity field.
+func (o *ReadsGetCapacityPerRegionRow) SetCapacity(v int64) {
 	o.Capacity = &v
 }
 

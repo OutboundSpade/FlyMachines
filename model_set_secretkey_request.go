@@ -20,7 +20,7 @@ var _ MappedNullable = &SetSecretkeyRequest{}
 // SetSecretkeyRequest struct for SetSecretkeyRequest
 type SetSecretkeyRequest struct {
 	Type *string `json:"type,omitempty"`
-	Value []int32 `json:"value,omitempty"`
+	Value []int64 `json:"value,omitempty"`
 }
 
 // NewSetSecretkeyRequest instantiates a new SetSecretkeyRequest object
@@ -73,9 +73,9 @@ func (o *SetSecretkeyRequest) SetType(v string) {
 }
 
 // GetValue returns the Value field value if set, zero value otherwise.
-func (o *SetSecretkeyRequest) GetValue() []int32 {
+func (o *SetSecretkeyRequest) GetValue() []int64 {
 	if o == nil || IsNil(o.Value) {
-		var ret []int32
+		var ret []int64
 		return ret
 	}
 	return o.Value
@@ -83,7 +83,7 @@ func (o *SetSecretkeyRequest) GetValue() []int32 {
 
 // GetValueOk returns a tuple with the Value field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *SetSecretkeyRequest) GetValueOk() ([]int32, bool) {
+func (o *SetSecretkeyRequest) GetValueOk() ([]int64, bool) {
 	if o == nil || IsNil(o.Value) {
 		return nil, false
 	}
@@ -99,8 +99,8 @@ func (o *SetSecretkeyRequest) HasValue() bool {
 	return false
 }
 
-// SetValue gets a reference to the given []int32 and assigns it to the Value field.
-func (o *SetSecretkeyRequest) SetValue(v []int32) {
+// SetValue gets a reference to the given []int64 and assigns it to the Value field.
+func (o *SetSecretkeyRequest) SetValue(v []int64) {
 	o.Value = v
 }
 
