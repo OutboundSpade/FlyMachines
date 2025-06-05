@@ -381,7 +381,7 @@ No authorization required
 
 ## VolumesList
 
-> []Volume VolumesList(ctx, appName).Execute()
+> []Volume VolumesList(ctx, appName).Summary(summary).Execute()
 
 List Volumes
 
@@ -401,10 +401,11 @@ import (
 
 func main() {
 	appName := "appName_example" // string | Fly App Name
+	summary := true // bool | Only return summary info about volumes (omit blocks, block size, etc) (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.VolumesAPI.VolumesList(context.Background(), appName).Execute()
+	resp, r, err := apiClient.VolumesAPI.VolumesList(context.Background(), appName).Summary(summary).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `VolumesAPI.VolumesList``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -430,6 +431,7 @@ Other parameters are passed through a pointer to a apiVolumesListRequest struct 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
+ **summary** | **bool** | Only return summary info about volumes (omit blocks, block size, etc) | 
 
 ### Return type
 

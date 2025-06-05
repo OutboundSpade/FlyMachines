@@ -21,7 +21,10 @@ var _ MappedNullable = &FlyMachineConfig{}
 type FlyMachineConfig struct {
 	// Optional boolean telling the Machine to destroy itself once it’s complete (default false)
 	AutoDestroy *bool `json:"auto_destroy,omitempty"`
+	// An optional object that defines one or more named top-level checks. The key for each check is the check name.
 	Checks *map[string]FlyMachineCheck `json:"checks,omitempty"`
+	// Containers are a list of containers that will run in the machine. Currently restricted to only specific organizations.
+	Containers []FlyContainerConfig `json:"containers,omitempty"`
 	// Deprecated: use Service.Autostart instead
 	DisableMachineAutostart *bool `json:"disable_machine_autostart,omitempty"`
 	Dns *FlyDNSConfig `json:"dns,omitempty"`
@@ -34,7 +37,6 @@ type FlyMachineConfig struct {
 	Init *FlyMachineInit `json:"init,omitempty"`
 	Metadata *map[string]string `json:"metadata,omitempty"`
 	Metrics *FlyMachineMetrics `json:"metrics,omitempty"`
-	Mounts []FlyMachineMount `json:"mounts,omitempty"`
 	Processes []FlyMachineProcess `json:"processes,omitempty"`
 	Restart *FlyMachineRestart `json:"restart,omitempty"`
 	Schedule *string `json:"schedule,omitempty"`
@@ -126,6 +128,38 @@ func (o *FlyMachineConfig) HasChecks() bool {
 // SetChecks gets a reference to the given map[string]FlyMachineCheck and assigns it to the Checks field.
 func (o *FlyMachineConfig) SetChecks(v map[string]FlyMachineCheck) {
 	o.Checks = &v
+}
+
+// GetContainers returns the Containers field value if set, zero value otherwise.
+func (o *FlyMachineConfig) GetContainers() []FlyContainerConfig {
+	if o == nil || IsNil(o.Containers) {
+		var ret []FlyContainerConfig
+		return ret
+	}
+	return o.Containers
+}
+
+// GetContainersOk returns a tuple with the Containers field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *FlyMachineConfig) GetContainersOk() ([]FlyContainerConfig, bool) {
+	if o == nil || IsNil(o.Containers) {
+		return nil, false
+	}
+	return o.Containers, true
+}
+
+// HasContainers returns a boolean if a field has been set.
+func (o *FlyMachineConfig) HasContainers() bool {
+	if o != nil && !IsNil(o.Containers) {
+		return true
+	}
+
+	return false
+}
+
+// SetContainers gets a reference to the given []FlyContainerConfig and assigns it to the Containers field.
+func (o *FlyMachineConfig) SetContainers(v []FlyContainerConfig) {
+	o.Containers = v
 }
 
 // GetDisableMachineAutostart returns the DisableMachineAutostart field value if set, zero value otherwise.
@@ -416,38 +450,6 @@ func (o *FlyMachineConfig) SetMetrics(v FlyMachineMetrics) {
 	o.Metrics = &v
 }
 
-// GetMounts returns the Mounts field value if set, zero value otherwise.
-func (o *FlyMachineConfig) GetMounts() []FlyMachineMount {
-	if o == nil || IsNil(o.Mounts) {
-		var ret []FlyMachineMount
-		return ret
-	}
-	return o.Mounts
-}
-
-// GetMountsOk returns a tuple with the Mounts field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *FlyMachineConfig) GetMountsOk() ([]FlyMachineMount, bool) {
-	if o == nil || IsNil(o.Mounts) {
-		return nil, false
-	}
-	return o.Mounts, true
-}
-
-// HasMounts returns a boolean if a field has been set.
-func (o *FlyMachineConfig) HasMounts() bool {
-	if o != nil && !IsNil(o.Mounts) {
-		return true
-	}
-
-	return false
-}
-
-// SetMounts gets a reference to the given []FlyMachineMount and assigns it to the Mounts field.
-func (o *FlyMachineConfig) SetMounts(v []FlyMachineMount) {
-	o.Mounts = v
-}
-
 // GetProcesses returns the Processes field value if set, zero value otherwise.
 func (o *FlyMachineConfig) GetProcesses() []FlyMachineProcess {
 	if o == nil || IsNil(o.Processes) {
@@ -720,6 +722,9 @@ func (o FlyMachineConfig) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Checks) {
 		toSerialize["checks"] = o.Checks
 	}
+	if !IsNil(o.Containers) {
+		toSerialize["containers"] = o.Containers
+	}
 	if !IsNil(o.DisableMachineAutostart) {
 		toSerialize["disable_machine_autostart"] = o.DisableMachineAutostart
 	}
@@ -746,9 +751,6 @@ func (o FlyMachineConfig) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.Metrics) {
 		toSerialize["metrics"] = o.Metrics
-	}
-	if !IsNil(o.Mounts) {
-		toSerialize["mounts"] = o.Mounts
 	}
 	if !IsNil(o.Processes) {
 		toSerialize["processes"] = o.Processes

@@ -5,6 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **GuestPath** | Pointer to **string** | GuestPath is the path on the machine where the file will be written and must be an absolute path. For example: /full/path/to/file.json | [optional] 
+**ImageConfig** | Pointer to **string** | The name of an image to use the OCI image config as the file contents. | [optional] 
 **Mode** | Pointer to **int32** | Mode bits used to set permissions on this file as accepted by chmod(2). | [optional] 
 **RawValue** | Pointer to **string** | The base64 encoded string of the file contents. | [optional] 
 **SecretName** | Pointer to **string** | The name of the secret that contains the base64 encoded file contents. | [optional] 
@@ -52,6 +53,31 @@ SetGuestPath sets GuestPath field to given value.
 `func (o *FlyFile) HasGuestPath() bool`
 
 HasGuestPath returns a boolean if a field has been set.
+
+### GetImageConfig
+
+`func (o *FlyFile) GetImageConfig() string`
+
+GetImageConfig returns the ImageConfig field if non-nil, zero value otherwise.
+
+### GetImageConfigOk
+
+`func (o *FlyFile) GetImageConfigOk() (*string, bool)`
+
+GetImageConfigOk returns a tuple with the ImageConfig field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetImageConfig
+
+`func (o *FlyFile) SetImageConfig(v string)`
+
+SetImageConfig sets ImageConfig field to given value.
+
+### HasImageConfig
+
+`func (o *FlyFile) HasImageConfig() bool`
+
+HasImageConfig returns a boolean if a field has been set.
 
 ### GetMode
 

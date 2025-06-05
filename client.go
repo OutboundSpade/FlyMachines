@@ -53,6 +53,8 @@ type APIClient struct {
 
 	MachinesAPI *MachinesAPIService
 
+	PlatformAPI *PlatformAPIService
+
 	SecretsAPI *SecretsAPIService
 
 	TokensAPI *TokensAPIService
@@ -78,6 +80,7 @@ func NewAPIClient(cfg *Configuration) *APIClient {
 	// API Services
 	c.AppsAPI = (*AppsAPIService)(&c.common)
 	c.MachinesAPI = (*MachinesAPIService)(&c.common)
+	c.PlatformAPI = (*PlatformAPIService)(&c.common)
 	c.SecretsAPI = (*SecretsAPIService)(&c.common)
 	c.TokensAPI = (*TokensAPIService)(&c.common)
 	c.VolumesAPI = (*VolumesAPIService)(&c.common)
@@ -139,6 +142,10 @@ func typeCheckParameter(obj interface{}, expected string, name string) error {
 
 func parameterValueToString( obj interface{}, key string ) string {
 	if reflect.TypeOf(obj).Kind() != reflect.Ptr {
+		if actualObj, ok := obj.(interface{ GetActualInstanceValue() interface{} }); ok {
+			return fmt.Sprintf("%v", actualObj.GetActualInstanceValue())
+		}
+
 		return fmt.Sprintf("%v", obj)
 	}
 	var param,ok = obj.(MappedNullable)

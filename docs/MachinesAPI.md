@@ -474,7 +474,7 @@ No authorization required
 
 ## MachinesList
 
-> []Machine MachinesList(ctx, appName).IncludeDeleted(includeDeleted).Region(region).Execute()
+> []Machine MachinesList(ctx, appName).IncludeDeleted(includeDeleted).Region(region).State(state).Summary(summary).Execute()
 
 List Machines
 
@@ -496,10 +496,12 @@ func main() {
 	appName := "appName_example" // string | Fly App Name
 	includeDeleted := true // bool | Include deleted machines (optional)
 	region := "region_example" // string | Region filter (optional)
+	state := "state_example" // string | comma separated list of states to filter (created, started, stopped, suspended) (optional)
+	summary := true // bool | Only return summary info about machines (omit config, checks, events, host_status, nonce, etc.) (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.MachinesAPI.MachinesList(context.Background(), appName).IncludeDeleted(includeDeleted).Region(region).Execute()
+	resp, r, err := apiClient.MachinesAPI.MachinesList(context.Background(), appName).IncludeDeleted(includeDeleted).Region(region).State(state).Summary(summary).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `MachinesAPI.MachinesList``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -527,6 +529,8 @@ Name | Type | Description  | Notes
 
  **includeDeleted** | **bool** | Include deleted machines | 
  **region** | **string** | Region filter | 
+ **state** | **string** | comma separated list of states to filter (created, started, stopped, suspended) | 
+ **summary** | **bool** | Only return summary info about machines (omit config, checks, events, host_status, nonce, etc.) | 
 
 ### Return type
 

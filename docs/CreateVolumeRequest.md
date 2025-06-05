@@ -15,6 +15,7 @@ Name | Type | Description | Notes
 **SnapshotId** | Pointer to **string** | restore from snapshot | [optional] 
 **SnapshotRetention** | Pointer to **int32** |  | [optional] 
 **SourceVolumeId** | Pointer to **string** | fork from remote volume | [optional] 
+**UniqueZoneAppWide** | Pointer to **bool** |  | [optional] 
 
 ## Methods
 
@@ -309,6 +310,31 @@ SetSourceVolumeId sets SourceVolumeId field to given value.
 `func (o *CreateVolumeRequest) HasSourceVolumeId() bool`
 
 HasSourceVolumeId returns a boolean if a field has been set.
+
+### GetUniqueZoneAppWide
+
+`func (o *CreateVolumeRequest) GetUniqueZoneAppWide() bool`
+
+GetUniqueZoneAppWide returns the UniqueZoneAppWide field if non-nil, zero value otherwise.
+
+### GetUniqueZoneAppWideOk
+
+`func (o *CreateVolumeRequest) GetUniqueZoneAppWideOk() (*bool, bool)`
+
+GetUniqueZoneAppWideOk returns a tuple with the UniqueZoneAppWide field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetUniqueZoneAppWide
+
+`func (o *CreateVolumeRequest) SetUniqueZoneAppWide(v bool)`
+
+SetUniqueZoneAppWide sets UniqueZoneAppWide field to given value.
+
+### HasUniqueZoneAppWide
+
+`func (o *CreateVolumeRequest) HasUniqueZoneAppWide() bool`
+
+HasUniqueZoneAppWide returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

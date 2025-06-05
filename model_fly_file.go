@@ -21,6 +21,8 @@ var _ MappedNullable = &FlyFile{}
 type FlyFile struct {
 	// GuestPath is the path on the machine where the file will be written and must be an absolute path. For example: /full/path/to/file.json
 	GuestPath *string `json:"guest_path,omitempty"`
+	// The name of an image to use the OCI image config as the file contents.
+	ImageConfig *string `json:"image_config,omitempty"`
 	// Mode bits used to set permissions on this file as accepted by chmod(2).
 	Mode *int32 `json:"mode,omitempty"`
 	// The base64 encoded string of the file contents.
@@ -76,6 +78,38 @@ func (o *FlyFile) HasGuestPath() bool {
 // SetGuestPath gets a reference to the given string and assigns it to the GuestPath field.
 func (o *FlyFile) SetGuestPath(v string) {
 	o.GuestPath = &v
+}
+
+// GetImageConfig returns the ImageConfig field value if set, zero value otherwise.
+func (o *FlyFile) GetImageConfig() string {
+	if o == nil || IsNil(o.ImageConfig) {
+		var ret string
+		return ret
+	}
+	return *o.ImageConfig
+}
+
+// GetImageConfigOk returns a tuple with the ImageConfig field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *FlyFile) GetImageConfigOk() (*string, bool) {
+	if o == nil || IsNil(o.ImageConfig) {
+		return nil, false
+	}
+	return o.ImageConfig, true
+}
+
+// HasImageConfig returns a boolean if a field has been set.
+func (o *FlyFile) HasImageConfig() bool {
+	if o != nil && !IsNil(o.ImageConfig) {
+		return true
+	}
+
+	return false
+}
+
+// SetImageConfig gets a reference to the given string and assigns it to the ImageConfig field.
+func (o *FlyFile) SetImageConfig(v string) {
+	o.ImageConfig = &v
 }
 
 // GetMode returns the Mode field value if set, zero value otherwise.
@@ -186,6 +220,9 @@ func (o FlyFile) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if !IsNil(o.GuestPath) {
 		toSerialize["guest_path"] = o.GuestPath
+	}
+	if !IsNil(o.ImageConfig) {
+		toSerialize["image_config"] = o.ImageConfig
 	}
 	if !IsNil(o.Mode) {
 		toSerialize["mode"] = o.Mode

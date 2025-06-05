@@ -17,7 +17,7 @@ import (
 // checks if the FlyMachineCheck type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &FlyMachineCheck{}
 
-// FlyMachineCheck An optional object that defines one or more named checks. The key for each check is the check name.
+// FlyMachineCheck struct for FlyMachineCheck
 type FlyMachineCheck struct {
 	// The time to wait after a VM starts before checking its health
 	GracePeriod *FlyDuration `json:"grace_period,omitempty"`

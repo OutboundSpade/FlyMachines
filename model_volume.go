@@ -26,6 +26,8 @@ type Volume struct {
 	Blocks *int32 `json:"blocks,omitempty"`
 	BlocksAvail *int32 `json:"blocks_avail,omitempty"`
 	BlocksFree *int32 `json:"blocks_free,omitempty"`
+	BytesTotal *int32 `json:"bytes_total,omitempty"`
+	BytesUsed *int32 `json:"bytes_used,omitempty"`
 	CreatedAt *string `json:"created_at,omitempty"`
 	Encrypted *bool `json:"encrypted,omitempty"`
 	Fstype *string `json:"fstype,omitempty"`
@@ -278,6 +280,70 @@ func (o *Volume) HasBlocksFree() bool {
 // SetBlocksFree gets a reference to the given int32 and assigns it to the BlocksFree field.
 func (o *Volume) SetBlocksFree(v int32) {
 	o.BlocksFree = &v
+}
+
+// GetBytesTotal returns the BytesTotal field value if set, zero value otherwise.
+func (o *Volume) GetBytesTotal() int32 {
+	if o == nil || IsNil(o.BytesTotal) {
+		var ret int32
+		return ret
+	}
+	return *o.BytesTotal
+}
+
+// GetBytesTotalOk returns a tuple with the BytesTotal field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *Volume) GetBytesTotalOk() (*int32, bool) {
+	if o == nil || IsNil(o.BytesTotal) {
+		return nil, false
+	}
+	return o.BytesTotal, true
+}
+
+// HasBytesTotal returns a boolean if a field has been set.
+func (o *Volume) HasBytesTotal() bool {
+	if o != nil && !IsNil(o.BytesTotal) {
+		return true
+	}
+
+	return false
+}
+
+// SetBytesTotal gets a reference to the given int32 and assigns it to the BytesTotal field.
+func (o *Volume) SetBytesTotal(v int32) {
+	o.BytesTotal = &v
+}
+
+// GetBytesUsed returns the BytesUsed field value if set, zero value otherwise.
+func (o *Volume) GetBytesUsed() int32 {
+	if o == nil || IsNil(o.BytesUsed) {
+		var ret int32
+		return ret
+	}
+	return *o.BytesUsed
+}
+
+// GetBytesUsedOk returns a tuple with the BytesUsed field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *Volume) GetBytesUsedOk() (*int32, bool) {
+	if o == nil || IsNil(o.BytesUsed) {
+		return nil, false
+	}
+	return o.BytesUsed, true
+}
+
+// HasBytesUsed returns a boolean if a field has been set.
+func (o *Volume) HasBytesUsed() bool {
+	if o != nil && !IsNil(o.BytesUsed) {
+		return true
+	}
+
+	return false
+}
+
+// SetBytesUsed gets a reference to the given int32 and assigns it to the BytesUsed field.
+func (o *Volume) SetBytesUsed(v int32) {
+	o.BytesUsed = &v
 }
 
 // GetCreatedAt returns the CreatedAt field value if set, zero value otherwise.
@@ -662,6 +728,12 @@ func (o Volume) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.BlocksFree) {
 		toSerialize["blocks_free"] = o.BlocksFree
+	}
+	if !IsNil(o.BytesTotal) {
+		toSerialize["bytes_total"] = o.BytesTotal
+	}
+	if !IsNil(o.BytesUsed) {
+		toSerialize["bytes_used"] = o.BytesUsed
 	}
 	if !IsNil(o.CreatedAt) {
 		toSerialize["created_at"] = o.CreatedAt

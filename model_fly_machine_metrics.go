@@ -19,6 +19,7 @@ var _ MappedNullable = &FlyMachineMetrics{}
 
 // FlyMachineMetrics struct for FlyMachineMetrics
 type FlyMachineMetrics struct {
+	Https *bool `json:"https,omitempty"`
 	Path *string `json:"path,omitempty"`
 	Port *int32 `json:"port,omitempty"`
 }
@@ -38,6 +39,38 @@ func NewFlyMachineMetrics() *FlyMachineMetrics {
 func NewFlyMachineMetricsWithDefaults() *FlyMachineMetrics {
 	this := FlyMachineMetrics{}
 	return &this
+}
+
+// GetHttps returns the Https field value if set, zero value otherwise.
+func (o *FlyMachineMetrics) GetHttps() bool {
+	if o == nil || IsNil(o.Https) {
+		var ret bool
+		return ret
+	}
+	return *o.Https
+}
+
+// GetHttpsOk returns a tuple with the Https field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *FlyMachineMetrics) GetHttpsOk() (*bool, bool) {
+	if o == nil || IsNil(o.Https) {
+		return nil, false
+	}
+	return o.Https, true
+}
+
+// HasHttps returns a boolean if a field has been set.
+func (o *FlyMachineMetrics) HasHttps() bool {
+	if o != nil && !IsNil(o.Https) {
+		return true
+	}
+
+	return false
+}
+
+// SetHttps gets a reference to the given bool and assigns it to the Https field.
+func (o *FlyMachineMetrics) SetHttps(v bool) {
+	o.Https = &v
 }
 
 // GetPath returns the Path field value if set, zero value otherwise.
@@ -114,6 +147,9 @@ func (o FlyMachineMetrics) MarshalJSON() ([]byte, error) {
 
 func (o FlyMachineMetrics) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
+	if !IsNil(o.Https) {
+		toSerialize["https"] = o.Https
+	}
 	if !IsNil(o.Path) {
 		toSerialize["path"] = o.Path
 	}

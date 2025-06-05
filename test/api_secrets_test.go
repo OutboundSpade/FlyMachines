@@ -26,9 +26,13 @@ func Test_machines_SecretsAPIService(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		httpRes, err := apiClient.SecretsAPI.SecretCreate(context.Background()).Execute()
+		var appName string
+		var secretName string
+
+		resp, httpRes, err := apiClient.SecretsAPI.SecretCreate(context.Background(), appName, secretName).Execute()
 
 		require.Nil(t, err)
+		require.NotNil(t, resp)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
@@ -38,22 +42,158 @@ func Test_machines_SecretsAPIService(t *testing.T) {
 		t.Skip("skip test")  // remove to run test
 
 		var appName string
-		var secretLabel string
+		var secretName string
 
-		httpRes, err := apiClient.SecretsAPI.SecretDelete(context.Background(), appName, secretLabel).Execute()
+		httpRes, err := apiClient.SecretsAPI.SecretDelete(context.Background(), appName, secretName).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test SecretsAPIService SecretGenerate", func(t *testing.T) {
+	t.Run("Test SecretsAPIService SecretGet", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		httpRes, err := apiClient.SecretsAPI.SecretGenerate(context.Background()).Execute()
+		var appName string
+		var secretName string
+
+		resp, httpRes, err := apiClient.SecretsAPI.SecretGet(context.Background(), appName, secretName).Execute()
 
 		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test SecretsAPIService SecretkeyDecrypt", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var appName string
+		var secretName string
+
+		resp, httpRes, err := apiClient.SecretsAPI.SecretkeyDecrypt(context.Background(), appName, secretName).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test SecretsAPIService SecretkeyDelete", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var appName string
+		var secretName string
+
+		httpRes, err := apiClient.SecretsAPI.SecretkeyDelete(context.Background(), appName, secretName).Execute()
+
+		require.Nil(t, err)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test SecretsAPIService SecretkeyEncrypt", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var appName string
+		var secretName string
+
+		resp, httpRes, err := apiClient.SecretsAPI.SecretkeyEncrypt(context.Background(), appName, secretName).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test SecretsAPIService SecretkeyGenerate", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var appName string
+		var secretName string
+
+		resp, httpRes, err := apiClient.SecretsAPI.SecretkeyGenerate(context.Background(), appName, secretName).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test SecretsAPIService SecretkeyGet", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var appName string
+		var secretName string
+
+		resp, httpRes, err := apiClient.SecretsAPI.SecretkeyGet(context.Background(), appName, secretName).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test SecretsAPIService SecretkeySet", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var appName string
+		var secretName string
+
+		resp, httpRes, err := apiClient.SecretsAPI.SecretkeySet(context.Background(), appName, secretName).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test SecretsAPIService SecretkeySign", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var appName string
+		var secretName string
+
+		resp, httpRes, err := apiClient.SecretsAPI.SecretkeySign(context.Background(), appName, secretName).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test SecretsAPIService SecretkeyVerify", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var appName string
+		var secretName string
+
+		httpRes, err := apiClient.SecretsAPI.SecretkeyVerify(context.Background(), appName, secretName).Execute()
+
+		require.Nil(t, err)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test SecretsAPIService SecretkeysList", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var appName string
+
+		resp, httpRes, err := apiClient.SecretsAPI.SecretkeysList(context.Background(), appName).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
@@ -62,7 +202,9 @@ func Test_machines_SecretsAPIService(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		resp, httpRes, err := apiClient.SecretsAPI.SecretsList(context.Background()).Execute()
+		var appName string
+
+		resp, httpRes, err := apiClient.SecretsAPI.SecretsList(context.Background(), appName).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)

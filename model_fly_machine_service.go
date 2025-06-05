@@ -22,7 +22,8 @@ type FlyMachineService struct {
 	Autostart *bool `json:"autostart,omitempty"`
 	// Accepts a string (new format) or a boolean (old format). For backward compatibility with older clients, the API continues to use booleans for \"off\" and \"stop\" in responses. * \"off\" or false - Do not autostop the Machine. * \"stop\" or true - Automatically stop the Machine. * \"suspend\" - Automatically suspend the Machine, falling back to a full stop if this is not possible.
 	Autostop *string `json:"autostop,omitempty"`
-	Checks []FlyMachineCheck `json:"checks,omitempty"`
+	// An optional list of service checks
+	Checks []FlyMachineServiceCheck `json:"checks,omitempty"`
 	Concurrency *FlyMachineServiceConcurrency `json:"concurrency,omitempty"`
 	ForceInstanceDescription *string `json:"force_instance_description,omitempty"`
 	ForceInstanceKey *string `json:"force_instance_key,omitempty"`
@@ -114,9 +115,9 @@ func (o *FlyMachineService) SetAutostop(v string) {
 }
 
 // GetChecks returns the Checks field value if set, zero value otherwise.
-func (o *FlyMachineService) GetChecks() []FlyMachineCheck {
+func (o *FlyMachineService) GetChecks() []FlyMachineServiceCheck {
 	if o == nil || IsNil(o.Checks) {
-		var ret []FlyMachineCheck
+		var ret []FlyMachineServiceCheck
 		return ret
 	}
 	return o.Checks
@@ -124,7 +125,7 @@ func (o *FlyMachineService) GetChecks() []FlyMachineCheck {
 
 // GetChecksOk returns a tuple with the Checks field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *FlyMachineService) GetChecksOk() ([]FlyMachineCheck, bool) {
+func (o *FlyMachineService) GetChecksOk() ([]FlyMachineServiceCheck, bool) {
 	if o == nil || IsNil(o.Checks) {
 		return nil, false
 	}
@@ -140,8 +141,8 @@ func (o *FlyMachineService) HasChecks() bool {
 	return false
 }
 
-// SetChecks gets a reference to the given []FlyMachineCheck and assigns it to the Checks field.
-func (o *FlyMachineService) SetChecks(v []FlyMachineCheck) {
+// SetChecks gets a reference to the given []FlyMachineServiceCheck and assigns it to the Checks field.
+func (o *FlyMachineService) SetChecks(v []FlyMachineServiceCheck) {
 	o.Checks = v
 }
 

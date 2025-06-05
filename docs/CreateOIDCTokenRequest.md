@@ -5,6 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Aud** | Pointer to **string** |  | [optional] 
+**AwsPrincipalTags** | Pointer to **bool** |  | [optional] 
 
 ## Methods
 
@@ -49,6 +50,31 @@ SetAud sets Aud field to given value.
 `func (o *CreateOIDCTokenRequest) HasAud() bool`
 
 HasAud returns a boolean if a field has been set.
+
+### GetAwsPrincipalTags
+
+`func (o *CreateOIDCTokenRequest) GetAwsPrincipalTags() bool`
+
+GetAwsPrincipalTags returns the AwsPrincipalTags field if non-nil, zero value otherwise.
+
+### GetAwsPrincipalTagsOk
+
+`func (o *CreateOIDCTokenRequest) GetAwsPrincipalTagsOk() (*bool, bool)`
+
+GetAwsPrincipalTagsOk returns a tuple with the AwsPrincipalTags field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetAwsPrincipalTags
+
+`func (o *CreateOIDCTokenRequest) SetAwsPrincipalTags(v bool)`
+
+SetAwsPrincipalTags sets AwsPrincipalTags field to given value.
+
+### HasAwsPrincipalTags
+
+`func (o *CreateOIDCTokenRequest) HasAwsPrincipalTags() bool`
+
+HasAwsPrincipalTags returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

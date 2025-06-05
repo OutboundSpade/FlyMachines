@@ -576,6 +576,13 @@ type ApiVolumesListRequest struct {
 	ctx context.Context
 	ApiService *VolumesAPIService
 	appName string
+	summary *bool
+}
+
+// Only return summary info about volumes (omit blocks, block size, etc)
+func (r ApiVolumesListRequest) Summary(summary bool) ApiVolumesListRequest {
+	r.summary = &summary
+	return r
 }
 
 func (r ApiVolumesListRequest) Execute() ([]Volume, *http.Response, error) {
@@ -622,6 +629,9 @@ func (a *VolumesAPIService) VolumesListExecute(r ApiVolumesListRequest) ([]Volum
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
+	if r.summary != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "summary", r.summary, "form", "")
+	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
 

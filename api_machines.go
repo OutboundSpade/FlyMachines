@@ -712,6 +712,8 @@ type ApiMachinesListRequest struct {
 	appName string
 	includeDeleted *bool
 	region *string
+	state *string
+	summary *bool
 }
 
 // Include deleted machines
@@ -723,6 +725,18 @@ func (r ApiMachinesListRequest) IncludeDeleted(includeDeleted bool) ApiMachinesL
 // Region filter
 func (r ApiMachinesListRequest) Region(region string) ApiMachinesListRequest {
 	r.region = &region
+	return r
+}
+
+// comma separated list of states to filter (created, started, stopped, suspended)
+func (r ApiMachinesListRequest) State(state string) ApiMachinesListRequest {
+	r.state = &state
+	return r
+}
+
+// Only return summary info about machines (omit config, checks, events, host_status, nonce, etc.)
+func (r ApiMachinesListRequest) Summary(summary bool) ApiMachinesListRequest {
+	r.summary = &summary
 	return r
 }
 
@@ -775,6 +789,12 @@ func (a *MachinesAPIService) MachinesListExecute(r ApiMachinesListRequest) ([]Ma
 	}
 	if r.region != nil {
 		parameterAddToHeaderOrQuery(localVarQueryParams, "region", r.region, "form", "")
+	}
+	if r.state != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "state", r.state, "form", "")
+	}
+	if r.summary != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "summary", r.summary, "form", "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}

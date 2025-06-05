@@ -22,6 +22,8 @@ type MachineExecRequest struct {
 	// Deprecated: use Command instead
 	Cmd *string `json:"cmd,omitempty"`
 	Command []string `json:"command,omitempty"`
+	Container *string `json:"container,omitempty"`
+	Stdin *string `json:"stdin,omitempty"`
 	Timeout *int32 `json:"timeout,omitempty"`
 }
 
@@ -106,6 +108,70 @@ func (o *MachineExecRequest) SetCommand(v []string) {
 	o.Command = v
 }
 
+// GetContainer returns the Container field value if set, zero value otherwise.
+func (o *MachineExecRequest) GetContainer() string {
+	if o == nil || IsNil(o.Container) {
+		var ret string
+		return ret
+	}
+	return *o.Container
+}
+
+// GetContainerOk returns a tuple with the Container field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *MachineExecRequest) GetContainerOk() (*string, bool) {
+	if o == nil || IsNil(o.Container) {
+		return nil, false
+	}
+	return o.Container, true
+}
+
+// HasContainer returns a boolean if a field has been set.
+func (o *MachineExecRequest) HasContainer() bool {
+	if o != nil && !IsNil(o.Container) {
+		return true
+	}
+
+	return false
+}
+
+// SetContainer gets a reference to the given string and assigns it to the Container field.
+func (o *MachineExecRequest) SetContainer(v string) {
+	o.Container = &v
+}
+
+// GetStdin returns the Stdin field value if set, zero value otherwise.
+func (o *MachineExecRequest) GetStdin() string {
+	if o == nil || IsNil(o.Stdin) {
+		var ret string
+		return ret
+	}
+	return *o.Stdin
+}
+
+// GetStdinOk returns a tuple with the Stdin field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *MachineExecRequest) GetStdinOk() (*string, bool) {
+	if o == nil || IsNil(o.Stdin) {
+		return nil, false
+	}
+	return o.Stdin, true
+}
+
+// HasStdin returns a boolean if a field has been set.
+func (o *MachineExecRequest) HasStdin() bool {
+	if o != nil && !IsNil(o.Stdin) {
+		return true
+	}
+
+	return false
+}
+
+// SetStdin gets a reference to the given string and assigns it to the Stdin field.
+func (o *MachineExecRequest) SetStdin(v string) {
+	o.Stdin = &v
+}
+
 // GetTimeout returns the Timeout field value if set, zero value otherwise.
 func (o *MachineExecRequest) GetTimeout() int32 {
 	if o == nil || IsNil(o.Timeout) {
@@ -153,6 +219,12 @@ func (o MachineExecRequest) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.Command) {
 		toSerialize["command"] = o.Command
+	}
+	if !IsNil(o.Container) {
+		toSerialize["container"] = o.Container
+	}
+	if !IsNil(o.Stdin) {
+		toSerialize["stdin"] = o.Stdin
 	}
 	if !IsNil(o.Timeout) {
 		toSerialize["timeout"] = o.Timeout

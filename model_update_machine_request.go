@@ -29,6 +29,7 @@ type UpdateMachineRequest struct {
 	// The target region. Omitting this param launches in the same region as your WireGuard peer connection (somewhere near you).
 	Region *string `json:"region,omitempty"`
 	SkipLaunch *bool `json:"skip_launch,omitempty"`
+	SkipSecrets *bool `json:"skip_secrets,omitempty"`
 	SkipServiceRegistration *bool `json:"skip_service_registration,omitempty"`
 }
 
@@ -273,6 +274,38 @@ func (o *UpdateMachineRequest) SetSkipLaunch(v bool) {
 	o.SkipLaunch = &v
 }
 
+// GetSkipSecrets returns the SkipSecrets field value if set, zero value otherwise.
+func (o *UpdateMachineRequest) GetSkipSecrets() bool {
+	if o == nil || IsNil(o.SkipSecrets) {
+		var ret bool
+		return ret
+	}
+	return *o.SkipSecrets
+}
+
+// GetSkipSecretsOk returns a tuple with the SkipSecrets field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *UpdateMachineRequest) GetSkipSecretsOk() (*bool, bool) {
+	if o == nil || IsNil(o.SkipSecrets) {
+		return nil, false
+	}
+	return o.SkipSecrets, true
+}
+
+// HasSkipSecrets returns a boolean if a field has been set.
+func (o *UpdateMachineRequest) HasSkipSecrets() bool {
+	if o != nil && !IsNil(o.SkipSecrets) {
+		return true
+	}
+
+	return false
+}
+
+// SetSkipSecrets gets a reference to the given bool and assigns it to the SkipSecrets field.
+func (o *UpdateMachineRequest) SetSkipSecrets(v bool) {
+	o.SkipSecrets = &v
+}
+
 // GetSkipServiceRegistration returns the SkipServiceRegistration field value if set, zero value otherwise.
 func (o *UpdateMachineRequest) GetSkipServiceRegistration() bool {
 	if o == nil || IsNil(o.SkipServiceRegistration) {
@@ -335,6 +368,9 @@ func (o UpdateMachineRequest) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.SkipLaunch) {
 		toSerialize["skip_launch"] = o.SkipLaunch
+	}
+	if !IsNil(o.SkipSecrets) {
+		toSerialize["skip_secrets"] = o.SkipSecrets
 	}
 	if !IsNil(o.SkipServiceRegistration) {
 		toSerialize["skip_service_registration"] = o.SkipServiceRegistration

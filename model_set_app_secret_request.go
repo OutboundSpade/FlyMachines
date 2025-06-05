@@ -14,43 +14,43 @@ import (
 	"encoding/json"
 )
 
-// checks if the CreateSecretRequest type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &CreateSecretRequest{}
+// checks if the SetAppSecretRequest type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &SetAppSecretRequest{}
 
-// CreateSecretRequest struct for CreateSecretRequest
-type CreateSecretRequest struct {
-	Value []int32 `json:"value,omitempty"`
+// SetAppSecretRequest struct for SetAppSecretRequest
+type SetAppSecretRequest struct {
+	Value *string `json:"value,omitempty"`
 }
 
-// NewCreateSecretRequest instantiates a new CreateSecretRequest object
+// NewSetAppSecretRequest instantiates a new SetAppSecretRequest object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewCreateSecretRequest() *CreateSecretRequest {
-	this := CreateSecretRequest{}
+func NewSetAppSecretRequest() *SetAppSecretRequest {
+	this := SetAppSecretRequest{}
 	return &this
 }
 
-// NewCreateSecretRequestWithDefaults instantiates a new CreateSecretRequest object
+// NewSetAppSecretRequestWithDefaults instantiates a new SetAppSecretRequest object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
-func NewCreateSecretRequestWithDefaults() *CreateSecretRequest {
-	this := CreateSecretRequest{}
+func NewSetAppSecretRequestWithDefaults() *SetAppSecretRequest {
+	this := SetAppSecretRequest{}
 	return &this
 }
 
 // GetValue returns the Value field value if set, zero value otherwise.
-func (o *CreateSecretRequest) GetValue() []int32 {
+func (o *SetAppSecretRequest) GetValue() string {
 	if o == nil || IsNil(o.Value) {
-		var ret []int32
+		var ret string
 		return ret
 	}
-	return o.Value
+	return *o.Value
 }
 
 // GetValueOk returns a tuple with the Value field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *CreateSecretRequest) GetValueOk() ([]int32, bool) {
+func (o *SetAppSecretRequest) GetValueOk() (*string, bool) {
 	if o == nil || IsNil(o.Value) {
 		return nil, false
 	}
@@ -58,7 +58,7 @@ func (o *CreateSecretRequest) GetValueOk() ([]int32, bool) {
 }
 
 // HasValue returns a boolean if a field has been set.
-func (o *CreateSecretRequest) HasValue() bool {
+func (o *SetAppSecretRequest) HasValue() bool {
 	if o != nil && !IsNil(o.Value) {
 		return true
 	}
@@ -66,12 +66,12 @@ func (o *CreateSecretRequest) HasValue() bool {
 	return false
 }
 
-// SetValue gets a reference to the given []int32 and assigns it to the Value field.
-func (o *CreateSecretRequest) SetValue(v []int32) {
-	o.Value = v
+// SetValue gets a reference to the given string and assigns it to the Value field.
+func (o *SetAppSecretRequest) SetValue(v string) {
+	o.Value = &v
 }
 
-func (o CreateSecretRequest) MarshalJSON() ([]byte, error) {
+func (o SetAppSecretRequest) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
@@ -79,7 +79,7 @@ func (o CreateSecretRequest) MarshalJSON() ([]byte, error) {
 	return json.Marshal(toSerialize)
 }
 
-func (o CreateSecretRequest) ToMap() (map[string]interface{}, error) {
+func (o SetAppSecretRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if !IsNil(o.Value) {
 		toSerialize["value"] = o.Value
@@ -87,38 +87,38 @@ func (o CreateSecretRequest) ToMap() (map[string]interface{}, error) {
 	return toSerialize, nil
 }
 
-type NullableCreateSecretRequest struct {
-	value *CreateSecretRequest
+type NullableSetAppSecretRequest struct {
+	value *SetAppSecretRequest
 	isSet bool
 }
 
-func (v NullableCreateSecretRequest) Get() *CreateSecretRequest {
+func (v NullableSetAppSecretRequest) Get() *SetAppSecretRequest {
 	return v.value
 }
 
-func (v *NullableCreateSecretRequest) Set(val *CreateSecretRequest) {
+func (v *NullableSetAppSecretRequest) Set(val *SetAppSecretRequest) {
 	v.value = val
 	v.isSet = true
 }
 
-func (v NullableCreateSecretRequest) IsSet() bool {
+func (v NullableSetAppSecretRequest) IsSet() bool {
 	return v.isSet
 }
 
-func (v *NullableCreateSecretRequest) Unset() {
+func (v *NullableSetAppSecretRequest) Unset() {
 	v.value = nil
 	v.isSet = false
 }
 
-func NewNullableCreateSecretRequest(val *CreateSecretRequest) *NullableCreateSecretRequest {
-	return &NullableCreateSecretRequest{value: val, isSet: true}
+func NewNullableSetAppSecretRequest(val *SetAppSecretRequest) *NullableSetAppSecretRequest {
+	return &NullableSetAppSecretRequest{value: val, isSet: true}
 }
 
-func (v NullableCreateSecretRequest) MarshalJSON() ([]byte, error) {
+func (v NullableSetAppSecretRequest) MarshalJSON() ([]byte, error) {
 	return json.Marshal(v.value)
 }
 
-func (v *NullableCreateSecretRequest) UnmarshalJSON(src []byte) error {
+func (v *NullableSetAppSecretRequest) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }

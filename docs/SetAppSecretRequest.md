@@ -1,52 +1,52 @@
-# CreateSecretRequest
+# SetAppSecretRequest
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Value** | Pointer to **[]int32** |  | [optional] 
+**Value** | Pointer to **string** |  | [optional] 
 
 ## Methods
 
-### NewCreateSecretRequest
+### NewSetAppSecretRequest
 
-`func NewCreateSecretRequest() *CreateSecretRequest`
+`func NewSetAppSecretRequest() *SetAppSecretRequest`
 
-NewCreateSecretRequest instantiates a new CreateSecretRequest object
+NewSetAppSecretRequest instantiates a new SetAppSecretRequest object
 This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewCreateSecretRequestWithDefaults
+### NewSetAppSecretRequestWithDefaults
 
-`func NewCreateSecretRequestWithDefaults() *CreateSecretRequest`
+`func NewSetAppSecretRequestWithDefaults() *SetAppSecretRequest`
 
-NewCreateSecretRequestWithDefaults instantiates a new CreateSecretRequest object
+NewSetAppSecretRequestWithDefaults instantiates a new SetAppSecretRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
 ### GetValue
 
-`func (o *CreateSecretRequest) GetValue() []int32`
+`func (o *SetAppSecretRequest) GetValue() string`
 
 GetValue returns the Value field if non-nil, zero value otherwise.
 
 ### GetValueOk
 
-`func (o *CreateSecretRequest) GetValueOk() (*[]int32, bool)`
+`func (o *SetAppSecretRequest) GetValueOk() (*string, bool)`
 
 GetValueOk returns a tuple with the Value field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetValue
 
-`func (o *CreateSecretRequest) SetValue(v []int32)`
+`func (o *SetAppSecretRequest) SetValue(v string)`
 
 SetValue sets Value field to given value.
 
 ### HasValue
 
-`func (o *CreateSecretRequest) HasValue() bool`
+`func (o *SetAppSecretRequest) HasValue() bool`
 
 HasValue returns a boolean if a field has been set.
 

@@ -32,6 +32,7 @@ type CreateVolumeRequest struct {
 	SnapshotRetention *int32 `json:"snapshot_retention,omitempty"`
 	// fork from remote volume
 	SourceVolumeId *string `json:"source_volume_id,omitempty"`
+	UniqueZoneAppWide *bool `json:"unique_zone_app_wide,omitempty"`
 }
 
 // NewCreateVolumeRequest instantiates a new CreateVolumeRequest object
@@ -403,6 +404,38 @@ func (o *CreateVolumeRequest) SetSourceVolumeId(v string) {
 	o.SourceVolumeId = &v
 }
 
+// GetUniqueZoneAppWide returns the UniqueZoneAppWide field value if set, zero value otherwise.
+func (o *CreateVolumeRequest) GetUniqueZoneAppWide() bool {
+	if o == nil || IsNil(o.UniqueZoneAppWide) {
+		var ret bool
+		return ret
+	}
+	return *o.UniqueZoneAppWide
+}
+
+// GetUniqueZoneAppWideOk returns a tuple with the UniqueZoneAppWide field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *CreateVolumeRequest) GetUniqueZoneAppWideOk() (*bool, bool) {
+	if o == nil || IsNil(o.UniqueZoneAppWide) {
+		return nil, false
+	}
+	return o.UniqueZoneAppWide, true
+}
+
+// HasUniqueZoneAppWide returns a boolean if a field has been set.
+func (o *CreateVolumeRequest) HasUniqueZoneAppWide() bool {
+	if o != nil && !IsNil(o.UniqueZoneAppWide) {
+		return true
+	}
+
+	return false
+}
+
+// SetUniqueZoneAppWide gets a reference to the given bool and assigns it to the UniqueZoneAppWide field.
+func (o *CreateVolumeRequest) SetUniqueZoneAppWide(v bool) {
+	o.UniqueZoneAppWide = &v
+}
+
 func (o CreateVolumeRequest) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
@@ -445,6 +478,9 @@ func (o CreateVolumeRequest) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.SourceVolumeId) {
 		toSerialize["source_volume_id"] = o.SourceVolumeId
+	}
+	if !IsNil(o.UniqueZoneAppWide) {
+		toSerialize["unique_zone_app_wide"] = o.UniqueZoneAppWide
 	}
 	return toSerialize, nil
 }

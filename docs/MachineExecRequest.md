@@ -6,6 +6,8 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Cmd** | Pointer to **string** | Deprecated: use Command instead | [optional] 
 **Command** | Pointer to **[]string** |  | [optional] 
+**Container** | Pointer to **string** |  | [optional] 
+**Stdin** | Pointer to **string** |  | [optional] 
 **Timeout** | Pointer to **int32** |  | [optional] 
 
 ## Methods
@@ -76,6 +78,56 @@ SetCommand sets Command field to given value.
 `func (o *MachineExecRequest) HasCommand() bool`
 
 HasCommand returns a boolean if a field has been set.
+
+### GetContainer
+
+`func (o *MachineExecRequest) GetContainer() string`
+
+GetContainer returns the Container field if non-nil, zero value otherwise.
+
+### GetContainerOk
+
+`func (o *MachineExecRequest) GetContainerOk() (*string, bool)`
+
+GetContainerOk returns a tuple with the Container field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetContainer
+
+`func (o *MachineExecRequest) SetContainer(v string)`
+
+SetContainer sets Container field to given value.
+
+### HasContainer
+
+`func (o *MachineExecRequest) HasContainer() bool`
+
+HasContainer returns a boolean if a field has been set.
+
+### GetStdin
+
+`func (o *MachineExecRequest) GetStdin() string`
+
+GetStdin returns the Stdin field if non-nil, zero value otherwise.
+
+### GetStdinOk
+
+`func (o *MachineExecRequest) GetStdinOk() (*string, bool)`
+
+GetStdinOk returns a tuple with the Stdin field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetStdin
+
+`func (o *MachineExecRequest) SetStdin(v string)`
+
+SetStdin sets Stdin field to given value.
+
+### HasStdin
+
+`func (o *MachineExecRequest) HasStdin() bool`
+
+HasStdin returns a boolean if a field has been set.
 
 ### GetTimeout
 

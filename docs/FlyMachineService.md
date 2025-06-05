@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Autostart** | Pointer to **bool** |  | [optional] 
 **Autostop** | Pointer to **string** | Accepts a string (new format) or a boolean (old format). For backward compatibility with older clients, the API continues to use booleans for \&quot;off\&quot; and \&quot;stop\&quot; in responses. * \&quot;off\&quot; or false - Do not autostop the Machine. * \&quot;stop\&quot; or true - Automatically stop the Machine. * \&quot;suspend\&quot; - Automatically suspend the Machine, falling back to a full stop if this is not possible. | [optional] 
-**Checks** | Pointer to [**[]FlyMachineCheck**](FlyMachineCheck.md) |  | [optional] 
+**Checks** | Pointer to [**[]FlyMachineServiceCheck**](FlyMachineServiceCheck.md) | An optional list of service checks | [optional] 
 **Concurrency** | Pointer to [**FlyMachineServiceConcurrency**](FlyMachineServiceConcurrency.md) |  | [optional] 
 **ForceInstanceDescription** | Pointer to **string** |  | [optional] 
 **ForceInstanceKey** | Pointer to **string** |  | [optional] 
@@ -86,20 +86,20 @@ HasAutostop returns a boolean if a field has been set.
 
 ### GetChecks
 
-`func (o *FlyMachineService) GetChecks() []FlyMachineCheck`
+`func (o *FlyMachineService) GetChecks() []FlyMachineServiceCheck`
 
 GetChecks returns the Checks field if non-nil, zero value otherwise.
 
 ### GetChecksOk
 
-`func (o *FlyMachineService) GetChecksOk() (*[]FlyMachineCheck, bool)`
+`func (o *FlyMachineService) GetChecksOk() (*[]FlyMachineServiceCheck, bool)`
 
 GetChecksOk returns a tuple with the Checks field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetChecks
 
-`func (o *FlyMachineService) SetChecks(v []FlyMachineCheck)`
+`func (o *FlyMachineService) SetChecks(v []FlyMachineServiceCheck)`
 
 SetChecks sets Checks field to given value.
 

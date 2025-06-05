@@ -5,7 +5,8 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **AutoDestroy** | Pointer to **bool** | Optional boolean telling the Machine to destroy itself once it’s complete (default false) | [optional] 
-**Checks** | Pointer to [**map[string]FlyMachineCheck**](FlyMachineCheck.md) |  | [optional] 
+**Checks** | Pointer to [**map[string]FlyMachineCheck**](FlyMachineCheck.md) | An optional object that defines one or more named top-level checks. The key for each check is the check name. | [optional] 
+**Containers** | Pointer to [**[]FlyContainerConfig**](FlyContainerConfig.md) | Containers are a list of containers that will run in the machine. Currently restricted to only specific organizations. | [optional] 
 **DisableMachineAutostart** | Pointer to **bool** | Deprecated: use Service.Autostart instead | [optional] 
 **Dns** | Pointer to [**FlyDNSConfig**](FlyDNSConfig.md) |  | [optional] 
 **Env** | Pointer to **map[string]string** | An object filled with key/value pairs to be set as environment variables | [optional] 
@@ -15,7 +16,6 @@ Name | Type | Description | Notes
 **Init** | Pointer to [**FlyMachineInit**](FlyMachineInit.md) |  | [optional] 
 **Metadata** | Pointer to **map[string]string** |  | [optional] 
 **Metrics** | Pointer to [**FlyMachineMetrics**](FlyMachineMetrics.md) |  | [optional] 
-**Mounts** | Pointer to [**[]FlyMachineMount**](FlyMachineMount.md) |  | [optional] 
 **Processes** | Pointer to [**[]FlyMachineProcess**](FlyMachineProcess.md) |  | [optional] 
 **Restart** | Pointer to [**FlyMachineRestart**](FlyMachineRestart.md) |  | [optional] 
 **Schedule** | Pointer to **string** |  | [optional] 
@@ -93,6 +93,31 @@ SetChecks sets Checks field to given value.
 `func (o *FlyMachineConfig) HasChecks() bool`
 
 HasChecks returns a boolean if a field has been set.
+
+### GetContainers
+
+`func (o *FlyMachineConfig) GetContainers() []FlyContainerConfig`
+
+GetContainers returns the Containers field if non-nil, zero value otherwise.
+
+### GetContainersOk
+
+`func (o *FlyMachineConfig) GetContainersOk() (*[]FlyContainerConfig, bool)`
+
+GetContainersOk returns a tuple with the Containers field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetContainers
+
+`func (o *FlyMachineConfig) SetContainers(v []FlyContainerConfig)`
+
+SetContainers sets Containers field to given value.
+
+### HasContainers
+
+`func (o *FlyMachineConfig) HasContainers() bool`
+
+HasContainers returns a boolean if a field has been set.
 
 ### GetDisableMachineAutostart
 
@@ -318,31 +343,6 @@ SetMetrics sets Metrics field to given value.
 `func (o *FlyMachineConfig) HasMetrics() bool`
 
 HasMetrics returns a boolean if a field has been set.
-
-### GetMounts
-
-`func (o *FlyMachineConfig) GetMounts() []FlyMachineMount`
-
-GetMounts returns the Mounts field if non-nil, zero value otherwise.
-
-### GetMountsOk
-
-`func (o *FlyMachineConfig) GetMountsOk() (*[]FlyMachineMount, bool)`
-
-GetMountsOk returns a tuple with the Mounts field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetMounts
-
-`func (o *FlyMachineConfig) SetMounts(v []FlyMachineMount)`
-
-SetMounts sets Mounts field to given value.
-
-### HasMounts
-
-`func (o *FlyMachineConfig) HasMounts() bool`
-
-HasMounts returns a boolean if a field has been set.
 
 ### GetProcesses
 

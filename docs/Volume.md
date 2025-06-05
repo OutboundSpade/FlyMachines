@@ -11,6 +11,8 @@ Name | Type | Description | Notes
 **Blocks** | Pointer to **int32** |  | [optional] 
 **BlocksAvail** | Pointer to **int32** |  | [optional] 
 **BlocksFree** | Pointer to **int32** |  | [optional] 
+**BytesTotal** | Pointer to **int32** |  | [optional] 
+**BytesUsed** | Pointer to **int32** |  | [optional] 
 **CreatedAt** | Pointer to **string** |  | [optional] 
 **Encrypted** | Pointer to **bool** |  | [optional] 
 **Fstype** | Pointer to **string** |  | [optional] 
@@ -216,6 +218,56 @@ SetBlocksFree sets BlocksFree field to given value.
 `func (o *Volume) HasBlocksFree() bool`
 
 HasBlocksFree returns a boolean if a field has been set.
+
+### GetBytesTotal
+
+`func (o *Volume) GetBytesTotal() int32`
+
+GetBytesTotal returns the BytesTotal field if non-nil, zero value otherwise.
+
+### GetBytesTotalOk
+
+`func (o *Volume) GetBytesTotalOk() (*int32, bool)`
+
+GetBytesTotalOk returns a tuple with the BytesTotal field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetBytesTotal
+
+`func (o *Volume) SetBytesTotal(v int32)`
+
+SetBytesTotal sets BytesTotal field to given value.
+
+### HasBytesTotal
+
+`func (o *Volume) HasBytesTotal() bool`
+
+HasBytesTotal returns a boolean if a field has been set.
+
+### GetBytesUsed
+
+`func (o *Volume) GetBytesUsed() int32`
+
+GetBytesUsed returns the BytesUsed field if non-nil, zero value otherwise.
+
+### GetBytesUsedOk
+
+`func (o *Volume) GetBytesUsedOk() (*int32, bool)`
+
+GetBytesUsedOk returns a tuple with the BytesUsed field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetBytesUsed
+
+`func (o *Volume) SetBytesUsed(v int32)`
+
+SetBytesUsed sets BytesUsed field to given value.
+
+### HasBytesUsed
+
+`func (o *Volume) HasBytesUsed() bool`
+
+HasBytesUsed returns a boolean if a field has been set.
 
 ### GetCreatedAt
 

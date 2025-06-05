@@ -47,7 +47,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/ListAppsResponse'
+                $ref: "#/components/schemas/ListAppsResponse"
           description: OK
       summary: List Apps
       tags:
@@ -60,7 +60,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/CreateAppRequest'
+              $ref: "#/components/schemas/CreateAppRequest"
         description: App body
         required: true
       responses:
@@ -71,7 +71,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/ErrorResponse'
+                $ref: "#/components/schemas/ErrorResponse"
           description: Bad Request
       summary: Create App
       tags:
@@ -116,7 +116,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/App'
+                $ref: "#/components/schemas/App"
           description: OK
       summary: Get App
       tags:
@@ -151,13 +151,31 @@ paths:
         schema:
           type: string
         style: form
+      - description: "comma separated list of states to filter (created, started,\
+          \ stopped, suspended)"
+        explode: true
+        in: query
+        name: state
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: "Only return summary info about machines (omit config, checks,\
+          \ events, host_status, nonce, etc.)"
+        explode: true
+        in: query
+        name: summary
+        required: false
+        schema:
+          type: boolean
+        style: form
       responses:
         "200":
           content:
             application/json:
               schema:
                 items:
-                  $ref: '#/components/schemas/Machine'
+                  $ref: "#/components/schemas/Machine"
                 type: array
           description: OK
       summary: List Machines
@@ -182,7 +200,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/CreateMachineRequest'
+              $ref: "#/components/schemas/CreateMachineRequest"
         description: Create machine request
         required: true
       responses:
@@ -190,7 +208,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Machine'
+                $ref: "#/components/schemas/Machine"
           description: OK
       summary: Create Machine
       tags:
@@ -259,7 +277,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Machine'
+                $ref: "#/components/schemas/Machine"
           description: OK
       summary: Get Machine
       tags:
@@ -289,7 +307,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/UpdateMachineRequest'
+              $ref: "#/components/schemas/UpdateMachineRequest"
         description: Request body
         required: true
       responses:
@@ -297,13 +315,13 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Machine'
+                $ref: "#/components/schemas/Machine"
           description: OK
         "400":
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/ErrorResponse'
+                $ref: "#/components/schemas/ErrorResponse"
           description: Bad Request
       summary: Update Machine
       tags:
@@ -366,7 +384,7 @@ paths:
             application/json:
               schema:
                 items:
-                  $ref: '#/components/schemas/MachineEvent'
+                  $ref: "#/components/schemas/MachineEvent"
                 type: array
           description: OK
       summary: List Events
@@ -398,7 +416,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/MachineExecRequest'
+              $ref: "#/components/schemas/MachineExecRequest"
         description: Request body
         required: true
       responses:
@@ -406,19 +424,19 @@ paths:
           content:
             application/octet-stream:
               schema:
-                $ref: '#/components/schemas/flydv1.ExecResponse'
+                $ref: "#/components/schemas/flydv1.ExecResponse"
             application/json:
               schema:
-                $ref: '#/components/schemas/flydv1.ExecResponse'
+                $ref: "#/components/schemas/flydv1.ExecResponse"
           description: "stdout, stderr, exit code, and exit signal are returned"
         "400":
           content:
             application/octet-stream:
               schema:
-                $ref: '#/components/schemas/ErrorResponse'
+                $ref: "#/components/schemas/ErrorResponse"
             application/json:
               schema:
-                $ref: '#/components/schemas/ErrorResponse'
+                $ref: "#/components/schemas/ErrorResponse"
           description: Bad Request
       summary: Execute Command
       tags:
@@ -487,7 +505,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Lease'
+                $ref: "#/components/schemas/Lease"
           description: OK
       summary: Get Lease
       tags:
@@ -526,7 +544,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/CreateLeaseRequest'
+              $ref: "#/components/schemas/CreateLeaseRequest"
         description: Request body
         required: true
       responses:
@@ -534,7 +552,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Lease'
+                $ref: "#/components/schemas/Lease"
           description: OK
       summary: Create Lease
       tags:
@@ -648,7 +666,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/ErrorResponse'
+                $ref: "#/components/schemas/ErrorResponse"
           description: Bad Request
       summary: Update Metadata
       tags:
@@ -697,14 +715,14 @@ paths:
             application/json:
               schema:
                 items:
-                  $ref: '#/components/schemas/ProcessStat'
+                  $ref: "#/components/schemas/ProcessStat"
                 type: array
           description: OK
         "400":
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/ErrorResponse'
+                $ref: "#/components/schemas/ErrorResponse"
           description: Bad Request
       summary: List Processes
       tags:
@@ -755,7 +773,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/ErrorResponse'
+                $ref: "#/components/schemas/ErrorResponse"
           description: Bad Request
       summary: Restart Machine
       tags:
@@ -786,7 +804,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/SignalRequest'
+              $ref: "#/components/schemas/SignalRequest"
         description: Request body
         required: true
       responses:
@@ -797,7 +815,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/ErrorResponse'
+                $ref: "#/components/schemas/ErrorResponse"
           description: Bad Request
       summary: Signal Machine
       tags:
@@ -858,7 +876,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/StopRequest'
+              $ref: "#/components/schemas/StopRequest"
         description: Optional request body
         required: false
       responses:
@@ -869,7 +887,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/ErrorResponse'
+                $ref: "#/components/schemas/ErrorResponse"
           description: Bad Request
       summary: Stop Machine
       tags:
@@ -961,7 +979,7 @@ paths:
             application/json:
               schema:
                 items:
-                  $ref: '#/components/schemas/MachineVersion'
+                  $ref: "#/components/schemas/MachineVersion"
                 type: array
           description: OK
       summary: List Versions
@@ -1028,27 +1046,451 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/ErrorResponse'
+                $ref: "#/components/schemas/ErrorResponse"
           description: Bad Request
       summary: Wait for State
       tags:
       - Machines
-  /apps/{app_name}/secrets:
+  /apps/{app_name}/secretkeys:
     get:
-      operationId: Secrets_list
+      operationId: Secretkeys_list
+      parameters:
+      - description: Fly App Name
+        explode: false
+        in: path
+        name: app_name
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: Minimum secrets version to return. Returned when setting a new
+          secret
+        explode: true
+        in: query
+        name: version
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: Comma-seperated list of secret keys to list
+        explode: true
+        in: query
+        name: types
+        required: false
+        schema:
+          type: string
+        style: form
       responses:
         "200":
           content:
             application/json:
               schema:
-                items:
-                  $ref: '#/components/schemas/ListSecret'
-                type: array
+                $ref: "#/components/schemas/SecretKeys"
           description: OK
-      summary: List App secrets
+      summary: List secret keys belonging to an app
       tags:
       - Secrets
-  /apps/{app_name}/secrets/{secret_label}:
+  /apps/{app_name}/secretkeys/{secret_name}:
+    delete:
+      operationId: Secretkey_delete
+      parameters:
+      - description: Fly App Name
+        explode: false
+        in: path
+        name: app_name
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: Secret key name
+        explode: false
+        in: path
+        name: secret_name
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "204":
+          content: {}
+          description: No Content
+      summary: Delete an app's secret key
+      tags:
+      - Secrets
+    get:
+      operationId: Secretkey_get
+      parameters:
+      - description: Fly App Name
+        explode: false
+        in: path
+        name: app_name
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: Secret key name
+        explode: false
+        in: path
+        name: secret_name
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: Minimum secrets version to return. Returned when setting a new
+          secret
+        explode: true
+        in: query
+        name: version
+        required: false
+        schema:
+          type: string
+        style: form
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/SecretKey"
+          description: OK
+      summary: Get an app's secret key
+      tags:
+      - Secrets
+    post:
+      operationId: Secretkey_set
+      parameters:
+      - description: Fly App Name
+        explode: false
+        in: path
+        name: app_name
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: Secret key name
+        explode: false
+        in: path
+        name: secret_name
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/SetSecretkeyRequest"
+        description: Create secret key request
+        required: true
+      responses:
+        "201":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/SetSecretkeyResponse"
+          description: Created
+        "400":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+          description: Bad Request
+      summary: Create or update a secret key
+      tags:
+      - Secrets
+      x-codegen-request-body-name: request
+  /apps/{app_name}/secretkeys/{secret_name}/decrypt:
+    post:
+      operationId: Secretkey_decrypt
+      parameters:
+      - description: Fly App Name
+        explode: false
+        in: path
+        name: app_name
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: Secret key name
+        explode: false
+        in: path
+        name: secret_name
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: Minimum secrets version to return. Returned when setting a new
+          secret
+        explode: true
+        in: query
+        name: version
+        required: false
+        schema:
+          type: string
+        style: form
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/DecryptSecretkeyRequest"
+        description: Decrypt with secret key request
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/DecryptSecretkeyResponse"
+          description: OK
+        "400":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+          description: Bad Request
+      summary: Decrypt with a secret key
+      tags:
+      - Secrets
+      x-codegen-request-body-name: request
+  /apps/{app_name}/secretkeys/{secret_name}/encrypt:
+    post:
+      operationId: Secretkey_encrypt
+      parameters:
+      - description: Fly App Name
+        explode: false
+        in: path
+        name: app_name
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: Secret key name
+        explode: false
+        in: path
+        name: secret_name
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: Minimum secrets version to return. Returned when setting a new
+          secret
+        explode: true
+        in: query
+        name: version
+        required: false
+        schema:
+          type: string
+        style: form
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/EncryptSecretkeyRequest"
+        description: Encrypt with secret key request
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/EncryptSecretkeyResponse"
+          description: OK
+        "400":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+          description: Bad Request
+      summary: Encrypt with a secret key
+      tags:
+      - Secrets
+      x-codegen-request-body-name: request
+  /apps/{app_name}/secretkeys/{secret_name}/generate:
+    post:
+      operationId: Secretkey_generate
+      parameters:
+      - description: Fly App Name
+        explode: false
+        in: path
+        name: app_name
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: Secret key name
+        explode: false
+        in: path
+        name: secret_name
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/SetSecretkeyRequest"
+        description: generate secret key request
+        required: true
+      responses:
+        "201":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/SetSecretkeyResponse"
+          description: Created
+        "400":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+          description: Bad Request
+      summary: Generate a random secret key
+      tags:
+      - Secrets
+      x-codegen-request-body-name: request
+  /apps/{app_name}/secretkeys/{secret_name}/sign:
+    post:
+      operationId: Secretkey_sign
+      parameters:
+      - description: Fly App Name
+        explode: false
+        in: path
+        name: app_name
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: Secret key name
+        explode: false
+        in: path
+        name: secret_name
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: Minimum secrets version to return. Returned when setting a new
+          secret
+        explode: true
+        in: query
+        name: version
+        required: false
+        schema:
+          type: string
+        style: form
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/SignSecretkeyRequest"
+        description: Sign with secret key request
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/SignSecretkeyResponse"
+          description: OK
+        "400":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+          description: Bad Request
+      summary: Sign with a secret key
+      tags:
+      - Secrets
+      x-codegen-request-body-name: request
+  /apps/{app_name}/secretkeys/{secret_name}/verify:
+    post:
+      operationId: Secretkey_verify
+      parameters:
+      - description: Fly App Name
+        explode: false
+        in: path
+        name: app_name
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: Secret key name
+        explode: false
+        in: path
+        name: secret_name
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: Minimum secrets version to return. Returned when setting a new
+          secret
+        explode: true
+        in: query
+        name: version
+        required: false
+        schema:
+          type: string
+        style: form
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/VerifySecretkeyRequest"
+        description: Verify with secret key request
+        required: true
+      responses:
+        "204":
+          content: {}
+          description: No Content
+        "400":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+          description: Bad Request
+      summary: Verify with a secret key
+      tags:
+      - Secrets
+      x-codegen-request-body-name: request
+  /apps/{app_name}/secrets:
+    get:
+      operationId: Secrets_list
+      parameters:
+      - description: Fly App Name
+        explode: false
+        in: path
+        name: app_name
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: Minimum secrets version to return. Returned when setting a new
+          secret
+        explode: true
+        in: query
+        name: version
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: Show the secret values.
+        explode: true
+        in: query
+        name: show_secrets
+        required: false
+        schema:
+          type: boolean
+        style: form
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/AppSecrets"
+          description: OK
+      summary: List app secrets belonging to an app
+      tags:
+      - Secrets
+  /apps/{app_name}/secrets/{secret_name}:
     delete:
       operationId: Secret_delete
       parameters:
@@ -1060,61 +1502,110 @@ paths:
         schema:
           type: string
         style: simple
-      - description: App Secret Label
+      - description: App secret name
         explode: false
         in: path
-        name: secret_label
+        name: secret_name
         required: true
         schema:
           type: string
         style: simple
       responses:
-        "200":
+        "204":
           content: {}
-          description: OK
-      summary: Destroy Secret
+          description: No Content
+      summary: Delete an app secret
       tags:
       - Secrets
-  /apps/{app_name}/secrets/{secret_label}/type/{secret_type}:
+    get:
+      operationId: Secret_get
+      parameters:
+      - description: Fly App Name
+        explode: false
+        in: path
+        name: app_name
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: App secret name
+        explode: false
+        in: path
+        name: secret_name
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: Minimum secrets version to return. Returned when setting a new
+          secret
+        explode: true
+        in: query
+        name: version
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: Show the secret value.
+        explode: true
+        in: query
+        name: show_secrets
+        required: false
+        schema:
+          type: boolean
+        style: form
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/AppSecret"
+          description: OK
+      summary: Get an app secret
+      tags:
+      - Secrets
     post:
       operationId: Secret_create
+      parameters:
+      - description: Fly App Name
+        explode: false
+        in: path
+        name: app_name
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: App secret name
+        explode: false
+        in: path
+        name: secret_name
+        required: true
+        schema:
+          type: string
+        style: simple
       requestBody:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/CreateSecretRequest'
-        description: secret body
+              $ref: "#/components/schemas/SetAppSecretRequest"
+        description: Create app secret request
         required: true
       responses:
         "201":
-          content: {}
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/SetAppSecretResponse"
           description: Created
         "400":
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/ErrorResponse'
+                $ref: "#/components/schemas/ErrorResponse"
           description: Bad Request
-      summary: Create Secret
+      summary: Create or update Secret
       tags:
       - Secrets
       x-codegen-request-body-name: request
-  /apps/{app_name}/secrets/{secret_label}/type/{secret_type}/generate:
-    post:
-      operationId: Secret_generate
-      responses:
-        "201":
-          content: {}
-          description: Created
-        "400":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ErrorResponse'
-          description: Bad Request
-      summary: Generate Secret
-      tags:
-      - Secrets
   /apps/{app_name}/volumes:
     get:
       description: |
@@ -1129,13 +1620,22 @@ paths:
         schema:
           type: string
         style: simple
+      - description: "Only return summary info about volumes (omit blocks, block size,\
+          \ etc)"
+        explode: true
+        in: query
+        name: summary
+        required: false
+        schema:
+          type: boolean
+        style: form
       responses:
         "200":
           content:
             application/json:
               schema:
                 items:
-                  $ref: '#/components/schemas/Volume'
+                  $ref: "#/components/schemas/Volume"
                 type: array
           description: OK
       summary: List Volumes
@@ -1158,7 +1658,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/CreateVolumeRequest'
+              $ref: "#/components/schemas/CreateVolumeRequest"
         description: Request body
         required: true
       responses:
@@ -1166,7 +1666,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Volume'
+                $ref: "#/components/schemas/Volume"
           description: OK
       summary: Create Volume
       tags:
@@ -1199,7 +1699,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Volume'
+                $ref: "#/components/schemas/Volume"
           description: OK
       summary: Destroy Volume
       tags:
@@ -1230,7 +1730,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Volume'
+                $ref: "#/components/schemas/Volume"
           description: OK
       summary: Get Volume
       tags:
@@ -1260,7 +1760,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/UpdateVolumeRequest'
+              $ref: "#/components/schemas/UpdateVolumeRequest"
         description: Request body
         required: true
       responses:
@@ -1268,13 +1768,13 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Volume'
+                $ref: "#/components/schemas/Volume"
           description: OK
         "400":
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/ErrorResponse'
+                $ref: "#/components/schemas/ErrorResponse"
           description: Bad Request
       summary: Update Volume
       tags:
@@ -1306,7 +1806,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/ExtendVolumeRequest'
+              $ref: "#/components/schemas/ExtendVolumeRequest"
         description: Request body
         required: true
       responses:
@@ -1314,7 +1814,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/ExtendVolumeResponse'
+                $ref: "#/components/schemas/ExtendVolumeResponse"
           description: OK
       summary: Extend Volume
       tags:
@@ -1348,7 +1848,7 @@ paths:
             application/json:
               schema:
                 items:
-                  $ref: '#/components/schemas/VolumeSnapshot'
+                  $ref: "#/components/schemas/VolumeSnapshot"
                 type: array
           description: OK
       summary: List Snapshots
@@ -1382,6 +1882,92 @@ paths:
       summary: Create Snapshot
       tags:
       - Volumes
+  /platform/placements:
+    post:
+      description: "Simulates placing the specified number of machines into regions,\
+        \ depending on available capacity and limits."
+      operationId: Platform_placements_post
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/main.getPlacementsRequest"
+        description: Get placements request
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/main.getPlacementsResponse"
+          description: OK
+      summary: Get Placements
+      tags:
+      - Platform
+      x-codegen-request-body-name: request
+  /platform/regions:
+    get:
+      description: List all regions on the platform with their current Machine capacity.
+      operationId: Platform_regions_get
+      parameters:
+      - description: guest machine size preset. default performance-1x
+        explode: true
+        in: query
+        name: size
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: guest CPU kind
+        explode: true
+        in: query
+        name: cpu_kind
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: guest memory in megabytes
+        explode: true
+        in: query
+        name: memory_mb
+        required: false
+        schema:
+          type: integer
+        style: form
+      - description: guest CPU count
+        explode: true
+        in: query
+        name: cpus
+        required: false
+        schema:
+          type: integer
+        style: form
+      - description: guest GPU count
+        explode: true
+        in: query
+        name: gpus
+        required: false
+        schema:
+          type: integer
+        style: form
+      - description: guest GPU kind
+        explode: true
+        in: query
+        name: gpu_kind
+        required: false
+        schema:
+          type: string
+        style: form
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/main.regionResponse"
+          description: OK
+      summary: Get Regions
+      tags:
+      - Platform
   /tokens/kms:
     post:
       description: "This site hosts documentation generated from the Fly.io Machines\
@@ -1407,7 +1993,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/CreateOIDCTokenRequest'
+              $ref: "#/components/schemas/CreateOIDCTokenRequest"
         description: Optional request body
         required: true
       responses:
@@ -1421,7 +2007,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/ErrorResponse'
+                $ref: "#/components/schemas/ErrorResponse"
           description: Bad Request
       summary: Request an OIDC token
       tags:
@@ -1443,9 +2029,37 @@ components:
         name:
           type: string
         organization:
-          $ref: '#/components/schemas/Organization'
+          $ref: "#/components/schemas/Organization"
         status:
           type: string
+      type: object
+    AppSecret:
+      example:
+        digest: digest
+        name: name
+        value: value
+      properties:
+        digest:
+          type: string
+        name:
+          type: string
+        value:
+          type: string
+      type: object
+    AppSecrets:
+      example:
+        secrets:
+        - digest: digest
+          name: name
+          value: value
+        - digest: digest
+          name: name
+          value: value
+      properties:
+        secrets:
+          items:
+            $ref: "#/components/schemas/AppSecret"
+          type: array
       type: object
     CheckStatus:
       example:
@@ -1492,6 +2106,7 @@ components:
       type: object
     CreateMachineRequest:
       example:
+        skip_secrets: true
         skip_service_registration: true
         lsvd: true
         name: name
@@ -1502,7 +2117,7 @@ components:
       properties:
         config:
           allOf:
-          - $ref: '#/components/schemas/fly.MachineConfig'
+          - $ref: "#/components/schemas/fly.MachineConfig"
           description: An object defining the Machine configuration
           type: object
         lease_ttl:
@@ -1519,6 +2134,8 @@ components:
           type: string
         skip_launch:
           type: boolean
+        skip_secrets:
+          type: boolean
         skip_service_registration:
           type: boolean
       type: object
@@ -1526,31 +2143,23 @@ components:
       description: Optional parameters
       example:
         aud: https://fly.io/org-slug
+        aws_principal_tags: true
       properties:
         aud:
           example: https://fly.io/org-slug
           type: string
-      type: object
-    CreateSecretRequest:
-      example:
-        value:
-        - 0
-        - 0
-      properties:
-        value:
-          items:
-            type: integer
-          type: array
+        aws_principal_tags:
+          type: boolean
       type: object
     CreateVolumeRequest:
       example:
         compute:
           gpu_kind: gpu_kind
-          cpus: 1
+          cpus: 2
           host_dedication_id: host_dedication_id
-          gpus: 5
+          gpus: 4
           cpu_kind: cpu_kind
-          memory_mb: 5
+          memory_mb: 7
           kernel_args:
           - kernel_args
           - kernel_args
@@ -1559,6 +2168,7 @@ components:
         snapshot_id: snapshot_id
         name: name
         size_gb: 0
+        unique_zone_app_wide: true
         compute_image: compute_image
         region: region
         snapshot_retention: 6
@@ -1566,7 +2176,7 @@ components:
         source_volume_id: source_volume_id
       properties:
         compute:
-          $ref: '#/components/schemas/fly.MachineGuest'
+          $ref: "#/components/schemas/fly.MachineGuest"
         compute_image:
           type: string
         encrypted:
@@ -1589,6 +2199,66 @@ components:
         source_volume_id:
           description: fork from remote volume
           type: string
+        unique_zone_app_wide:
+          type: boolean
+      type: object
+    DecryptSecretkeyRequest:
+      example:
+        associated_data:
+        - 0
+        - 0
+        ciphertext:
+        - 6
+        - 6
+      properties:
+        associated_data:
+          items:
+            type: integer
+          type: array
+        ciphertext:
+          items:
+            type: integer
+          type: array
+      type: object
+    DecryptSecretkeyResponse:
+      example:
+        plaintext:
+        - 0
+        - 0
+      properties:
+        plaintext:
+          items:
+            type: integer
+          type: array
+      type: object
+    EncryptSecretkeyRequest:
+      example:
+        associated_data:
+        - 0
+        - 0
+        plaintext:
+        - 6
+        - 6
+      properties:
+        associated_data:
+          items:
+            type: integer
+          type: array
+        plaintext:
+          items:
+            type: integer
+          type: array
+      type: object
+    EncryptSecretkeyResponse:
+      example:
+        ciphertext:
+        - 0
+        - 0
+      properties:
+        ciphertext:
+          items:
+            type: integer
+          type: array
       type: object
     ErrorResponse:
       example:
@@ -1602,7 +2272,7 @@ components:
         error:
           type: string
         status:
-          $ref: '#/components/schemas/main.statusCode'
+          $ref: "#/components/schemas/main.statusCode"
       type: object
     ExtendVolumeRequest:
       example:
@@ -1618,14 +2288,16 @@ components:
           blocks: 6
           attached_machine_id: attached_machine_id
           created_at: created_at
-          snapshot_retention: 2
+          bytes_total: 5
+          snapshot_retention: 9
           host_status: ok
           blocks_free: 5
+          bytes_used: 2
           encrypted: true
           zone: zone
           blocks_avail: 1
           name: name
-          size_gb: 5
+          size_gb: 7
           attached_alloc_id: attached_alloc_id
           id: id
           state: state
@@ -1637,7 +2309,7 @@ components:
         needs_restart:
           type: boolean
         volume:
-          $ref: '#/components/schemas/Volume'
+          $ref: "#/components/schemas/Volume"
       type: object
     ImageRef:
       example:
@@ -1718,27 +2390,10 @@ components:
       properties:
         apps:
           items:
-            $ref: '#/components/schemas/ListApp'
+            $ref: "#/components/schemas/ListApp"
           type: array
         total_apps:
           type: integer
-      type: object
-    ListSecret:
-      example:
-        publickey:
-        - 0
-        - 0
-        label: label
-        type: type
-      properties:
-        label:
-          type: string
-        publickey:
-          items:
-            type: integer
-          type: array
-        type:
-          type: string
       type: object
     ListenSocket:
       example:
@@ -1784,7 +2439,7 @@ components:
             entrypoint:
             - entrypoint
             - entrypoint
-            swap_size_mb: 2
+            swap_size_mb: 1
             tty: true
             cmd:
             - cmd
@@ -1845,8 +2500,8 @@ components:
             - exec
             - exec
           restart:
-            max_retries: 1
-            gpu_bid_price: 7.386281948385884
+            max_retries: 6
+            gpu_bid_price: 1.4894159098541704
             policy: "no"
           auto_destroy: true
           dns:
@@ -1869,25 +2524,8 @@ components:
               addr: addr
             - basename: basename
               addr: addr
-          mounts:
-          - volume: volume
-            path: path
-            encrypted: true
-            size_gb_limit: 4
-            extend_threshold_percent: 3
-            name: name
-            add_size_gb: 9
-            size_gb: 2
-          - volume: volume
-            path: path
-            encrypted: true
-            size_gb_limit: 4
-            extend_threshold_percent: 3
-            name: name
-            add_size_gb: 9
-            size_gb: 2
           services:
-          - min_machines_running: 7
+          - min_machines_running: 9
             protocol: protocol
             checks:
             - headers:
@@ -1902,8 +2540,7 @@ components:
               path: path
               protocol: protocol
               method: method
-              port: 0
-              kind: informational
+              port: 7
               tls_server_name: tls_server_name
               interval: "{}"
               tls_skip_verify: true
@@ -1922,8 +2559,7 @@ components:
               path: path
               protocol: protocol
               method: method
-              port: 0
-              kind: informational
+              port: 7
               tls_server_name: tls_server_name
               interval: "{}"
               tls_skip_verify: true
@@ -1932,14 +2568,14 @@ components:
               timeout: "{}"
             force_instance_key: force_instance_key
             autostart: true
-            internal_port: 6
+            internal_port: 5
             ports:
             - force_https: true
               port: 9
               handlers:
               - handlers
               - handlers
-              start_port: 9
+              start_port: 6
               tls_options:
                 alpn:
                 - alpn
@@ -1950,22 +2586,22 @@ components:
                 - versions
               proxy_proto_options:
                 version: version
-              end_port: 1
+              end_port: 9
               http_options:
-                headers_read_timeout: 4
+                headers_read_timeout: 6
                 compress: true
                 response:
                   headers:
                     key: "{}"
                   pristine: true
-                idle_timeout: 5
+                idle_timeout: 8
                 h2_backend: true
             - force_https: true
               port: 9
               handlers:
               - handlers
               - handlers
-              start_port: 9
+              start_port: 6
               tls_options:
                 alpn:
                 - alpn
@@ -1976,23 +2612,23 @@ components:
                 - versions
               proxy_proto_options:
                 version: version
-              end_port: 1
+              end_port: 9
               http_options:
-                headers_read_timeout: 4
+                headers_read_timeout: 6
                 compress: true
                 response:
                   headers:
                     key: "{}"
                   pristine: true
-                idle_timeout: 5
+                idle_timeout: 8
                 h2_backend: true
             force_instance_description: force_instance_description
             autostop: "off"
             concurrency:
-              soft_limit: 1
+              soft_limit: 4
               type: type
               hard_limit: 1
-          - min_machines_running: 7
+          - min_machines_running: 9
             protocol: protocol
             checks:
             - headers:
@@ -2007,8 +2643,7 @@ components:
               path: path
               protocol: protocol
               method: method
-              port: 0
-              kind: informational
+              port: 7
               tls_server_name: tls_server_name
               interval: "{}"
               tls_skip_verify: true
@@ -2027,8 +2662,7 @@ components:
               path: path
               protocol: protocol
               method: method
-              port: 0
-              kind: informational
+              port: 7
               tls_server_name: tls_server_name
               interval: "{}"
               tls_skip_verify: true
@@ -2037,14 +2671,14 @@ components:
               timeout: "{}"
             force_instance_key: force_instance_key
             autostart: true
-            internal_port: 6
+            internal_port: 5
             ports:
             - force_https: true
               port: 9
               handlers:
               - handlers
               - handlers
-              start_port: 9
+              start_port: 6
               tls_options:
                 alpn:
                 - alpn
@@ -2055,22 +2689,22 @@ components:
                 - versions
               proxy_proto_options:
                 version: version
-              end_port: 1
+              end_port: 9
               http_options:
-                headers_read_timeout: 4
+                headers_read_timeout: 6
                 compress: true
                 response:
                   headers:
                     key: "{}"
                   pristine: true
-                idle_timeout: 5
+                idle_timeout: 8
                 h2_backend: true
             - force_https: true
               port: 9
               handlers:
               - handlers
               - handlers
-              start_port: 9
+              start_port: 6
               tls_options:
                 alpn:
                 - alpn
@@ -2081,20 +2715,20 @@ components:
                 - versions
               proxy_proto_options:
                 version: version
-              end_port: 1
+              end_port: 9
               http_options:
-                headers_read_timeout: 4
+                headers_read_timeout: 6
                 compress: true
                 response:
                   headers:
                     key: "{}"
                   pristine: true
-                idle_timeout: 5
+                idle_timeout: 8
                 h2_backend: true
             force_instance_description: force_instance_description
             autostop: "off"
             concurrency:
-              soft_limit: 1
+              soft_limit: 4
               type: type
               hard_limit: 1
           env:
@@ -2136,52 +2770,262 @@ components:
           - mode: 6
             secret_name: secret_name
             raw_value: raw_value
+            image_config: image_config
             guest_path: guest_path
           - mode: 6
             secret_name: secret_name
             raw_value: raw_value
+            image_config: image_config
             guest_path: guest_path
+          containers:
+          - image: image
+            depends_on:
+            - condition: "{}"
+              name: name
+            - condition: "{}"
+              name: name
+            restart: "{}"
+            healthchecks:
+            - tcp:
+                port: 9
+              kind: "{}"
+              unhealthy: "{}"
+              failure_threshold: 1
+              name: name
+              http:
+                headers:
+                - values:
+                  - values
+                  - values
+                  name: name
+                - values:
+                  - values
+                  - values
+                  name: name
+                path: path
+                method: method
+                scheme: "{}"
+                port: 5
+                tls_server_name: tls_server_name
+                tls_skip_verify: true
+              success_threshold: 7
+              interval: 2
+              exec:
+                command:
+                - command
+                - command
+              grace_period: 5
+              timeout: 3
+            - tcp:
+                port: 9
+              kind: "{}"
+              unhealthy: "{}"
+              failure_threshold: 1
+              name: name
+              http:
+                headers:
+                - values:
+                  - values
+                  - values
+                  name: name
+                - values:
+                  - values
+                  - values
+                  name: name
+                path: path
+                method: method
+                scheme: "{}"
+                port: 5
+                tls_server_name: tls_server_name
+                tls_skip_verify: true
+              success_threshold: 7
+              interval: 2
+              exec:
+                command:
+                - command
+                - command
+              grace_period: 5
+              timeout: 3
+            env:
+              key: env
+            secrets:
+            - env_var: env_var
+              name: name
+            - env_var: env_var
+              name: name
+            stop: "{}"
+            entrypoint:
+            - entrypoint
+            - entrypoint
+            env_from:
+            - field_ref: id
+              env_var: env_var
+            - field_ref: id
+              env_var: env_var
+            name: name
+            files:
+            - mode: 6
+              secret_name: secret_name
+              raw_value: raw_value
+              image_config: image_config
+              guest_path: guest_path
+            - mode: 6
+              secret_name: secret_name
+              raw_value: raw_value
+              image_config: image_config
+              guest_path: guest_path
+            cmd:
+            - cmd
+            - cmd
+            user: user
+            exec:
+            - exec
+            - exec
+          - image: image
+            depends_on:
+            - condition: "{}"
+              name: name
+            - condition: "{}"
+              name: name
+            restart: "{}"
+            healthchecks:
+            - tcp:
+                port: 9
+              kind: "{}"
+              unhealthy: "{}"
+              failure_threshold: 1
+              name: name
+              http:
+                headers:
+                - values:
+                  - values
+                  - values
+                  name: name
+                - values:
+                  - values
+                  - values
+                  name: name
+                path: path
+                method: method
+                scheme: "{}"
+                port: 5
+                tls_server_name: tls_server_name
+                tls_skip_verify: true
+              success_threshold: 7
+              interval: 2
+              exec:
+                command:
+                - command
+                - command
+              grace_period: 5
+              timeout: 3
+            - tcp:
+                port: 9
+              kind: "{}"
+              unhealthy: "{}"
+              failure_threshold: 1
+              name: name
+              http:
+                headers:
+                - values:
+                  - values
+                  - values
+                  name: name
+                - values:
+                  - values
+                  - values
+                  name: name
+                path: path
+                method: method
+                scheme: "{}"
+                port: 5
+                tls_server_name: tls_server_name
+                tls_skip_verify: true
+              success_threshold: 7
+              interval: 2
+              exec:
+                command:
+                - command
+                - command
+              grace_period: 5
+              timeout: 3
+            env:
+              key: env
+            secrets:
+            - env_var: env_var
+              name: name
+            - env_var: env_var
+              name: name
+            stop: "{}"
+            entrypoint:
+            - entrypoint
+            - entrypoint
+            env_from:
+            - field_ref: id
+              env_var: env_var
+            - field_ref: id
+              env_var: env_var
+            name: name
+            files:
+            - mode: 6
+              secret_name: secret_name
+              raw_value: raw_value
+              image_config: image_config
+              guest_path: guest_path
+            - mode: 6
+              secret_name: secret_name
+              raw_value: raw_value
+              image_config: image_config
+              guest_path: guest_path
+            cmd:
+            - cmd
+            - cmd
+            user: user
+            exec:
+            - exec
+            - exec
           guest:
             gpu_kind: gpu_kind
-            cpus: 1
+            cpus: 2
             host_dedication_id: host_dedication_id
-            gpus: 5
+            gpus: 4
             cpu_kind: cpu_kind
-            memory_mb: 5
+            memory_mb: 7
             kernel_args:
             - kernel_args
             - kernel_args
           disable_machine_autostart: true
           metrics:
             path: path
-            port: 7
+            port: 1
+            https: true
           standbys:
           - standbys
           - standbys
           stop_config:
             signal: signal
             timeout:
-              time.Duration: 6
+              time.Duration: 3
         events:
         - request: "{}"
           id: id
           source: source
           type: type
           status: status
-          timestamp: 8
+          timestamp: 6
         - request: "{}"
           id: id
           source: source
           type: type
           status: status
-          timestamp: 8
+          timestamp: 6
         incomplete_config:
           image: image
           init:
             entrypoint:
             - entrypoint
             - entrypoint
-            swap_size_mb: 2
+            swap_size_mb: 1
             tty: true
             cmd:
             - cmd
@@ -2242,8 +3086,8 @@ components:
             - exec
             - exec
           restart:
-            max_retries: 1
-            gpu_bid_price: 7.386281948385884
+            max_retries: 6
+            gpu_bid_price: 1.4894159098541704
             policy: "no"
           auto_destroy: true
           dns:
@@ -2266,25 +3110,8 @@ components:
               addr: addr
             - basename: basename
               addr: addr
-          mounts:
-          - volume: volume
-            path: path
-            encrypted: true
-            size_gb_limit: 4
-            extend_threshold_percent: 3
-            name: name
-            add_size_gb: 9
-            size_gb: 2
-          - volume: volume
-            path: path
-            encrypted: true
-            size_gb_limit: 4
-            extend_threshold_percent: 3
-            name: name
-            add_size_gb: 9
-            size_gb: 2
           services:
-          - min_machines_running: 7
+          - min_machines_running: 9
             protocol: protocol
             checks:
             - headers:
@@ -2299,8 +3126,7 @@ components:
               path: path
               protocol: protocol
               method: method
-              port: 0
-              kind: informational
+              port: 7
               tls_server_name: tls_server_name
               interval: "{}"
               tls_skip_verify: true
@@ -2319,8 +3145,7 @@ components:
               path: path
               protocol: protocol
               method: method
-              port: 0
-              kind: informational
+              port: 7
               tls_server_name: tls_server_name
               interval: "{}"
               tls_skip_verify: true
@@ -2329,14 +3154,14 @@ components:
               timeout: "{}"
             force_instance_key: force_instance_key
             autostart: true
-            internal_port: 6
+            internal_port: 5
             ports:
             - force_https: true
               port: 9
               handlers:
               - handlers
               - handlers
-              start_port: 9
+              start_port: 6
               tls_options:
                 alpn:
                 - alpn
@@ -2347,22 +3172,22 @@ components:
                 - versions
               proxy_proto_options:
                 version: version
-              end_port: 1
+              end_port: 9
               http_options:
-                headers_read_timeout: 4
+                headers_read_timeout: 6
                 compress: true
                 response:
                   headers:
                     key: "{}"
                   pristine: true
-                idle_timeout: 5
+                idle_timeout: 8
                 h2_backend: true
             - force_https: true
               port: 9
               handlers:
               - handlers
               - handlers
-              start_port: 9
+              start_port: 6
               tls_options:
                 alpn:
                 - alpn
@@ -2373,23 +3198,23 @@ components:
                 - versions
               proxy_proto_options:
                 version: version
-              end_port: 1
+              end_port: 9
               http_options:
-                headers_read_timeout: 4
+                headers_read_timeout: 6
                 compress: true
                 response:
                   headers:
                     key: "{}"
                   pristine: true
-                idle_timeout: 5
+                idle_timeout: 8
                 h2_backend: true
             force_instance_description: force_instance_description
             autostop: "off"
             concurrency:
-              soft_limit: 1
+              soft_limit: 4
               type: type
               hard_limit: 1
-          - min_machines_running: 7
+          - min_machines_running: 9
             protocol: protocol
             checks:
             - headers:
@@ -2404,8 +3229,7 @@ components:
               path: path
               protocol: protocol
               method: method
-              port: 0
-              kind: informational
+              port: 7
               tls_server_name: tls_server_name
               interval: "{}"
               tls_skip_verify: true
@@ -2424,8 +3248,7 @@ components:
               path: path
               protocol: protocol
               method: method
-              port: 0
-              kind: informational
+              port: 7
               tls_server_name: tls_server_name
               interval: "{}"
               tls_skip_verify: true
@@ -2434,14 +3257,14 @@ components:
               timeout: "{}"
             force_instance_key: force_instance_key
             autostart: true
-            internal_port: 6
+            internal_port: 5
             ports:
             - force_https: true
               port: 9
               handlers:
               - handlers
               - handlers
-              start_port: 9
+              start_port: 6
               tls_options:
                 alpn:
                 - alpn
@@ -2452,22 +3275,22 @@ components:
                 - versions
               proxy_proto_options:
                 version: version
-              end_port: 1
+              end_port: 9
               http_options:
-                headers_read_timeout: 4
+                headers_read_timeout: 6
                 compress: true
                 response:
                   headers:
                     key: "{}"
                   pristine: true
-                idle_timeout: 5
+                idle_timeout: 8
                 h2_backend: true
             - force_https: true
               port: 9
               handlers:
               - handlers
               - handlers
-              start_port: 9
+              start_port: 6
               tls_options:
                 alpn:
                 - alpn
@@ -2478,20 +3301,20 @@ components:
                 - versions
               proxy_proto_options:
                 version: version
-              end_port: 1
+              end_port: 9
               http_options:
-                headers_read_timeout: 4
+                headers_read_timeout: 6
                 compress: true
                 response:
                   headers:
                     key: "{}"
                   pristine: true
-                idle_timeout: 5
+                idle_timeout: 8
                 h2_backend: true
             force_instance_description: force_instance_description
             autostop: "off"
             concurrency:
-              soft_limit: 1
+              soft_limit: 4
               type: type
               hard_limit: 1
           env:
@@ -2533,44 +3356,254 @@ components:
           - mode: 6
             secret_name: secret_name
             raw_value: raw_value
+            image_config: image_config
             guest_path: guest_path
           - mode: 6
             secret_name: secret_name
             raw_value: raw_value
+            image_config: image_config
             guest_path: guest_path
+          containers:
+          - image: image
+            depends_on:
+            - condition: "{}"
+              name: name
+            - condition: "{}"
+              name: name
+            restart: "{}"
+            healthchecks:
+            - tcp:
+                port: 9
+              kind: "{}"
+              unhealthy: "{}"
+              failure_threshold: 1
+              name: name
+              http:
+                headers:
+                - values:
+                  - values
+                  - values
+                  name: name
+                - values:
+                  - values
+                  - values
+                  name: name
+                path: path
+                method: method
+                scheme: "{}"
+                port: 5
+                tls_server_name: tls_server_name
+                tls_skip_verify: true
+              success_threshold: 7
+              interval: 2
+              exec:
+                command:
+                - command
+                - command
+              grace_period: 5
+              timeout: 3
+            - tcp:
+                port: 9
+              kind: "{}"
+              unhealthy: "{}"
+              failure_threshold: 1
+              name: name
+              http:
+                headers:
+                - values:
+                  - values
+                  - values
+                  name: name
+                - values:
+                  - values
+                  - values
+                  name: name
+                path: path
+                method: method
+                scheme: "{}"
+                port: 5
+                tls_server_name: tls_server_name
+                tls_skip_verify: true
+              success_threshold: 7
+              interval: 2
+              exec:
+                command:
+                - command
+                - command
+              grace_period: 5
+              timeout: 3
+            env:
+              key: env
+            secrets:
+            - env_var: env_var
+              name: name
+            - env_var: env_var
+              name: name
+            stop: "{}"
+            entrypoint:
+            - entrypoint
+            - entrypoint
+            env_from:
+            - field_ref: id
+              env_var: env_var
+            - field_ref: id
+              env_var: env_var
+            name: name
+            files:
+            - mode: 6
+              secret_name: secret_name
+              raw_value: raw_value
+              image_config: image_config
+              guest_path: guest_path
+            - mode: 6
+              secret_name: secret_name
+              raw_value: raw_value
+              image_config: image_config
+              guest_path: guest_path
+            cmd:
+            - cmd
+            - cmd
+            user: user
+            exec:
+            - exec
+            - exec
+          - image: image
+            depends_on:
+            - condition: "{}"
+              name: name
+            - condition: "{}"
+              name: name
+            restart: "{}"
+            healthchecks:
+            - tcp:
+                port: 9
+              kind: "{}"
+              unhealthy: "{}"
+              failure_threshold: 1
+              name: name
+              http:
+                headers:
+                - values:
+                  - values
+                  - values
+                  name: name
+                - values:
+                  - values
+                  - values
+                  name: name
+                path: path
+                method: method
+                scheme: "{}"
+                port: 5
+                tls_server_name: tls_server_name
+                tls_skip_verify: true
+              success_threshold: 7
+              interval: 2
+              exec:
+                command:
+                - command
+                - command
+              grace_period: 5
+              timeout: 3
+            - tcp:
+                port: 9
+              kind: "{}"
+              unhealthy: "{}"
+              failure_threshold: 1
+              name: name
+              http:
+                headers:
+                - values:
+                  - values
+                  - values
+                  name: name
+                - values:
+                  - values
+                  - values
+                  name: name
+                path: path
+                method: method
+                scheme: "{}"
+                port: 5
+                tls_server_name: tls_server_name
+                tls_skip_verify: true
+              success_threshold: 7
+              interval: 2
+              exec:
+                command:
+                - command
+                - command
+              grace_period: 5
+              timeout: 3
+            env:
+              key: env
+            secrets:
+            - env_var: env_var
+              name: name
+            - env_var: env_var
+              name: name
+            stop: "{}"
+            entrypoint:
+            - entrypoint
+            - entrypoint
+            env_from:
+            - field_ref: id
+              env_var: env_var
+            - field_ref: id
+              env_var: env_var
+            name: name
+            files:
+            - mode: 6
+              secret_name: secret_name
+              raw_value: raw_value
+              image_config: image_config
+              guest_path: guest_path
+            - mode: 6
+              secret_name: secret_name
+              raw_value: raw_value
+              image_config: image_config
+              guest_path: guest_path
+            cmd:
+            - cmd
+            - cmd
+            user: user
+            exec:
+            - exec
+            - exec
           guest:
             gpu_kind: gpu_kind
-            cpus: 1
+            cpus: 2
             host_dedication_id: host_dedication_id
-            gpus: 5
+            gpus: 4
             cpu_kind: cpu_kind
-            memory_mb: 5
+            memory_mb: 7
             kernel_args:
             - kernel_args
             - kernel_args
           disable_machine_autostart: true
           metrics:
             path: path
-            port: 7
+            port: 1
+            https: true
           standbys:
           - standbys
           - standbys
           stop_config:
             signal: signal
             timeout:
-              time.Duration: 6
+              time.Duration: 3
       properties:
         checks:
           items:
-            $ref: '#/components/schemas/CheckStatus'
+            $ref: "#/components/schemas/CheckStatus"
           type: array
         config:
-          $ref: '#/components/schemas/fly.MachineConfig'
+          $ref: "#/components/schemas/fly.MachineConfig"
         created_at:
           type: string
         events:
           items:
-            $ref: '#/components/schemas/MachineEvent'
+            $ref: "#/components/schemas/MachineEvent"
           type: array
         host_status:
           enum:
@@ -2581,9 +3614,9 @@ components:
         id:
           type: string
         image_ref:
-          $ref: '#/components/schemas/ImageRef'
+          $ref: "#/components/schemas/ImageRef"
         incomplete_config:
-          $ref: '#/components/schemas/fly.MachineConfig'
+          $ref: "#/components/schemas/fly.MachineConfig"
         instance_id:
           description: InstanceID is unique for each version of the machine
           type: string
@@ -2610,7 +3643,7 @@ components:
         source: source
         type: type
         status: status
-        timestamp: 8
+        timestamp: 6
       properties:
         id:
           type: string
@@ -2621,13 +3654,14 @@ components:
         status:
           type: string
         timestamp:
-          format: int64
           type: integer
         type:
           type: string
       type: object
     MachineExecRequest:
       example:
+        container: container
+        stdin: stdin
         cmd: cmd
         command:
         - command
@@ -2641,6 +3675,10 @@ components:
           items:
             type: string
           type: array
+        container:
+          type: string
+        stdin:
+          type: string
         timeout:
           type: integer
       type: object
@@ -2653,7 +3691,7 @@ components:
             entrypoint:
             - entrypoint
             - entrypoint
-            swap_size_mb: 2
+            swap_size_mb: 1
             tty: true
             cmd:
             - cmd
@@ -2714,8 +3752,8 @@ components:
             - exec
             - exec
           restart:
-            max_retries: 1
-            gpu_bid_price: 7.386281948385884
+            max_retries: 6
+            gpu_bid_price: 1.4894159098541704
             policy: "no"
           auto_destroy: true
           dns:
@@ -2738,25 +3776,8 @@ components:
               addr: addr
             - basename: basename
               addr: addr
-          mounts:
-          - volume: volume
-            path: path
-            encrypted: true
-            size_gb_limit: 4
-            extend_threshold_percent: 3
-            name: name
-            add_size_gb: 9
-            size_gb: 2
-          - volume: volume
-            path: path
-            encrypted: true
-            size_gb_limit: 4
-            extend_threshold_percent: 3
-            name: name
-            add_size_gb: 9
-            size_gb: 2
           services:
-          - min_machines_running: 7
+          - min_machines_running: 9
             protocol: protocol
             checks:
             - headers:
@@ -2771,8 +3792,7 @@ components:
               path: path
               protocol: protocol
               method: method
-              port: 0
-              kind: informational
+              port: 7
               tls_server_name: tls_server_name
               interval: "{}"
               tls_skip_verify: true
@@ -2791,8 +3811,7 @@ components:
               path: path
               protocol: protocol
               method: method
-              port: 0
-              kind: informational
+              port: 7
               tls_server_name: tls_server_name
               interval: "{}"
               tls_skip_verify: true
@@ -2801,14 +3820,14 @@ components:
               timeout: "{}"
             force_instance_key: force_instance_key
             autostart: true
-            internal_port: 6
+            internal_port: 5
             ports:
             - force_https: true
               port: 9
               handlers:
               - handlers
               - handlers
-              start_port: 9
+              start_port: 6
               tls_options:
                 alpn:
                 - alpn
@@ -2819,22 +3838,22 @@ components:
                 - versions
               proxy_proto_options:
                 version: version
-              end_port: 1
+              end_port: 9
               http_options:
-                headers_read_timeout: 4
+                headers_read_timeout: 6
                 compress: true
                 response:
                   headers:
                     key: "{}"
                   pristine: true
-                idle_timeout: 5
+                idle_timeout: 8
                 h2_backend: true
             - force_https: true
               port: 9
               handlers:
               - handlers
               - handlers
-              start_port: 9
+              start_port: 6
               tls_options:
                 alpn:
                 - alpn
@@ -2845,23 +3864,23 @@ components:
                 - versions
               proxy_proto_options:
                 version: version
-              end_port: 1
+              end_port: 9
               http_options:
-                headers_read_timeout: 4
+                headers_read_timeout: 6
                 compress: true
                 response:
                   headers:
                     key: "{}"
                   pristine: true
-                idle_timeout: 5
+                idle_timeout: 8
                 h2_backend: true
             force_instance_description: force_instance_description
             autostop: "off"
             concurrency:
-              soft_limit: 1
+              soft_limit: 4
               type: type
               hard_limit: 1
-          - min_machines_running: 7
+          - min_machines_running: 9
             protocol: protocol
             checks:
             - headers:
@@ -2876,8 +3895,7 @@ components:
               path: path
               protocol: protocol
               method: method
-              port: 0
-              kind: informational
+              port: 7
               tls_server_name: tls_server_name
               interval: "{}"
               tls_skip_verify: true
@@ -2896,8 +3914,7 @@ components:
               path: path
               protocol: protocol
               method: method
-              port: 0
-              kind: informational
+              port: 7
               tls_server_name: tls_server_name
               interval: "{}"
               tls_skip_verify: true
@@ -2906,14 +3923,14 @@ components:
               timeout: "{}"
             force_instance_key: force_instance_key
             autostart: true
-            internal_port: 6
+            internal_port: 5
             ports:
             - force_https: true
               port: 9
               handlers:
               - handlers
               - handlers
-              start_port: 9
+              start_port: 6
               tls_options:
                 alpn:
                 - alpn
@@ -2924,22 +3941,22 @@ components:
                 - versions
               proxy_proto_options:
                 version: version
-              end_port: 1
+              end_port: 9
               http_options:
-                headers_read_timeout: 4
+                headers_read_timeout: 6
                 compress: true
                 response:
                   headers:
                     key: "{}"
                   pristine: true
-                idle_timeout: 5
+                idle_timeout: 8
                 h2_backend: true
             - force_https: true
               port: 9
               handlers:
               - handlers
               - handlers
-              start_port: 9
+              start_port: 6
               tls_options:
                 alpn:
                 - alpn
@@ -2950,20 +3967,20 @@ components:
                 - versions
               proxy_proto_options:
                 version: version
-              end_port: 1
+              end_port: 9
               http_options:
-                headers_read_timeout: 4
+                headers_read_timeout: 6
                 compress: true
                 response:
                   headers:
                     key: "{}"
                   pristine: true
-                idle_timeout: 5
+                idle_timeout: 8
                 h2_backend: true
             force_instance_description: force_instance_description
             autostop: "off"
             concurrency:
-              soft_limit: 1
+              soft_limit: 4
               type: type
               hard_limit: 1
           env:
@@ -3005,35 +4022,245 @@ components:
           - mode: 6
             secret_name: secret_name
             raw_value: raw_value
+            image_config: image_config
             guest_path: guest_path
           - mode: 6
             secret_name: secret_name
             raw_value: raw_value
+            image_config: image_config
             guest_path: guest_path
+          containers:
+          - image: image
+            depends_on:
+            - condition: "{}"
+              name: name
+            - condition: "{}"
+              name: name
+            restart: "{}"
+            healthchecks:
+            - tcp:
+                port: 9
+              kind: "{}"
+              unhealthy: "{}"
+              failure_threshold: 1
+              name: name
+              http:
+                headers:
+                - values:
+                  - values
+                  - values
+                  name: name
+                - values:
+                  - values
+                  - values
+                  name: name
+                path: path
+                method: method
+                scheme: "{}"
+                port: 5
+                tls_server_name: tls_server_name
+                tls_skip_verify: true
+              success_threshold: 7
+              interval: 2
+              exec:
+                command:
+                - command
+                - command
+              grace_period: 5
+              timeout: 3
+            - tcp:
+                port: 9
+              kind: "{}"
+              unhealthy: "{}"
+              failure_threshold: 1
+              name: name
+              http:
+                headers:
+                - values:
+                  - values
+                  - values
+                  name: name
+                - values:
+                  - values
+                  - values
+                  name: name
+                path: path
+                method: method
+                scheme: "{}"
+                port: 5
+                tls_server_name: tls_server_name
+                tls_skip_verify: true
+              success_threshold: 7
+              interval: 2
+              exec:
+                command:
+                - command
+                - command
+              grace_period: 5
+              timeout: 3
+            env:
+              key: env
+            secrets:
+            - env_var: env_var
+              name: name
+            - env_var: env_var
+              name: name
+            stop: "{}"
+            entrypoint:
+            - entrypoint
+            - entrypoint
+            env_from:
+            - field_ref: id
+              env_var: env_var
+            - field_ref: id
+              env_var: env_var
+            name: name
+            files:
+            - mode: 6
+              secret_name: secret_name
+              raw_value: raw_value
+              image_config: image_config
+              guest_path: guest_path
+            - mode: 6
+              secret_name: secret_name
+              raw_value: raw_value
+              image_config: image_config
+              guest_path: guest_path
+            cmd:
+            - cmd
+            - cmd
+            user: user
+            exec:
+            - exec
+            - exec
+          - image: image
+            depends_on:
+            - condition: "{}"
+              name: name
+            - condition: "{}"
+              name: name
+            restart: "{}"
+            healthchecks:
+            - tcp:
+                port: 9
+              kind: "{}"
+              unhealthy: "{}"
+              failure_threshold: 1
+              name: name
+              http:
+                headers:
+                - values:
+                  - values
+                  - values
+                  name: name
+                - values:
+                  - values
+                  - values
+                  name: name
+                path: path
+                method: method
+                scheme: "{}"
+                port: 5
+                tls_server_name: tls_server_name
+                tls_skip_verify: true
+              success_threshold: 7
+              interval: 2
+              exec:
+                command:
+                - command
+                - command
+              grace_period: 5
+              timeout: 3
+            - tcp:
+                port: 9
+              kind: "{}"
+              unhealthy: "{}"
+              failure_threshold: 1
+              name: name
+              http:
+                headers:
+                - values:
+                  - values
+                  - values
+                  name: name
+                - values:
+                  - values
+                  - values
+                  name: name
+                path: path
+                method: method
+                scheme: "{}"
+                port: 5
+                tls_server_name: tls_server_name
+                tls_skip_verify: true
+              success_threshold: 7
+              interval: 2
+              exec:
+                command:
+                - command
+                - command
+              grace_period: 5
+              timeout: 3
+            env:
+              key: env
+            secrets:
+            - env_var: env_var
+              name: name
+            - env_var: env_var
+              name: name
+            stop: "{}"
+            entrypoint:
+            - entrypoint
+            - entrypoint
+            env_from:
+            - field_ref: id
+              env_var: env_var
+            - field_ref: id
+              env_var: env_var
+            name: name
+            files:
+            - mode: 6
+              secret_name: secret_name
+              raw_value: raw_value
+              image_config: image_config
+              guest_path: guest_path
+            - mode: 6
+              secret_name: secret_name
+              raw_value: raw_value
+              image_config: image_config
+              guest_path: guest_path
+            cmd:
+            - cmd
+            - cmd
+            user: user
+            exec:
+            - exec
+            - exec
           guest:
             gpu_kind: gpu_kind
-            cpus: 1
+            cpus: 2
             host_dedication_id: host_dedication_id
-            gpus: 5
+            gpus: 4
             cpu_kind: cpu_kind
-            memory_mb: 5
+            memory_mb: 7
             kernel_args:
             - kernel_args
             - kernel_args
           disable_machine_autostart: true
           metrics:
             path: path
-            port: 7
+            port: 1
+            https: true
           standbys:
           - standbys
           - standbys
           stop_config:
             signal: signal
             timeout:
-              time.Duration: 6
+              time.Duration: 3
       properties:
         user_config:
-          $ref: '#/components/schemas/fly.MachineConfig'
+          $ref: "#/components/schemas/fly.MachineConfig"
         version:
           type: string
       type: object
@@ -3070,7 +4297,7 @@ components:
           type: string
         listen_sockets:
           items:
-            $ref: '#/components/schemas/ListenSocket'
+            $ref: "#/components/schemas/ListenSocket"
           type: array
         pid:
           type: integer
@@ -3080,6 +4307,121 @@ components:
           type: integer
         stime:
           type: integer
+      type: object
+    SecretKey:
+      example:
+        public_key:
+        - 0
+        - 0
+        name: name
+        type: type
+      properties:
+        name:
+          type: string
+        public_key:
+          items:
+            type: integer
+          type: array
+        type:
+          type: string
+      type: object
+    SecretKeys:
+      example:
+        secret_keys:
+        - public_key:
+          - 0
+          - 0
+          name: name
+          type: type
+        - public_key:
+          - 0
+          - 0
+          name: name
+          type: type
+      properties:
+        secret_keys:
+          items:
+            $ref: "#/components/schemas/SecretKey"
+          type: array
+      type: object
+    SetAppSecretRequest:
+      example:
+        value: value
+      properties:
+        value:
+          type: string
+      type: object
+    SetAppSecretResponse:
+      example:
+        digest: digest
+        name: name
+        value: value
+        version: 0
+      properties:
+        digest:
+          type: string
+        name:
+          type: string
+        value:
+          type: string
+        version:
+          type: integer
+      type: object
+    SetSecretkeyRequest:
+      example:
+        type: type
+        value:
+        - 0
+        - 0
+      properties:
+        type:
+          type: string
+        value:
+          items:
+            type: integer
+          type: array
+      type: object
+    SetSecretkeyResponse:
+      example:
+        public_key:
+        - 0
+        - 0
+        name: name
+        type: type
+        version: 6
+      properties:
+        name:
+          type: string
+        public_key:
+          items:
+            type: integer
+          type: array
+        type:
+          type: string
+        version:
+          type: integer
+      type: object
+    SignSecretkeyRequest:
+      example:
+        plaintext:
+        - 0
+        - 0
+      properties:
+        plaintext:
+          items:
+            type: integer
+          type: array
+      type: object
+    SignSecretkeyResponse:
+      example:
+        signature:
+        - 0
+        - 0
+      properties:
+        signature:
+          items:
+            type: integer
+          type: array
       type: object
     SignalRequest:
       example:
@@ -3106,15 +4448,16 @@ components:
       example:
         signal: signal
         timeout:
-          time.Duration: 6
+          time.Duration: 3
       properties:
         signal:
           type: string
         timeout:
-          $ref: '#/components/schemas/fly.Duration'
+          $ref: "#/components/schemas/fly.Duration"
       type: object
     UpdateMachineRequest:
       example:
+        skip_secrets: true
         skip_service_registration: true
         lsvd: true
         name: name
@@ -3126,7 +4469,7 @@ components:
       properties:
         config:
           allOf:
-          - $ref: '#/components/schemas/fly.MachineConfig'
+          - $ref: "#/components/schemas/fly.MachineConfig"
           description: An object defining the Machine configuration
           type: object
         current_version:
@@ -3145,6 +4488,8 @@ components:
           type: string
         skip_launch:
           type: boolean
+        skip_secrets:
+          type: boolean
         skip_service_registration:
           type: boolean
       type: object
@@ -3158,20 +4503,40 @@ components:
         snapshot_retention:
           type: integer
       type: object
+    VerifySecretkeyRequest:
+      example:
+        signature:
+        - 6
+        - 6
+        plaintext:
+        - 0
+        - 0
+      properties:
+        plaintext:
+          items:
+            type: integer
+          type: array
+        signature:
+          items:
+            type: integer
+          type: array
+      type: object
     Volume:
       example:
         auto_backup_enabled: true
         blocks: 6
         attached_machine_id: attached_machine_id
         created_at: created_at
-        snapshot_retention: 2
+        bytes_total: 5
+        snapshot_retention: 9
         host_status: ok
         blocks_free: 5
+        bytes_used: 2
         encrypted: true
         zone: zone
         blocks_avail: 1
         name: name
-        size_gb: 5
+        size_gb: 7
         attached_alloc_id: attached_alloc_id
         id: id
         state: state
@@ -3192,6 +4557,10 @@ components:
         blocks_avail:
           type: integer
         blocks_free:
+          type: integer
+        bytes_total:
+          type: integer
+        bytes_used:
           type: integer
         created_at:
           type: string
@@ -3242,6 +4611,303 @@ components:
         status:
           type: string
       type: object
+    fly.ContainerConfig:
+      example:
+        image: image
+        depends_on:
+        - condition: "{}"
+          name: name
+        - condition: "{}"
+          name: name
+        restart: "{}"
+        healthchecks:
+        - tcp:
+            port: 9
+          kind: "{}"
+          unhealthy: "{}"
+          failure_threshold: 1
+          name: name
+          http:
+            headers:
+            - values:
+              - values
+              - values
+              name: name
+            - values:
+              - values
+              - values
+              name: name
+            path: path
+            method: method
+            scheme: "{}"
+            port: 5
+            tls_server_name: tls_server_name
+            tls_skip_verify: true
+          success_threshold: 7
+          interval: 2
+          exec:
+            command:
+            - command
+            - command
+          grace_period: 5
+          timeout: 3
+        - tcp:
+            port: 9
+          kind: "{}"
+          unhealthy: "{}"
+          failure_threshold: 1
+          name: name
+          http:
+            headers:
+            - values:
+              - values
+              - values
+              name: name
+            - values:
+              - values
+              - values
+              name: name
+            path: path
+            method: method
+            scheme: "{}"
+            port: 5
+            tls_server_name: tls_server_name
+            tls_skip_verify: true
+          success_threshold: 7
+          interval: 2
+          exec:
+            command:
+            - command
+            - command
+          grace_period: 5
+          timeout: 3
+        env:
+          key: env
+        secrets:
+        - env_var: env_var
+          name: name
+        - env_var: env_var
+          name: name
+        stop: "{}"
+        entrypoint:
+        - entrypoint
+        - entrypoint
+        env_from:
+        - field_ref: id
+          env_var: env_var
+        - field_ref: id
+          env_var: env_var
+        name: name
+        files:
+        - mode: 6
+          secret_name: secret_name
+          raw_value: raw_value
+          image_config: image_config
+          guest_path: guest_path
+        - mode: 6
+          secret_name: secret_name
+          raw_value: raw_value
+          image_config: image_config
+          guest_path: guest_path
+        cmd:
+        - cmd
+        - cmd
+        user: user
+        exec:
+        - exec
+        - exec
+      properties:
+        cmd:
+          description: CmdOverride is used to override the default command of the
+            image.
+          items:
+            type: string
+          type: array
+        depends_on:
+          description: |-
+            DependsOn can be used to define dependencies between containers. The container will only be
+            started after all of its dependent conditions have been satisfied.
+          items:
+            $ref: "#/components/schemas/fly.ContainerDependency"
+          type: array
+        entrypoint:
+          description: EntrypointOverride is used to override the default entrypoint
+            of the image.
+          items:
+            type: string
+          type: array
+        env:
+          additionalProperties:
+            type: string
+          description: ExtraEnv is used to add additional environment variables to
+            the container.
+          type: object
+        env_from:
+          description: EnvFrom can be provided to set environment variables from machine
+            fields.
+          items:
+            $ref: "#/components/schemas/fly.EnvFrom"
+          type: array
+        exec:
+          description: |-
+            Image Config overrides - these fields are used to override the image configuration.
+            If not provided, the image configuration will be used.
+            ExecOverride is used to override the default command of the image.
+          items:
+            type: string
+          type: array
+        files:
+          description: Files are files that will be written to the container file
+            system.
+          items:
+            $ref: "#/components/schemas/fly.File"
+          type: array
+        healthchecks:
+          description: "Healthchecks determine the health of your containers. Healthchecks\
+            \ can use HTTP, TCP or an Exec command."
+          items:
+            $ref: "#/components/schemas/fly.ContainerHealthcheck"
+          type: array
+        image:
+          description: Image is the docker image to run.
+          type: string
+        name:
+          description: Name is used to identify the container in the machine.
+          type: string
+        restart:
+          allOf:
+          - $ref: "#/components/schemas/fly.MachineRestart"
+          description: |-
+            Restart is used to define the restart policy for the container. NOTE: spot-price is not
+            supported for containers.
+          type: object
+        secrets:
+          description: |-
+            Secrets can be provided at the process level to explicitly indicate which secrets should be
+            used for the process. If not provided, the secrets provided at the machine level will be used.
+          items:
+            $ref: "#/components/schemas/fly.MachineSecret"
+          type: array
+        stop:
+          allOf:
+          - $ref: "#/components/schemas/fly.StopConfig"
+          description: Stop is used to define the signal and timeout for stopping
+            the container.
+          type: object
+        user:
+          description: UserOverride is used to override the default user of the image.
+          type: string
+      type: object
+    fly.ContainerDependency:
+      example:
+        condition: "{}"
+        name: name
+      properties:
+        condition:
+          allOf:
+          - $ref: "#/components/schemas/fly.ContainerDependencyCondition"
+          type: object
+        name:
+          type: string
+      type: object
+    fly.ContainerDependencyCondition:
+      enum:
+      - exited_successfully
+      - healthy
+      - started
+      type: string
+      x-enum-varnames:
+      - ExitedSuccessfully
+      - Healthy
+      - Started
+    fly.ContainerHealthcheck:
+      example:
+        tcp:
+          port: 9
+        kind: "{}"
+        unhealthy: "{}"
+        failure_threshold: 1
+        name: name
+        http:
+          headers:
+          - values:
+            - values
+            - values
+            name: name
+          - values:
+            - values
+            - values
+            name: name
+          path: path
+          method: method
+          scheme: "{}"
+          port: 5
+          tls_server_name: tls_server_name
+          tls_skip_verify: true
+        success_threshold: 7
+        interval: 2
+        exec:
+          command:
+          - command
+          - command
+        grace_period: 5
+        timeout: 3
+      properties:
+        exec:
+          $ref: "#/components/schemas/fly.ExecHealthcheck"
+        failure_threshold:
+          description: The number of times the check must fail before considering
+            the container unhealthy.
+          type: integer
+        grace_period:
+          description: The time in seconds to wait after a container starts before
+            checking its health.
+          type: integer
+        http:
+          $ref: "#/components/schemas/fly.HTTPHealthcheck"
+        interval:
+          description: The time in seconds between executing the defined check.
+          type: integer
+        kind:
+          allOf:
+          - $ref: "#/components/schemas/fly.ContainerHealthcheckKind"
+          description: "Kind of healthcheck (readiness, liveness)"
+          type: object
+        name:
+          description: The name of the check. Must be unique within the container.
+          type: string
+        success_threshold:
+          description: The number of times the check must succeeed before considering
+            the container healthy.
+          type: integer
+        tcp:
+          $ref: "#/components/schemas/fly.TCPHealthcheck"
+        timeout:
+          description: The time in seconds to wait for the check to complete.
+          type: integer
+        unhealthy:
+          allOf:
+          - $ref: "#/components/schemas/fly.UnhealthyPolicy"
+          description: Unhealthy policy that determines what action to take if a container
+            is deemed unhealthy
+          type: object
+      type: object
+    fly.ContainerHealthcheckKind:
+      enum:
+      - readiness
+      - liveness
+      type: string
+      x-enum-varnames:
+      - Readiness
+      - Liveness
+    fly.ContainerHealthcheckScheme:
+      enum:
+      - http
+      - https
+      type: string
+      x-enum-varnames:
+      - HTTP
+      - HTTPS
     fly.DNSConfig:
       example:
         searches:
@@ -3266,7 +4932,7 @@ components:
       properties:
         dns_forward_rules:
           items:
-            $ref: '#/components/schemas/fly.dnsForwardRule'
+            $ref: "#/components/schemas/fly.dnsForwardRule"
           type: array
         hostname:
           type: string
@@ -3278,7 +4944,7 @@ components:
           type: array
         options:
           items:
-            $ref: '#/components/schemas/fly.dnsOption'
+            $ref: "#/components/schemas/fly.dnsOption"
           type: array
         searches:
           items:
@@ -3289,11 +4955,19 @@ components:
       type: object
     fly.Duration:
       example:
-        time.Duration: 6
+        time.Duration: 3
       properties:
         time.Duration:
           type: integer
           x-enum-varnames:
+          - minDuration
+          - maxDuration
+          - Nanosecond
+          - Microsecond
+          - Millisecond
+          - Second
+          - Minute
+          - Hour
           - minDuration
           - maxDuration
           - Nanosecond
@@ -3333,6 +5007,19 @@ components:
           - image
           type: string
       type: object
+    fly.ExecHealthcheck:
+      example:
+        command:
+        - command
+        - command
+      properties:
+        command:
+          description: "The command to run to check the health of the container (e.g.\
+            \ [\"cat\", \"/tmp/healthy\"])"
+          items:
+            type: string
+          type: array
+      type: object
     fly.File:
       description: A file that will be written to the Machine. One of RawValue or
         SecretName must be set.
@@ -3340,12 +5027,17 @@ components:
         mode: 6
         secret_name: secret_name
         raw_value: raw_value
+        image_config: image_config
         guest_path: guest_path
       properties:
         guest_path:
           description: |-
             GuestPath is the path on the machine where the file will be written and must be an absolute path.
             For example: /full/path/to/file.json
+          type: string
+        image_config:
+          description: The name of an image to use the OCI image config as the file
+            contents.
           type: string
         mode:
           description: Mode bits used to set permissions on this file as accepted
@@ -3359,15 +5051,61 @@ components:
             contents.
           type: string
       type: object
+    fly.HTTPHealthcheck:
+      example:
+        headers:
+        - values:
+          - values
+          - values
+          name: name
+        - values:
+          - values
+          - values
+          name: name
+        path: path
+        method: method
+        scheme: "{}"
+        port: 5
+        tls_server_name: tls_server_name
+        tls_skip_verify: true
+      properties:
+        headers:
+          description: Additional headers to send with the request
+          items:
+            $ref: "#/components/schemas/fly.MachineHTTPHeader"
+          type: array
+        method:
+          description: The HTTP method to use to when making the request
+          type: string
+        path:
+          description: The path to send the request to
+          type: string
+        port:
+          description: "The port to connect to, often the same as internal_port"
+          type: integer
+        scheme:
+          allOf:
+          - $ref: "#/components/schemas/fly.ContainerHealthcheckScheme"
+          description: Whether to use http or https
+          type: object
+        tls_server_name:
+          description: "If the protocol is https, the hostname to use for TLS certificate\
+            \ validation"
+          type: string
+        tls_skip_verify:
+          description: "If the protocol is https, whether or not to verify the TLS\
+            \ certificate"
+          type: boolean
+      type: object
     fly.HTTPOptions:
       example:
-        headers_read_timeout: 4
+        headers_read_timeout: 6
         compress: true
         response:
           headers:
             key: "{}"
           pristine: true
-        idle_timeout: 5
+        idle_timeout: 8
         h2_backend: true
       properties:
         compress:
@@ -3379,7 +5117,7 @@ components:
         idle_timeout:
           type: integer
         response:
-          $ref: '#/components/schemas/fly.HTTPResponseOptions'
+          $ref: "#/components/schemas/fly.HTTPResponseOptions"
       type: object
     fly.HTTPResponseOptions:
       example:
@@ -3395,8 +5133,6 @@ components:
           type: boolean
       type: object
     fly.MachineCheck:
-      description: An optional object that defines one or more named checks. The key
-        for each check is the check name.
       example:
         headers:
         - values:
@@ -3421,16 +5157,16 @@ components:
       properties:
         grace_period:
           allOf:
-          - $ref: '#/components/schemas/fly.Duration'
+          - $ref: "#/components/schemas/fly.Duration"
           description: The time to wait after a VM starts before checking its health
           type: object
         headers:
           items:
-            $ref: '#/components/schemas/fly.MachineHTTPHeader'
+            $ref: "#/components/schemas/fly.MachineHTTPHeader"
           type: array
         interval:
           allOf:
-          - $ref: '#/components/schemas/fly.Duration'
+          - $ref: "#/components/schemas/fly.Duration"
           description: The time between connectivity checks
           type: object
         kind:
@@ -3454,7 +5190,7 @@ components:
           type: string
         timeout:
           allOf:
-          - $ref: '#/components/schemas/fly.Duration'
+          - $ref: "#/components/schemas/fly.Duration"
           description: The maximum time a connection can take before being reported
             as failing its health check
           type: object
@@ -3477,7 +5213,7 @@ components:
           entrypoint:
           - entrypoint
           - entrypoint
-          swap_size_mb: 2
+          swap_size_mb: 1
           tty: true
           cmd:
           - cmd
@@ -3538,8 +5274,8 @@ components:
           - exec
           - exec
         restart:
-          max_retries: 1
-          gpu_bid_price: 7.386281948385884
+          max_retries: 6
+          gpu_bid_price: 1.4894159098541704
           policy: "no"
         auto_destroy: true
         dns:
@@ -3562,25 +5298,8 @@ components:
             addr: addr
           - basename: basename
             addr: addr
-        mounts:
-        - volume: volume
-          path: path
-          encrypted: true
-          size_gb_limit: 4
-          extend_threshold_percent: 3
-          name: name
-          add_size_gb: 9
-          size_gb: 2
-        - volume: volume
-          path: path
-          encrypted: true
-          size_gb_limit: 4
-          extend_threshold_percent: 3
-          name: name
-          add_size_gb: 9
-          size_gb: 2
         services:
-        - min_machines_running: 7
+        - min_machines_running: 9
           protocol: protocol
           checks:
           - headers:
@@ -3595,8 +5314,7 @@ components:
             path: path
             protocol: protocol
             method: method
-            port: 0
-            kind: informational
+            port: 7
             tls_server_name: tls_server_name
             interval: "{}"
             tls_skip_verify: true
@@ -3615,8 +5333,7 @@ components:
             path: path
             protocol: protocol
             method: method
-            port: 0
-            kind: informational
+            port: 7
             tls_server_name: tls_server_name
             interval: "{}"
             tls_skip_verify: true
@@ -3625,14 +5342,14 @@ components:
             timeout: "{}"
           force_instance_key: force_instance_key
           autostart: true
-          internal_port: 6
+          internal_port: 5
           ports:
           - force_https: true
             port: 9
             handlers:
             - handlers
             - handlers
-            start_port: 9
+            start_port: 6
             tls_options:
               alpn:
               - alpn
@@ -3643,22 +5360,22 @@ components:
               - versions
             proxy_proto_options:
               version: version
-            end_port: 1
+            end_port: 9
             http_options:
-              headers_read_timeout: 4
+              headers_read_timeout: 6
               compress: true
               response:
                 headers:
                   key: "{}"
                 pristine: true
-              idle_timeout: 5
+              idle_timeout: 8
               h2_backend: true
           - force_https: true
             port: 9
             handlers:
             - handlers
             - handlers
-            start_port: 9
+            start_port: 6
             tls_options:
               alpn:
               - alpn
@@ -3669,23 +5386,23 @@ components:
               - versions
             proxy_proto_options:
               version: version
-            end_port: 1
+            end_port: 9
             http_options:
-              headers_read_timeout: 4
+              headers_read_timeout: 6
               compress: true
               response:
                 headers:
                   key: "{}"
                 pristine: true
-              idle_timeout: 5
+              idle_timeout: 8
               h2_backend: true
           force_instance_description: force_instance_description
           autostop: "off"
           concurrency:
-            soft_limit: 1
+            soft_limit: 4
             type: type
             hard_limit: 1
-        - min_machines_running: 7
+        - min_machines_running: 9
           protocol: protocol
           checks:
           - headers:
@@ -3700,8 +5417,7 @@ components:
             path: path
             protocol: protocol
             method: method
-            port: 0
-            kind: informational
+            port: 7
             tls_server_name: tls_server_name
             interval: "{}"
             tls_skip_verify: true
@@ -3720,8 +5436,7 @@ components:
             path: path
             protocol: protocol
             method: method
-            port: 0
-            kind: informational
+            port: 7
             tls_server_name: tls_server_name
             interval: "{}"
             tls_skip_verify: true
@@ -3730,14 +5445,14 @@ components:
             timeout: "{}"
           force_instance_key: force_instance_key
           autostart: true
-          internal_port: 6
+          internal_port: 5
           ports:
           - force_https: true
             port: 9
             handlers:
             - handlers
             - handlers
-            start_port: 9
+            start_port: 6
             tls_options:
               alpn:
               - alpn
@@ -3748,22 +5463,22 @@ components:
               - versions
             proxy_proto_options:
               version: version
-            end_port: 1
+            end_port: 9
             http_options:
-              headers_read_timeout: 4
+              headers_read_timeout: 6
               compress: true
               response:
                 headers:
                   key: "{}"
                 pristine: true
-              idle_timeout: 5
+              idle_timeout: 8
               h2_backend: true
           - force_https: true
             port: 9
             handlers:
             - handlers
             - handlers
-            start_port: 9
+            start_port: 6
             tls_options:
               alpn:
               - alpn
@@ -3774,20 +5489,20 @@ components:
               - versions
             proxy_proto_options:
               version: version
-            end_port: 1
+            end_port: 9
             http_options:
-              headers_read_timeout: 4
+              headers_read_timeout: 6
               compress: true
               response:
                 headers:
                   key: "{}"
                 pristine: true
-              idle_timeout: 5
+              idle_timeout: 8
               h2_backend: true
           force_instance_description: force_instance_description
           autostop: "off"
           concurrency:
-            soft_limit: 1
+            soft_limit: 4
             type: type
             hard_limit: 1
         env:
@@ -3829,32 +5544,242 @@ components:
         - mode: 6
           secret_name: secret_name
           raw_value: raw_value
+          image_config: image_config
           guest_path: guest_path
         - mode: 6
           secret_name: secret_name
           raw_value: raw_value
+          image_config: image_config
           guest_path: guest_path
+        containers:
+        - image: image
+          depends_on:
+          - condition: "{}"
+            name: name
+          - condition: "{}"
+            name: name
+          restart: "{}"
+          healthchecks:
+          - tcp:
+              port: 9
+            kind: "{}"
+            unhealthy: "{}"
+            failure_threshold: 1
+            name: name
+            http:
+              headers:
+              - values:
+                - values
+                - values
+                name: name
+              - values:
+                - values
+                - values
+                name: name
+              path: path
+              method: method
+              scheme: "{}"
+              port: 5
+              tls_server_name: tls_server_name
+              tls_skip_verify: true
+            success_threshold: 7
+            interval: 2
+            exec:
+              command:
+              - command
+              - command
+            grace_period: 5
+            timeout: 3
+          - tcp:
+              port: 9
+            kind: "{}"
+            unhealthy: "{}"
+            failure_threshold: 1
+            name: name
+            http:
+              headers:
+              - values:
+                - values
+                - values
+                name: name
+              - values:
+                - values
+                - values
+                name: name
+              path: path
+              method: method
+              scheme: "{}"
+              port: 5
+              tls_server_name: tls_server_name
+              tls_skip_verify: true
+            success_threshold: 7
+            interval: 2
+            exec:
+              command:
+              - command
+              - command
+            grace_period: 5
+            timeout: 3
+          env:
+            key: env
+          secrets:
+          - env_var: env_var
+            name: name
+          - env_var: env_var
+            name: name
+          stop: "{}"
+          entrypoint:
+          - entrypoint
+          - entrypoint
+          env_from:
+          - field_ref: id
+            env_var: env_var
+          - field_ref: id
+            env_var: env_var
+          name: name
+          files:
+          - mode: 6
+            secret_name: secret_name
+            raw_value: raw_value
+            image_config: image_config
+            guest_path: guest_path
+          - mode: 6
+            secret_name: secret_name
+            raw_value: raw_value
+            image_config: image_config
+            guest_path: guest_path
+          cmd:
+          - cmd
+          - cmd
+          user: user
+          exec:
+          - exec
+          - exec
+        - image: image
+          depends_on:
+          - condition: "{}"
+            name: name
+          - condition: "{}"
+            name: name
+          restart: "{}"
+          healthchecks:
+          - tcp:
+              port: 9
+            kind: "{}"
+            unhealthy: "{}"
+            failure_threshold: 1
+            name: name
+            http:
+              headers:
+              - values:
+                - values
+                - values
+                name: name
+              - values:
+                - values
+                - values
+                name: name
+              path: path
+              method: method
+              scheme: "{}"
+              port: 5
+              tls_server_name: tls_server_name
+              tls_skip_verify: true
+            success_threshold: 7
+            interval: 2
+            exec:
+              command:
+              - command
+              - command
+            grace_period: 5
+            timeout: 3
+          - tcp:
+              port: 9
+            kind: "{}"
+            unhealthy: "{}"
+            failure_threshold: 1
+            name: name
+            http:
+              headers:
+              - values:
+                - values
+                - values
+                name: name
+              - values:
+                - values
+                - values
+                name: name
+              path: path
+              method: method
+              scheme: "{}"
+              port: 5
+              tls_server_name: tls_server_name
+              tls_skip_verify: true
+            success_threshold: 7
+            interval: 2
+            exec:
+              command:
+              - command
+              - command
+            grace_period: 5
+            timeout: 3
+          env:
+            key: env
+          secrets:
+          - env_var: env_var
+            name: name
+          - env_var: env_var
+            name: name
+          stop: "{}"
+          entrypoint:
+          - entrypoint
+          - entrypoint
+          env_from:
+          - field_ref: id
+            env_var: env_var
+          - field_ref: id
+            env_var: env_var
+          name: name
+          files:
+          - mode: 6
+            secret_name: secret_name
+            raw_value: raw_value
+            image_config: image_config
+            guest_path: guest_path
+          - mode: 6
+            secret_name: secret_name
+            raw_value: raw_value
+            image_config: image_config
+            guest_path: guest_path
+          cmd:
+          - cmd
+          - cmd
+          user: user
+          exec:
+          - exec
+          - exec
         guest:
           gpu_kind: gpu_kind
-          cpus: 1
+          cpus: 2
           host_dedication_id: host_dedication_id
-          gpus: 5
+          gpus: 4
           cpu_kind: cpu_kind
-          memory_mb: 5
+          memory_mb: 7
           kernel_args:
           - kernel_args
           - kernel_args
         disable_machine_autostart: true
         metrics:
           path: path
-          port: 7
+          port: 1
+          https: true
         standbys:
         - standbys
         - standbys
         stop_config:
           signal: signal
           timeout:
-            time.Duration: 6
+            time.Duration: 3
       properties:
         auto_destroy:
           description: Optional boolean telling the Machine to destroy itself once
@@ -3862,13 +5787,22 @@ components:
           type: boolean
         checks:
           additionalProperties:
-            $ref: '#/components/schemas/fly.MachineCheck'
+            $ref: "#/components/schemas/fly.MachineCheck"
+          description: An optional object that defines one or more named top-level
+            checks. The key for each check is the check name.
           type: object
+        containers:
+          description: |-
+            Containers are a list of containers that will run in the machine. Currently restricted to
+            only specific organizations.
+          items:
+            $ref: "#/components/schemas/fly.ContainerConfig"
+          type: array
         disable_machine_autostart:
           description: "Deprecated: use Service.Autostart instead"
           type: boolean
         dns:
-          $ref: '#/components/schemas/fly.DNSConfig'
+          $ref: "#/components/schemas/fly.DNSConfig"
         env:
           additionalProperties:
             type: string
@@ -3877,36 +5811,32 @@ components:
           type: object
         files:
           items:
-            $ref: '#/components/schemas/fly.File'
+            $ref: "#/components/schemas/fly.File"
           type: array
         guest:
-          $ref: '#/components/schemas/fly.MachineGuest'
+          $ref: "#/components/schemas/fly.MachineGuest"
         image:
           description: The docker image to run
           type: string
         init:
-          $ref: '#/components/schemas/fly.MachineInit'
+          $ref: "#/components/schemas/fly.MachineInit"
         metadata:
           additionalProperties:
             type: string
           type: object
         metrics:
-          $ref: '#/components/schemas/fly.MachineMetrics'
-        mounts:
-          items:
-            $ref: '#/components/schemas/fly.MachineMount'
-          type: array
+          $ref: "#/components/schemas/fly.MachineMetrics"
         processes:
           items:
-            $ref: '#/components/schemas/fly.MachineProcess'
+            $ref: "#/components/schemas/fly.MachineProcess"
           type: array
         restart:
-          $ref: '#/components/schemas/fly.MachineRestart'
+          $ref: "#/components/schemas/fly.MachineRestart"
         schedule:
           type: string
         services:
           items:
-            $ref: '#/components/schemas/fly.MachineService'
+            $ref: "#/components/schemas/fly.MachineService"
           type: array
         size:
           description: "Deprecated: use Guest instead"
@@ -3920,19 +5850,19 @@ components:
           type: array
         statics:
           items:
-            $ref: '#/components/schemas/fly.Static'
+            $ref: "#/components/schemas/fly.Static"
           type: array
         stop_config:
-          $ref: '#/components/schemas/fly.StopConfig'
+          $ref: "#/components/schemas/fly.StopConfig"
       type: object
     fly.MachineGuest:
       example:
         gpu_kind: gpu_kind
-        cpus: 1
+        cpus: 2
         host_dedication_id: host_dedication_id
-        gpus: 5
+        gpus: 4
         cpu_kind: cpu_kind
-        memory_mb: 5
+        memory_mb: 7
         kernel_args:
         - kernel_args
         - kernel_args
@@ -3978,7 +5908,7 @@ components:
         entrypoint:
         - entrypoint
         - entrypoint
-        swap_size_mb: 2
+        swap_size_mb: 1
         tty: true
         cmd:
         - cmd
@@ -4014,40 +5944,15 @@ components:
     fly.MachineMetrics:
       example:
         path: path
-        port: 7
+        port: 1
+        https: true
       properties:
+        https:
+          type: boolean
         path:
           type: string
         port:
           type: integer
-      type: object
-    fly.MachineMount:
-      example:
-        volume: volume
-        path: path
-        encrypted: true
-        size_gb_limit: 4
-        extend_threshold_percent: 3
-        name: name
-        add_size_gb: 9
-        size_gb: 2
-      properties:
-        add_size_gb:
-          type: integer
-        encrypted:
-          type: boolean
-        extend_threshold_percent:
-          type: integer
-        name:
-          type: string
-        path:
-          type: string
-        size_gb:
-          type: integer
-        size_gb_limit:
-          type: integer
-        volume:
-          type: string
       type: object
     fly.MachinePort:
       example:
@@ -4056,7 +5961,7 @@ components:
         handlers:
         - handlers
         - handlers
-        start_port: 9
+        start_port: 6
         tls_options:
           alpn:
           - alpn
@@ -4067,15 +5972,15 @@ components:
           - versions
         proxy_proto_options:
           version: version
-        end_port: 1
+        end_port: 9
         http_options:
-          headers_read_timeout: 4
+          headers_read_timeout: 6
           compress: true
           response:
             headers:
               key: "{}"
             pristine: true
-          idle_timeout: 5
+          idle_timeout: 8
           h2_backend: true
       properties:
         end_port:
@@ -4087,15 +5992,15 @@ components:
             type: string
           type: array
         http_options:
-          $ref: '#/components/schemas/fly.HTTPOptions'
+          $ref: "#/components/schemas/fly.HTTPOptions"
         port:
           type: integer
         proxy_proto_options:
-          $ref: '#/components/schemas/fly.ProxyProtoOptions'
+          $ref: "#/components/schemas/fly.ProxyProtoOptions"
         start_port:
           type: integer
         tls_options:
-          $ref: '#/components/schemas/fly.TLSOptions'
+          $ref: "#/components/schemas/fly.TLSOptions"
       type: object
     fly.MachineProcess:
       example:
@@ -4139,7 +6044,7 @@ components:
           description: EnvFrom can be provided to set environment variables from machine
             fields.
           items:
-            $ref: '#/components/schemas/fly.EnvFrom'
+            $ref: "#/components/schemas/fly.EnvFrom"
           type: array
         exec:
           items:
@@ -4156,7 +6061,7 @@ components:
             Secrets can be provided at the process level to explicitly indicate which secrets should be
             used for the process. If not provided, the secrets provided at the machine level will be used.
           items:
-            $ref: '#/components/schemas/fly.MachineSecret'
+            $ref: "#/components/schemas/fly.MachineSecret"
           type: array
         user:
           type: string
@@ -4165,8 +6070,8 @@ components:
       description: The Machine restart policy defines whether and how flyd restarts
         a Machine after its main process exits. See https://fly.io/docs/machines/guides-examples/machine-restart-policy/.
       example:
-        max_retries: 1
-        gpu_bid_price: 7.386281948385884
+        max_retries: 6
+        gpu_bid_price: 1.4894159098541704
         policy: "no"
       properties:
         gpu_bid_price:
@@ -4209,7 +6114,7 @@ components:
       type: object
     fly.MachineService:
       example:
-        min_machines_running: 7
+        min_machines_running: 9
         protocol: protocol
         checks:
         - headers:
@@ -4224,8 +6129,7 @@ components:
           path: path
           protocol: protocol
           method: method
-          port: 0
-          kind: informational
+          port: 7
           tls_server_name: tls_server_name
           interval: "{}"
           tls_skip_verify: true
@@ -4244,8 +6148,7 @@ components:
           path: path
           protocol: protocol
           method: method
-          port: 0
-          kind: informational
+          port: 7
           tls_server_name: tls_server_name
           interval: "{}"
           tls_skip_verify: true
@@ -4254,14 +6157,14 @@ components:
           timeout: "{}"
         force_instance_key: force_instance_key
         autostart: true
-        internal_port: 6
+        internal_port: 5
         ports:
         - force_https: true
           port: 9
           handlers:
           - handlers
           - handlers
-          start_port: 9
+          start_port: 6
           tls_options:
             alpn:
             - alpn
@@ -4272,22 +6175,22 @@ components:
             - versions
           proxy_proto_options:
             version: version
-          end_port: 1
+          end_port: 9
           http_options:
-            headers_read_timeout: 4
+            headers_read_timeout: 6
             compress: true
             response:
               headers:
                 key: "{}"
               pristine: true
-            idle_timeout: 5
+            idle_timeout: 8
             h2_backend: true
         - force_https: true
           port: 9
           handlers:
           - handlers
           - handlers
-          start_port: 9
+          start_port: 6
           tls_options:
             alpn:
             - alpn
@@ -4298,20 +6201,20 @@ components:
             - versions
           proxy_proto_options:
             version: version
-          end_port: 1
+          end_port: 9
           http_options:
-            headers_read_timeout: 4
+            headers_read_timeout: 6
             compress: true
             response:
               headers:
                 key: "{}"
               pristine: true
-            idle_timeout: 5
+            idle_timeout: 8
             h2_backend: true
         force_instance_description: force_instance_description
         autostop: "off"
         concurrency:
-          soft_limit: 1
+          soft_limit: 4
           type: type
           hard_limit: 1
       properties:
@@ -4329,11 +6232,12 @@ components:
           - suspend
           type: string
         checks:
+          description: An optional list of service checks
           items:
-            $ref: '#/components/schemas/fly.MachineCheck'
+            $ref: "#/components/schemas/fly.MachineServiceCheck"
           type: array
         concurrency:
-          $ref: '#/components/schemas/fly.MachineServiceConcurrency'
+          $ref: "#/components/schemas/fly.MachineServiceConcurrency"
         force_instance_description:
           type: string
         force_instance_key:
@@ -4344,14 +6248,81 @@ components:
           type: integer
         ports:
           items:
-            $ref: '#/components/schemas/fly.MachinePort'
+            $ref: "#/components/schemas/fly.MachinePort"
           type: array
         protocol:
           type: string
       type: object
+    fly.MachineServiceCheck:
+      example:
+        headers:
+        - values:
+          - values
+          - values
+          name: name
+        - values:
+          - values
+          - values
+          name: name
+        path: path
+        protocol: protocol
+        method: method
+        port: 7
+        tls_server_name: tls_server_name
+        interval: "{}"
+        tls_skip_verify: true
+        type: type
+        grace_period: "{}"
+        timeout: "{}"
+      properties:
+        grace_period:
+          allOf:
+          - $ref: "#/components/schemas/fly.Duration"
+          description: The time to wait after a VM starts before checking its health
+          type: object
+        headers:
+          items:
+            $ref: "#/components/schemas/fly.MachineHTTPHeader"
+          type: array
+        interval:
+          allOf:
+          - $ref: "#/components/schemas/fly.Duration"
+          description: The time between connectivity checks
+          type: object
+        method:
+          description: "For http checks, the HTTP method to use to when making the\
+            \ request"
+          type: string
+        path:
+          description: "For http checks, the path to send the request to"
+          type: string
+        port:
+          description: "The port to connect to, often the same as internal_port"
+          type: integer
+        protocol:
+          description: "For http checks, whether to use http or https"
+          type: string
+        timeout:
+          allOf:
+          - $ref: "#/components/schemas/fly.Duration"
+          description: The maximum time a connection can take before being reported
+            as failing its health check
+          type: object
+        tls_server_name:
+          description: "If the protocol is https, the hostname to use for TLS certificate\
+            \ validation"
+          type: string
+        tls_skip_verify:
+          description: "For http checks with https protocol, whether or not to verify\
+            \ the TLS certificate"
+          type: boolean
+        type:
+          description: tcp or http
+          type: string
+      type: object
     fly.MachineServiceConcurrency:
       example:
-        soft_limit: 1
+        soft_limit: 4
         type: type
         hard_limit: 1
       properties:
@@ -4392,12 +6363,20 @@ components:
       example:
         signal: signal
         timeout:
-          time.Duration: 6
+          time.Duration: 3
       properties:
         signal:
           type: string
         timeout:
-          $ref: '#/components/schemas/fly.Duration'
+          $ref: "#/components/schemas/fly.Duration"
+      type: object
+    fly.TCPHealthcheck:
+      example:
+        port: 9
+      properties:
+        port:
+          description: "The port to connect to, often the same as internal_port"
+          type: integer
       type: object
     fly.TLSOptions:
       example:
@@ -4420,6 +6399,12 @@ components:
             type: string
           type: array
       type: object
+    fly.UnhealthyPolicy:
+      enum:
+      - stop
+      type: string
+      x-enum-varnames:
+      - UnhealthyPolicyStop
     fly.dnsForwardRule:
       example:
         basename: basename
@@ -4456,6 +6441,84 @@ components:
         stdout:
           type: string
       type: object
+    main.getPlacementsRequest:
+      properties:
+        compute:
+          allOf:
+          - $ref: "#/components/schemas/fly.MachineGuest"
+          description: Resource requirements for the Machine to simulate. Defaults
+            to a performance-1x machine
+          type: object
+        count:
+          description: |-
+            Number of machines to simulate placement.
+            Defaults to 0, which returns the org-specific limit for each region.
+          type: integer
+        org_slug:
+          example: personal
+          type: string
+        region:
+          description: |-
+            Region expression for placement as a comma-delimited set of regions or aliases.
+            Defaults to "[region],any", to prefer the API endpoint's local region with any other region as fallback.
+          example: "lhr,eu"
+          type: string
+        volume_name:
+          example: ""
+          type: string
+        volume_size_bytes:
+          type: integer
+        weights:
+          allOf:
+          - $ref: "#/components/schemas/placement.Weights"
+          description: Optional weights to override default placement preferences.
+          example:
+            region: 1000
+            spread: 0
+          type: object
+      required:
+      - org_slug
+      type: object
+    main.getPlacementsResponse:
+      example:
+        regions:
+        - count: 6
+          region: region
+          concurrency: 0
+        - count: 6
+          region: region
+          concurrency: 0
+      properties:
+        regions:
+          items:
+            $ref: "#/components/schemas/placement.RegionPlacement"
+          type: array
+      type: object
+    main.regionResponse:
+      example:
+        regions:
+        - gateway_available: true
+          code: code
+          geo_region: geo_region
+          requires_paid_plan: true
+          latitude: 6.027456183070403
+          name: name
+          capacity: 0
+          longitude: 1.4658129805029452
+        - gateway_available: true
+          code: code
+          geo_region: geo_region
+          requires_paid_plan: true
+          latitude: 6.027456183070403
+          name: name
+          capacity: 0
+          longitude: 1.4658129805029452
+      properties:
+        regions:
+          items:
+            $ref: "#/components/schemas/reads.GetCapacityPerRegionRow"
+          type: array
+      type: object
     main.statusCode:
       enum:
       - unknown
@@ -4464,4 +6527,52 @@ components:
       x-enum-varnames:
       - unknown
       - capacityErr
+    placement.RegionPlacement:
+      example:
+        count: 6
+        region: region
+        concurrency: 0
+      properties:
+        concurrency:
+          description: |-
+            Hint on the number of machines in this region can be created concurrently.
+            Equal to the number of unique hosts selected for placement.
+          type: integer
+        count:
+          type: integer
+        region:
+          type: string
+      type: object
+    placement.Weights:
+      additionalProperties:
+        type: integer
+      type: object
+    reads.GetCapacityPerRegionRow:
+      example:
+        gateway_available: true
+        code: code
+        geo_region: geo_region
+        requires_paid_plan: true
+        latitude: 6.027456183070403
+        name: name
+        capacity: 0
+        longitude: 1.4658129805029452
+      properties:
+        capacity:
+          type: integer
+        code:
+          type: string
+        gateway_available:
+          type: boolean
+        geo_region:
+          type: string
+        latitude:
+          type: number
+        longitude:
+          type: number
+        name:
+          type: string
+        requires_paid_plan:
+          type: boolean
+      type: object
 x-original-swagger-version: "2.0"

@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **Name** | Pointer to **string** | Unique name for this Machine. If omitted, one is generated for you | [optional] 
 **Region** | Pointer to **string** | The target region. Omitting this param launches in the same region as your WireGuard peer connection (somewhere near you). | [optional] 
 **SkipLaunch** | Pointer to **bool** |  | [optional] 
+**SkipSecrets** | Pointer to **bool** |  | [optional] 
 **SkipServiceRegistration** | Pointer to **bool** |  | [optional] 
 
 ## Methods
@@ -180,6 +181,31 @@ SetSkipLaunch sets SkipLaunch field to given value.
 `func (o *CreateMachineRequest) HasSkipLaunch() bool`
 
 HasSkipLaunch returns a boolean if a field has been set.
+
+### GetSkipSecrets
+
+`func (o *CreateMachineRequest) GetSkipSecrets() bool`
+
+GetSkipSecrets returns the SkipSecrets field if non-nil, zero value otherwise.
+
+### GetSkipSecretsOk
+
+`func (o *CreateMachineRequest) GetSkipSecretsOk() (*bool, bool)`
+
+GetSkipSecretsOk returns a tuple with the SkipSecrets field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSkipSecrets
+
+`func (o *CreateMachineRequest) SetSkipSecrets(v bool)`
+
+SetSkipSecrets sets SkipSecrets field to given value.
+
+### HasSkipSecrets
+
+`func (o *CreateMachineRequest) HasSkipSecrets() bool`
+
+HasSkipSecrets returns a boolean if a field has been set.
 
 ### GetSkipServiceRegistration
 

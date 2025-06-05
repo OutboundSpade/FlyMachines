@@ -20,6 +20,7 @@ var _ MappedNullable = &CreateOIDCTokenRequest{}
 // CreateOIDCTokenRequest Optional parameters
 type CreateOIDCTokenRequest struct {
 	Aud *string `json:"aud,omitempty"`
+	AwsPrincipalTags *bool `json:"aws_principal_tags,omitempty"`
 }
 
 // NewCreateOIDCTokenRequest instantiates a new CreateOIDCTokenRequest object
@@ -71,6 +72,38 @@ func (o *CreateOIDCTokenRequest) SetAud(v string) {
 	o.Aud = &v
 }
 
+// GetAwsPrincipalTags returns the AwsPrincipalTags field value if set, zero value otherwise.
+func (o *CreateOIDCTokenRequest) GetAwsPrincipalTags() bool {
+	if o == nil || IsNil(o.AwsPrincipalTags) {
+		var ret bool
+		return ret
+	}
+	return *o.AwsPrincipalTags
+}
+
+// GetAwsPrincipalTagsOk returns a tuple with the AwsPrincipalTags field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *CreateOIDCTokenRequest) GetAwsPrincipalTagsOk() (*bool, bool) {
+	if o == nil || IsNil(o.AwsPrincipalTags) {
+		return nil, false
+	}
+	return o.AwsPrincipalTags, true
+}
+
+// HasAwsPrincipalTags returns a boolean if a field has been set.
+func (o *CreateOIDCTokenRequest) HasAwsPrincipalTags() bool {
+	if o != nil && !IsNil(o.AwsPrincipalTags) {
+		return true
+	}
+
+	return false
+}
+
+// SetAwsPrincipalTags gets a reference to the given bool and assigns it to the AwsPrincipalTags field.
+func (o *CreateOIDCTokenRequest) SetAwsPrincipalTags(v bool) {
+	o.AwsPrincipalTags = &v
+}
+
 func (o CreateOIDCTokenRequest) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
@@ -83,6 +116,9 @@ func (o CreateOIDCTokenRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if !IsNil(o.Aud) {
 		toSerialize["aud"] = o.Aud
+	}
+	if !IsNil(o.AwsPrincipalTags) {
+		toSerialize["aws_principal_tags"] = o.AwsPrincipalTags
 	}
 	return toSerialize, nil
 }

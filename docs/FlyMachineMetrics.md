@@ -4,6 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**Https** | Pointer to **bool** |  | [optional] 
 **Path** | Pointer to **string** |  | [optional] 
 **Port** | Pointer to **int32** |  | [optional] 
 
@@ -25,6 +26,31 @@ will change when the set of required properties is changed
 NewFlyMachineMetricsWithDefaults instantiates a new FlyMachineMetrics object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
+### GetHttps
+
+`func (o *FlyMachineMetrics) GetHttps() bool`
+
+GetHttps returns the Https field if non-nil, zero value otherwise.
+
+### GetHttpsOk
+
+`func (o *FlyMachineMetrics) GetHttpsOk() (*bool, bool)`
+
+GetHttpsOk returns a tuple with the Https field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetHttps
+
+`func (o *FlyMachineMetrics) SetHttps(v bool)`
+
+SetHttps sets Https field to given value.
+
+### HasHttps
+
+`func (o *FlyMachineMetrics) HasHttps() bool`
+
+HasHttps returns a boolean if a field has been set.
 
 ### GetPath
 
